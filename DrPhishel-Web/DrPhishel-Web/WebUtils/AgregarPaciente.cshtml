@@ -7,15 +7,15 @@
 <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="buscarPaciente">
         <h1 class="text-center" >Buscar Paciente</h1>
-        <form class="form-inline center-block login_panel">
-            <input type="number" class="form-control" placeholder="Cedula del paciente" style="width:180px;"/>
-            <input class="btn btn-success" type="button" value="Buscar paciente" />
+        <form class="form-inline center-block login_component">
+            <input type="number" class="form-control" placeholder="Cedula del paciente" style="width:180px;display:inline-block;"/>
+            <a class="btn btn-success" href="#" > <span class="glyphicon glyphicon-search"></span> </a>
         </form>
-        @RenderPage("~/WebUtils/DatosPaciente.cshtml");
+        @RenderPage("~/WebUtils/DatosPaciente.cshtml")
     </div>
     <div class="tab-pane" id="agregarPaciente">
         <h1 class="text-center">Agregar Paciente</h1>
-        @RenderPage("~/WebUtils/Registro.cshtml");
+        @RenderPage("~/WebUtils/Registro.cshtml")
     </div>
 </div>
 
