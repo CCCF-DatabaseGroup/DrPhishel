@@ -1,0 +1,53 @@
+﻿<table class="table" ng-controller="historialClinicoController">
+    <thead>
+        <!-- Este es el encabezado de la tabla, segun los valores que se desean obtener -->
+        <tr class="info">
+            <th>Doctor encargado</th>
+            <th>Fecha de la cita</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Es la lista de pedidos ordenada por hora-->
+        <tr ng-repeat="cita in citas">
+            <td>{{cita.DoctorEncargado}}</td>
+            <td>{{cita.FechaCita}}</td>
+            <td>
+                <input type="button" class="btn btn-info" ng-click="seleccionarCita(cita)" data-target="#myModal{{index}}" data-toggle="modal" value="Ver detalles"/>
+                <div id="myModal{{index}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+
+                        <!-- Este es un modal emergente que se encarga de solicitar los datos del usuario para que pueda logearse-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <!--Este es el titulo del modal emergente-->
+                                <h4 class="modal-title">Datos de la cita</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <h3>Descripcion de la cita</h3>
+                                <p>{{citaSeleccionada.Descripcion}}</p>
+                                <h3>Resultados de estudios</h3>
+                                <p>{{citaSeleccionada.ResultadosDeEstudios}}</p>
+                                <h3>Receta</h3>
+                                <div class="list-group">
+                                    <a class="list-group-item" ng-repeat="medicamento in receta">{{medicamento.nombre}}</a>
+                                </div>
+
+
+                            </div>
+                            <!--Este es el footer donde el boton close cierra el modal-->
+                            <div class="modal-footer">
+                                <!--Este boton cierra el modal-->
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+<div class="container" style="padding:0px;">
+    <div class="col-md-8">
+        <div class="jumbotron well">
+            <div style="display:inline-block;">
+                <img src="~/img/dr_icon.png" style="height:100px;width:100px;display:inline-block;" />
+                <h2>
+                    Bienvenido a DrPhishel!
+                </h2>
+                <p>
+                    La plataforma web, donde tu salud es primero, Puedes solicitar tus citas a tu doctor,
+                    adem&aacute;s puedes ver las recetas que te env&iacute;en y consultar tu historial cl&iacute;nico cuando quer&aacute;s
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-danger login_panel">
+            <div class="panel-heading">
+                Ingresar/Registrarse
+            </div>
+            <div class="panel-body">
+                <div>
+                    <form class="form-horizontal" role="form">
+                        <!--Este es el input donde se ingresa el nombre de usuario-->
+                        <input ng-model="userName" class="login_component form-control center-block" placeholder="usuario o e-mail" id="Text1" type="text" />
+                        <!--Este es el input donde se ingresa la contrasenia de usuario-->
+                        <input ng-model="userPassword" type="password" class="login_component form-control center-block" placeholder="contraseña" id="Text1" type="text" />
+                        <!--Este es el boton que el usuario utilizara para poder ingresar al sistema de farmacias-->
+                        <input class="login_component btn btn-success center-block" id="Button1" type="button" value="Ingresar" />                        
+                        
+                        <p class="login_message">{{loginMessage}}</p>
+
+                        <!-- Error de seleccion arreglado 
+                            solucion encontrada en 
+                            http://stackoverflow.com/questions/20870671/bootstrap-3-btn-group-lose-active-class-when-click-any-where-on-the-page
+                             -->
+                        <div class="btn-group btn-group-justified login_component center-block">
+                            <a href="#" class="btn btn-primary active">Paciente</a>
+                            <a href="#" class="btn btn-primary">Doctor</a>
+                            <a href="#" class="btn btn-primary">Admin</a>
+                        </div>
+                        <br />
+                        <input class="login_component btn btn-warning center-block" id="registro" type="button" value="Registrar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

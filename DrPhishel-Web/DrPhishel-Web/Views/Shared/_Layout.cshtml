@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body ng-app="myApp">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,15 +27,25 @@
         </div>
     </div>
     <div class="container body-content">
+        <br/>
         @RenderBody()
+        <br />
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+<!--
+    a@Scripts.Render("~/bundles/jquery")
+    a@Scripts.Render("~/bundles/bootstrap")
+    a@RenderSection("scripts", required: false)
+-->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/button.bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.jquery.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/AngularScripts/AngularMain.js"></script>
+    <script src="~/Scripts/AngularScripts/HistorialClinico.js"></script>
 </body>
 </html>

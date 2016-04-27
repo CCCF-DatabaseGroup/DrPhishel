@@ -1,0 +1,21 @@
+﻿<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#buscarPaciente"  data-toggle="tab">Paciente existente</a></li>
+    <li role="presentation"><a href="#agregarPaciente" data-toggle="tab" >Registrar paciente</a></li>
+</ul>
+
+
+<div id="my-tab-content" class="tab-content">
+    <div class="tab-pane active" id="buscarPaciente">
+        <h1 class="text-center" >Buscar Paciente</h1>
+        <form class="form-inline center-block login_panel">
+            <input type="number" class="form-control" placeholder="Cedula del paciente" style="width:180px;"/>
+            <input class="btn btn-success" type="button" value="Buscar paciente" />
+        </form>
+        @RenderPage("~/WebUtils/DatosPaciente.cshtml");
+    </div>
+    <div class="tab-pane" id="agregarPaciente">
+        <h1 class="text-center">Agregar Paciente</h1>
+        @RenderPage("~/WebUtils/Registro.cshtml");
+    </div>
+</div>
+
