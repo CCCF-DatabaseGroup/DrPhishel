@@ -2,17 +2,18 @@
 using Android.App;
 using Android.Content;
 using Android.Runtime;
+using System.Collections.Generic;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
 
 namespace AppDrPhishel
 {
-    [Activity(Label = "AppDrPhishel0.1", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "@string/_application_name", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
 
+       
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -20,8 +21,17 @@ namespace AppDrPhishel
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-          
+            Button CrearUsuario = FindViewById<Button>(Resource.Id.botonCrearMain);
+            CrearUsuario.Click += (sender, e) =>
+            {
+
+                StartActivity(typeof(CrearUsuarioActivity));
+            };
+
+
+
         }
+      
     }
 }
 

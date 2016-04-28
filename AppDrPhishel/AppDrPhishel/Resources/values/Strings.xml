@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--- xml encargado de tener los strings a cargar para los componentes -->
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">AppDrPhishel</string>
+   <string name="_crear_usuario">Crear Usuario</string>
+    <string name="_application_name">AppDrPhishel0.4</string>
+  <string name="_crear_cuenta">Crear Cuenta</string>
+ 
+  <string name="_log_in">Log in</string>
+  <!--- Strings para Crear Cuenta -->
+  <string name="_nombre">Nombre</string>
+  <string name="_contraseña">Contraseña</string>
+  <string name="_usuario">Usuario</string>
+  <string name="_apellido1">Apellido1</string>
+  <string name="_apellido2">Apellido2</string>
+  <string name="_correo">Correo Electronico</string>
+  <string name="_telefono">Teléfono</string>
+  <string name="_direccion">Dirección </string>
+
 </resources>
+
