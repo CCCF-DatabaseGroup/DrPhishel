@@ -8,8 +8,10 @@
     <div class="tab-pane active" id="buscarPaciente">
         <h1 class="text-center" >Buscar Paciente</h1>
         <form class="form-inline center-block login_component">
-            <input type="number" class="form-control" placeholder="Cedula del paciente" style="width:180px;display:inline-block;"/>
-            <a class="btn btn-success" href="#" > <span class="glyphicon glyphicon-search"></span> </a>
+            <input max="9" autofocus required oninvalid="validarCedula(this);" type="text" pattern="[1-8][0-9]{6,8}" class="form-control" placeholder="Cedula del paciente" style="width:180px;display:inline-block;"/>
+            <button id="consultaPorCedula" class="btn btn-success" href="" type="submit">
+                <span class="glyphicon glyphicon-search"></span> 
+            </button>
         </form>
         @RenderPage("~/WebUtils/DatosPaciente.cshtml")
     </div>

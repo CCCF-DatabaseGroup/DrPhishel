@@ -1,0 +1,64 @@
+﻿<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#agregar_cita" data-toggle="tab">Agregar Cita</a></li>
+    <li role="presentation"><a href="#editar_eliminar_cita" data-toggle="tab">Editar/Eliminar Cita</a></li>
+</ul>
+
+<div class="tab-content">
+
+
+    <form id="agregar_cita" class="form-group login_component center-block tab-pane active">
+        <!-- Doctor a seleccion -->
+        <label for="doctorSeleccionAgregar">Doctor:</label>
+        <select  id="doctorSeleccionAgregar" required class="form-control">
+            <option>A</option>
+        </select>
+
+        <!--Dia de la cita-->
+        <div class="form-group">
+            <label for="fecha_cita">Fecha de cita:</label>
+            <input required type="date" pattern="([0-2]?[0-9]|3[0-1])-([0-9]|1[0-2])-[0-9]{4}" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita" ng-model="usuario_Fecha_nacimiento">
+        </div>
+
+
+        <!-- Lista de citas -->
+        <label for="citas_disponibles">Citas disponibles:</label>
+        <select required id="citas_disponibles" class="form-control">
+            <option>A</option>
+        </select>
+
+
+        <!-- ve datos de cita -->
+        <h3>Datos de la cita:</h3>
+        <p></p>
+        <h4>Doctor encargado</h4>
+        <p></p>
+        <h4>Hora de la cita:</h4>
+        <p></p>
+        <!-- Boton agregar-->
+        <input class="login_component btn btn-success" type="submit" value="Agregar cita" />
+
+    </form>
+
+
+    <!--select citas-->
+    <form id="editar_eliminar_cita" class="form-group login_component center-block tab-pane">
+        <!-- Lista de citas -->
+        <label for="mis_citas">Mis citas:</label>
+        <select required id="mis_citas" class="form-control">
+            <option>A</option>
+        </select>
+
+        <!-- ver datos de cita -->
+        <h3>Datos de la cita:</h3>
+        <p></p>
+        <h4>Doctor encargado</h4>
+        <p></p>
+        <h4>Hora de la cita:</h4>
+        <p></p>
+        <!-- cambiar hora-->
+        <input class="login_component btn btn-warning" type="submit" value="actualizar" />
+        <!-- eliminar-->
+        <input class="login_component btn btn-danger" type="submit" value="borrar" />
+    </form>
+
+</div>

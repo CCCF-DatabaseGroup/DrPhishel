@@ -1,0 +1,60 @@
+﻿<table class="table" ng-controller="AdministradorController">
+    <thead>
+        <!-- Este es el encabezado de la tabla, segun los valores que se desean obtener -->
+        <tr class="info">
+            <th>N&uacute;mero de doctor</th>
+            <th>Nombre</th>
+            <th>Primer apellido</th>
+            <th>Segunda apellido</th>
+            <th>Ver ficha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Es la lista de pedidos ordenada por hora-->
+        <tr ng-repeat="doctorSolicitante in doctorSolicitantes">
+            <td>{{doctorSolicitante.NumeroDoctor}}</td>
+            <td>{{doctorSolicitante.Nombre}}</td>
+            <td>{{doctorSolicitante.PrimerApellido}}</td>
+            <td>{{doctorSolicitante.SegundoApellido}}</td>
+            <td>
+                <input type="button" class="btn btn-info" ng-click="verDatosDoctor(doctorSolicitante)" data-target="#DatosDoctorModal{{index}}" data-toggle="modal" value="Ver detalles" />
+                <div id="DatosDoctorModal{{index}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+
+                        <!-- Este es un modal emergente que se encarga de solicitar los datos del usuario para que pueda logearse-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <!--Este es el titulo del modal emergente-->
+                                <h4 class="modal-title">Datos de la cita</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <h3>N&uacute;mero de doctor</h3>
+                                {{doctorSolicitante.NumeroDoctor}}
+                                <h3>C&eacute;dula</h3>
+                                {{doctorSolicitante.Cedula}}
+                                <h3>Nombre</h3>
+                                {{doctorSolicitante.Nombre}}
+                                <p> </p>
+                                {{doctorSolicitante.PrimerApellido}}
+                                <p> </p>
+                                {{doctorSolicitante.SegundoApellido}}
+                                <h3>Especialidad</h3>
+                                {{doctorSolicitante.Especialidad}}
+                            </div>
+                            <!--Este es el footer donde el boton close cierra el modal-->
+                            <div class="modal-footer">
+                                <!--Este boton cierra el modal-->
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Aceptar Doctor</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
