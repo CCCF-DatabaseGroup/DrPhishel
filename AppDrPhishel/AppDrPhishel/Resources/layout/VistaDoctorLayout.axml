@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5973FF"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Button
+        android:text="@string/_historial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DOCTOR_BotonHistorialPacientes"
+        android:translationY="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+    <Button
+        android:text="@string/_calendario_citas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DOCTOR_BotonCalendarioCitas"
+        android:translationY="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+    <Button
+        android:text="@string/_agregar_paciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DOCTOR_BotonAgregarPaciente"
+        android:translationY="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+    <TextView
+        android:text="@string/_usuario"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:translationY="-140dp" />
+    <TextView
+        android:text="Nombre del Usuario"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:translationY="-140dp" />
+    <ImageButton
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton1"
+        android:translationY="300dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp" />
+</LinearLayout>
