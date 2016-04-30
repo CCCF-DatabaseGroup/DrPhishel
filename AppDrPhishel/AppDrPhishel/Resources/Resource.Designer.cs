@@ -45,7 +45,19 @@ namespace AppDrPhishel
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int CheckInicio = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int DrPhi = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int IconoDoctor = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int IconoPaciente = 2130837508;
 			
 			static Drawable()
 			{
@@ -61,79 +73,115 @@ namespace AppDrPhishel
 		{
 			
 			// aapt resource value: 0x7f05000e
-			public const int BotonCrearCuenta = 2131034126;
+			public const int CREARUSUARIO_BotonCrearCuenta = 2131034126;
 			
 			// aapt resource value: 0x7f050010
-			public const int BotonRegresarCrear = 2131034128;
-			
-			// aapt resource value: 0x7f050017
-			public const int EntryContraseña = 2131034135;
-			
-			// aapt resource value: 0x7f050015
-			public const int EntryUsuario = 2131034133;
-			
-			// aapt resource value: 0x7f050012
-			public const int botonCrearMain = 2131034130;
+			public const int CREARUSUARIO_BotonRegresar = 2131034128;
 			
 			// aapt resource value: 0x7f050003
-			public const int entryApellido1Crear = 2131034115;
+			public const int CREARUSUARIO_entryApellido1 = 2131034115;
 			
 			// aapt resource value: 0x7f050005
-			public const int entryApellido2Crear = 2131034117;
-			
-			// aapt resource value: 0x7f050009
-			public const int entryCorreoCrear = 2131034121;
-			
-			// aapt resource value: 0x7f05000d
-			public const int entryDireccionCrear = 2131034125;
-			
-			// aapt resource value: 0x7f050001
-			public const int entryNombreCrear = 2131034113;
-			
-			// aapt resource value: 0x7f05000b
-			public const int entryTelefonoCrear = 2131034123;
-			
-			// aapt resource value: 0x7f050007
-			public const int entryUsuarioCrear = 2131034119;
-			
-			// aapt resource value: 0x7f050018
-			public const int imageButton1 = 2131034136;
-			
-			// aapt resource value: 0x7f05000f
-			public const int progressBarCrear = 2131034127;
-			
-			// aapt resource value: 0x7f050002
-			public const int textApellido1Crear = 2131034114;
-			
-			// aapt resource value: 0x7f050004
-			public const int textApellido2Crear = 2131034116;
-			
-			// aapt resource value: 0x7f050016
-			public const int textConstraseña = 2131034134;
-			
-			// aapt resource value: 0x7f050008
-			public const int textCorreoCrear = 2131034120;
-			
-			// aapt resource value: 0x7f050013
-			public const int textCrearCuenta = 2131034131;
-			
-			// aapt resource value: 0x7f05000c
-			public const int textDireccionCrear = 2131034124;
+			public const int CREARUSUARIO_entryApellido2 = 2131034117;
 			
 			// aapt resource value: 0x7f050011
-			public const int textLogearCuenta = 2131034129;
+			public const int CREARUSUARIO_entryConstraseña = 2131034129;
 			
-			// aapt resource value: 0x7f050000
-			public const int textNombreCrear = 2131034112;
+			// aapt resource value: 0x7f050009
+			public const int CREARUSUARIO_entryCorreo = 2131034121;
+			
+			// aapt resource value: 0x7f05000d
+			public const int CREARUSUARIO_entryDireccion = 2131034125;
+			
+			// aapt resource value: 0x7f050001
+			public const int CREARUSUARIO_entryNombre = 2131034113;
+			
+			// aapt resource value: 0x7f05000b
+			public const int CREARUSUARIO_entryTelefono = 2131034123;
+			
+			// aapt resource value: 0x7f050007
+			public const int CREARUSUARIO_entryUsuario = 2131034119;
+			
+			// aapt resource value: 0x7f050002
+			public const int CREARUSUARIO_textApellido1 = 2131034114;
+			
+			// aapt resource value: 0x7f050004
+			public const int CREARUSUARIO_textApellido2 = 2131034116;
+			
+			// aapt resource value: 0x7f05000f
+			public const int CREARUSUARIO_textContraseña = 2131034127;
+			
+			// aapt resource value: 0x7f050008
+			public const int CREARUSUARIO_textCorreo = 2131034120;
+			
+			// aapt resource value: 0x7f05000c
+			public const int CREARUSUARIO_textDireccion = 2131034124;
 			
 			// aapt resource value: 0x7f05000a
-			public const int textTelefonoCrear = 2131034122;
-			
-			// aapt resource value: 0x7f050014
-			public const int textUsuario = 2131034132;
+			public const int CREARUSUARIO_textTelefono = 2131034122;
 			
 			// aapt resource value: 0x7f050006
-			public const int textUsuarioCrear = 2131034118;
+			public const int CREARUSUARIO_textUsuario = 2131034118;
+			
+			// aapt resource value: 0x7f050021
+			public const int DOCTOR_BotonAgregarPaciente = 2131034145;
+			
+			// aapt resource value: 0x7f050020
+			public const int DOCTOR_BotonCalendarioCitas = 2131034144;
+			
+			// aapt resource value: 0x7f05001f
+			public const int DOCTOR_BotonHistorialPacientes = 2131034143;
+			
+			// aapt resource value: 0x7f050024
+			public const int DOCTOR_botonRegresar = 2131034148;
+			
+			// aapt resource value: 0x7f050023
+			public const int DOCTOR_textNombreUsuario = 2131034147;
+			
+			// aapt resource value: 0x7f050022
+			public const int DOCTOR_textUsuario = 2131034146;
+			
+			// aapt resource value: 0x7f050012
+			public const int HISTORIALPEDIDOSDOCTORlista = 2131034130;
+			
+			// aapt resource value: 0x7f050014
+			public const int MAIN_botonCrear = 2131034132;
+			
+			// aapt resource value: 0x7f05001a
+			public const int MAIN_botonLogearse = 2131034138;
+			
+			// aapt resource value: 0x7f050019
+			public const int MAIN_entryContraseña = 2131034137;
+			
+			// aapt resource value: 0x7f050017
+			public const int MAIN_entryUsuario = 2131034135;
+			
+			// aapt resource value: 0x7f050018
+			public const int MAIN_textConstraseña = 2131034136;
+			
+			// aapt resource value: 0x7f050015
+			public const int MAIN_textCrearCuenta = 2131034133;
+			
+			// aapt resource value: 0x7f050013
+			public const int MAIN_textLogearCuenta = 2131034131;
+			
+			// aapt resource value: 0x7f050016
+			public const int MAIN_textUsuario = 2131034134;
+			
+			// aapt resource value: 0x7f05001d
+			public const int TESTtextId = 2131034141;
+			
+			// aapt resource value: 0x7f05001b
+			public const int TESTtextNombre = 2131034139;
+			
+			// aapt resource value: 0x7f05001e
+			public const int TESTtextPadecimiento = 2131034142;
+			
+			// aapt resource value: 0x7f05001c
+			public const int TESTtextUsuario = 2131034140;
+			
+			// aapt resource value: 0x7f050000
+			public const int textNombreCREARUSUARIO = 2131034112;
 			
 			static Id()
 			{
@@ -152,7 +200,16 @@ namespace AppDrPhishel
 			public const int CrearUsuarioLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int HistorialPedidoPacienteDoctorLayout = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Test = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int VistaDoctorLayout = 2130903044;
 			
 			static Layout()
 			{
@@ -167,6 +224,9 @@ namespace AppDrPhishel
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f04000d
+			public const int _agregar_paciente = 2130968589;
+			
 			// aapt resource value: 0x7f040007
 			public const int _apellido1 = 2130968583;
 			
@@ -175,6 +235,9 @@ namespace AppDrPhishel
 			
 			// aapt resource value: 0x7f040001
 			public const int _application_name = 2130968577;
+			
+			// aapt resource value: 0x7f04000e
+			public const int _calendario_citas = 2130968590;
 			
 			// aapt resource value: 0x7f040005
 			public const int _contraseña = 2130968581;
@@ -190,6 +253,9 @@ namespace AppDrPhishel
 			
 			// aapt resource value: 0x7f04000b
 			public const int _direccion = 2130968587;
+			
+			// aapt resource value: 0x7f04000c
+			public const int _historial = 2130968588;
 			
 			// aapt resource value: 0x7f040003
 			public const int _log_in = 2130968579;

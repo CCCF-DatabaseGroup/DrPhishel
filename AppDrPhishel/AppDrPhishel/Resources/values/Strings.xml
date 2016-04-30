@@ -2,7 +2,7 @@
 <!--- xml encargado de tener los strings a cargar para los componentes -->
 <resources>
    <string name="_crear_usuario">Crear Usuario</string>
-    <string name="_application_name">AppDrPhishel0.4</string>
+    <string name="_application_name">AppDrPhishel1.0</string>
   <string name="_crear_cuenta">Crear Cuenta</string>
  
   <string name="_log_in">Log in</string>
@@ -16,5 +16,10 @@
   <string name="_telefono">Teléfono</string>
   <string name="_direccion">Dirección </string>
 
-</resources>
+  <!--- Strings para los botones de Doctor -->
 
+  <string name="_historial">Historial de mis pacientes </string>
+  <string name="_agregar_paciente">Agregar un paciente </string>
+  <string name="_calendario_citas">Mis citas </string>
+  
+  </resources>

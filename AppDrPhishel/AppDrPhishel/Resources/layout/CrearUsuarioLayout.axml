@@ -1,128 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px"
-    android:background="#E40202">
-    <TextView
-        android:text="@string/_nombre"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:fillViewport="false">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textNombreCrear" />
-    <EditText
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryNombreCrear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <TextView
-        android:text="@string/_apellido1"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textApellido1Crear " />
-    <EditText
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryApellido1Crear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <TextView
-        android:text="@string/_apellido2"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textApellido2Crear" />
-    <EditText
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryApellido2Crear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <TextView
-        android:text="@string/_usuario"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textUsuarioCrear" />
-    <EditText
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryUsuarioCrear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <TextView
-        android:text="@string/_correo"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textCorreoCrear" />
-    <EditText
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryCorreoCrear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <TextView
-        android:text="@string/_telefono"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textTelefonoCrear" />
-    <EditText
-        android:inputType="phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryTelefonoCrear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <TextView
-        android:text="@string/_direccion"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textDireccionCrear" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/entryDireccionCrear"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <Button
-        android:text="@string/_crear_cuenta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/BotonCrearCuenta"
-        android:translationY="70dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp" />
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBarCrear"
-        android:translationY="-35dp"
-        android:visibility="invisible" />
-    <ImageButton
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/BotonRegresarCrear"
-        android:translationY="50dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="#E40202">
+        <TextView
+            android:text="@string/_nombre"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textNombreCREARUSUARIO" />
+        <EditText
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryNombre"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <TextView
+            android:text="@string/_apellido1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textApellido1 " />
+        <EditText
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryApellido1"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <TextView
+            android:text="@string/_apellido2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textApellido2" />
+        <EditText
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryApellido2"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <TextView
+            android:text="@string/_usuario"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textUsuario" />
+        <EditText
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryUsuario"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <TextView
+            android:text="@string/_correo"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textCorreo" />
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryCorreo"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <TextView
+            android:text="@string/_telefono"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textTelefono" />
+        <EditText
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryTelefono"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <TextView
+            android:text="@string/_direccion"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textDireccion" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryDireccion"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FF1E00" />
+        <Button
+            android:text="@string/_crear_cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_BotonCrearCuenta"
+            android:translationY="70dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp" />
+        <TextView
+            android:text="@string/_contraseña"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_textContraseña"
+            android:translationY="-50dp" />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_BotonRegresar"
+            android:translationY="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="150dp"
+            android:background="@null"
+            android:src="@drawable/DrPhi" />
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CREARUSUARIO_entryConstraseña"
+            android:textColor="#FF1E00"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:translationY="-125dp" />
+    </LinearLayout>
+</ScrollView>

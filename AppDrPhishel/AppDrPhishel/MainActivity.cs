@@ -9,11 +9,11 @@ using Android.OS;
 
 namespace AppDrPhishel
 {
-    [Activity(Label = "@string/_application_name", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "@string/_application_name", MainLauncher = true, Icon = "@drawable/Drphi")]
     public class MainActivity : Activity
     {
+    
 
-       
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -21,17 +21,38 @@ namespace AppDrPhishel
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            Button CrearUsuario = FindViewById<Button>(Resource.Id.botonCrearMain);
+            //Entradas del Usuario
+            EditText EntradaUsuario = FindViewById<EditText>(Resource.Id.MAIN_entryUsuario);
+            EditText EntradaContraseña = FindViewById<EditText>(Resource.Id.MAIN_entryContraseña);
+
+            Button CrearUsuario = FindViewById<Button>(Resource.Id.MAIN_botonCrear);
             CrearUsuario.Click += (sender, e) =>
             {
 
                 StartActivity(typeof(CrearUsuarioActivity));
             };
 
+            ImageButton LogearUsuario = FindViewById<ImageButton>(Resource.Id.MAIN_botonLogearse);
+            LogearUsuario.Click += (sender, e) =>
+            {
+                //Capturando User y password
+                String User = EntradaUsuario.Text.ToString();
+                String Password = EntradaContraseña.Text.ToString();
+                if (User == "doctor" && Password == "doctor")
+                {
+                    //Se Pasa a la vista Doctor y se envia el User Usando un intent
+                    Intent PasarADoctor = new Intent(this,typeof(VistaDoctorActivity));
+                    PasarADoctor.PutExtra("Usuario", User);
+                    StartActivity(PasarADoctor);
+                }
+                else
+                {
+                    EntradaUsuario.Text = "Usuario Invalido|No existe";
+                }
+            };
 
 
         }
-      
     }
 }
 

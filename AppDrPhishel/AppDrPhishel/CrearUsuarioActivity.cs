@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace AppDrPhishel
 {
-    [Activity(Label = "CrearUsuarioActivity")]
+    [Activity(Label = "@string/_application_name", Icon = "@drawable/Drphi")]
     public class CrearUsuarioActivity : ConectionActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -21,7 +21,7 @@ namespace AppDrPhishel
             SetContentView(Resource.Layout.CrearUsuarioLayout);
             // Create your application here
 
-            ImageButton CrearUsuario = FindViewById<ImageButton>(Resource.Id.BotonRegresarCrear);
+            ImageButton CrearUsuario = FindViewById<ImageButton>(Resource.Id.CREARUSUARIO_BotonRegresar);
             CrearUsuario.Click += (sender, e) =>
             {
 
