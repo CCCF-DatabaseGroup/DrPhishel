@@ -12,5 +12,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/HISTORIALPEDIDOSDOCTORlista" />
+        android:id="@+id/HISTORIALPEDIDOSDOCTORlista"
+        android:choiceMode="singleChoice"
+        android:descendantFocusability="blocksDescendants" />
 </LinearLayout>

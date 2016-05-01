@@ -51,13 +51,10 @@ namespace AppDrPhishel
 			public const int DrPhi = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int IconoDoctor = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int IconoDoctor = 2130837507;
-			
-			// aapt resource value: 0x7f020004
-			public const int IconoPaciente = 2130837508;
+			public const int IconoPaciente = 2130837507;
 			
 			static Drawable()
 			{
@@ -144,41 +141,41 @@ namespace AppDrPhishel
 			// aapt resource value: 0x7f050012
 			public const int HISTORIALPEDIDOSDOCTORlista = 2131034130;
 			
-			// aapt resource value: 0x7f050014
-			public const int MAIN_botonCrear = 2131034132;
-			
-			// aapt resource value: 0x7f05001a
-			public const int MAIN_botonLogearse = 2131034138;
-			
-			// aapt resource value: 0x7f050019
-			public const int MAIN_entryContraseña = 2131034137;
-			
-			// aapt resource value: 0x7f050017
-			public const int MAIN_entryUsuario = 2131034135;
-			
 			// aapt resource value: 0x7f050018
-			public const int MAIN_textConstraseña = 2131034136;
-			
-			// aapt resource value: 0x7f050015
-			public const int MAIN_textCrearCuenta = 2131034133;
-			
-			// aapt resource value: 0x7f050013
-			public const int MAIN_textLogearCuenta = 2131034131;
-			
-			// aapt resource value: 0x7f050016
-			public const int MAIN_textUsuario = 2131034134;
-			
-			// aapt resource value: 0x7f05001d
-			public const int TESTtextId = 2131034141;
-			
-			// aapt resource value: 0x7f05001b
-			public const int TESTtextNombre = 2131034139;
+			public const int MAIN_botonCrear = 2131034136;
 			
 			// aapt resource value: 0x7f05001e
-			public const int TESTtextPadecimiento = 2131034142;
+			public const int MAIN_botonLogearse = 2131034142;
+			
+			// aapt resource value: 0x7f05001d
+			public const int MAIN_entryContraseña = 2131034141;
+			
+			// aapt resource value: 0x7f05001b
+			public const int MAIN_entryUsuario = 2131034139;
 			
 			// aapt resource value: 0x7f05001c
-			public const int TESTtextUsuario = 2131034140;
+			public const int MAIN_textConstraseña = 2131034140;
+			
+			// aapt resource value: 0x7f050019
+			public const int MAIN_textCrearCuenta = 2131034137;
+			
+			// aapt resource value: 0x7f050017
+			public const int MAIN_textLogearCuenta = 2131034135;
+			
+			// aapt resource value: 0x7f05001a
+			public const int MAIN_textUsuario = 2131034138;
+			
+			// aapt resource value: 0x7f050015
+			public const int TESTtextId = 2131034133;
+			
+			// aapt resource value: 0x7f050013
+			public const int TESTtextNombre = 2131034131;
+			
+			// aapt resource value: 0x7f050016
+			public const int TESTtextPadecimiento = 2131034134;
+			
+			// aapt resource value: 0x7f050014
+			public const int TESTtextUsuario = 2131034132;
 			
 			// aapt resource value: 0x7f050000
 			public const int textNombreCREARUSUARIO = 2131034112;
@@ -203,10 +200,10 @@ namespace AppDrPhishel
 			public const int HistorialPedidoPacienteDoctorLayout = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Main = 2130903042;
+			public const int ListViewTextFormatLayout = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Test = 2130903043;
+			public const int Main = 2130903043;
 			
 			// aapt resource value: 0x7f030004
 			public const int VistaDoctorLayout = 2130903044;
