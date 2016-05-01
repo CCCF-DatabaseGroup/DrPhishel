@@ -14,5 +14,11 @@ namespace DrPhishel_Web.Controllers
 
             return View();
         }
+        public ActionResult Registrarse()
+        {
+            ViewBag.Title = "Home Page";
+
+            return View();
+        }
     }
 }

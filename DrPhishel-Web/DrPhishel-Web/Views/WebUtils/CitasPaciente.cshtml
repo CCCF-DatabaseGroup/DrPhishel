@@ -1,4 +1,8 @@
-﻿<ul class="nav nav-tabs">
+﻿<div class="auxiliar_component center-block">
+    <h2>Citas</h2>
+</div>
+<ul class="nav nav-tabs">
+
     <li role="presentation" class="active"><a href="#agregar_cita" data-toggle="tab">Agregar Cita</a></li>
     <li role="presentation"><a href="#editar_eliminar_cita" data-toggle="tab">Editar/Eliminar Cita</a></li>
 </ul>
@@ -16,8 +20,8 @@
             </select>
 
             <!--Dia de la cita-->
-                <label for="fecha_cita">Fecha de cita:</label>
-                <input required type="date" pattern="([0-2]?[0-9]|3[0-1])-([0-9]|1[0-2])-[0-9]{4}" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita" ng-model="usuario_Fecha_nacimiento">
+            <label for="fecha_cita">Fecha de cita:</label>
+            <input required type="date" pattern="([0-2]?[0-9]|3[0-1])-([0-9]|1[0-2])-[0-9]{4}" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita" ng-model="usuario_Fecha_nacimiento">
 
 
             <!-- Lista de citas -->
@@ -39,7 +43,7 @@
 
 
         </form>
-       
+
     </div>
 
 
@@ -52,10 +56,12 @@
                 <option>A</option>
             </select>
 
+            <h3>Doctor encargado:</h3>
+
             <!-- ver datos de cita -->
             <h3>Datos de la cita:</h3>
             <p></p>
-            
+
             <label for="fecha_cita">Fecha de Cita:</label>
             <input required type="date" pattern="([0-2]?[0-9]|3[0-1])-([0-9]|1[0-2])-[0-9]{4}" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="dd/mm/aaaa" ng-model="usuario_Fecha_nacimiento">
 
@@ -63,15 +69,14 @@
             <select id="hora_cita" required class="form-control">
                 <option>Primera cita</option>
             </select>
-            <h4>Doctor encargado</h4>
             <p></p>
-            
+
             <!-- cambiar hora-->
             <input class="login_component btn btn-warning" type="submit" value="actualizar" />
             <!-- eliminar-->
             <input class="login_component btn btn-danger" type="submit" value="borrar" />
         </form>
-        
+
     </div>
 
 </div>

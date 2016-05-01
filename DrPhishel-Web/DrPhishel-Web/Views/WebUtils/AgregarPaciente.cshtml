@@ -14,12 +14,13 @@
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
             </form>
-            @RenderPage("~/WebUtils/DatosPaciente.cshtml")
+            @RenderPage("DatosPaciente.cshtml")
+            <input class="login_component btn btn-warning center-block" id="registroPaciente" type="button" value="Registrar como paciente" />
         </div>
     </div>
     <div class="tab-pane" id="agregarPaciente">
         <h1 class="text-center">Agregar Paciente</h1>
-        @RenderPage("~/WebUtils/Registro.cshtml")
+        @RenderPage("Registro.cshtml")
     </div>
 </div>
 

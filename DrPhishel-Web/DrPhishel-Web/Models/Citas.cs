@@ -1,0 +1,137 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+
+namespace DrPhishel_Web.Models
+{
+    public class Citas
+    {
+        private int IdCita { get; set; }
+        private int NumeroDoctor { get; set; }
+        private int CedulaPaciente { get; set; }
+        private string fechaCita { get; set; }
+        private string horaCita { get; set; }
+
+        /* Constructor que crea una cita con todos sus parametros */
+        public Citas(int pIdCita, int pNumeroDoctor, int pCedulaPaciente, string pFechaCita, string pHoraCita)
+        {
+            IdCita = pIdCita;
+            NumeroDoctor = pNumeroDoctor;
+            CedulaPaciente = pCedulaPaciente;
+            fechaCita = pFechaCita;
+            horaCita = pHoraCita;               
+        }
+
+        /*  Constructor para crear un objeto cita sin ID */
+        public Citas(int pNumeroDoctor, int pCedulaPaciente, string pFechaCita, string pHoraCita)
+        {
+            IdCita = 0;
+            NumeroDoctor = pNumeroDoctor;
+            CedulaPaciente = pCedulaPaciente;
+            fechaCita = pFechaCita;
+            horaCita = pHoraCita;
+        }
+
+        /* Constructor por defecto */
+        public Citas()
+        {
+            IdCita = 0;
+            NumeroDoctor = 0;
+            CedulaPaciente = 0;
+            fechaCita = "";
+            horaCita = "";
+        }
+        
+        /*  pide la cita para el paciente
+            retorna true si la cita se pidió
+            false si no se pudo pedir   */
+
+        public bool crearCita()
+        {
+            List<SqlParameter> ParametrosCita = new List<SqlParameter>();
+            ParametrosCita.Add(new SqlParameter(CST.PARAM_DOCT, this.NumeroDoctor));
+            ParametrosCita.Add(new SqlParameter(CST.PARAM_CEDULA, this.CedulaPaciente));
+            ParametrosCita.Add(new SqlParameter(CST.PARAM_FECHA_NAC, this.fechaCita));
+            ParametrosCita.Add(new SqlParameter(CST.PARAM_HORA, this.horaCita));
+
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_PEDIR_CITA, ParametrosCita))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        /*  recibe el dia y el id del doctor y obtiene todas las citas para ese día */
+        public static List<string> ObtenerCitasDisponiblesDoctor(int pIdDoctor, string pDia)
+        {
+            List<SqlParameter> ParametrosObtenerCita = new List<SqlParameter>();
+            ParametrosObtenerCita.Add(new SqlParameter(CST.PARAM_ID_DOCTOR, pIdDoctor));
+            ParametrosObtenerCita.Add(new SqlParameter(CST.PARAM_FECHA_MAYUS, pDia));
+
+            Connection conexion = new Connection();
+            List<string> ListaCitas = new List<string>();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_OBTENER_CITAS_DISP_DOC, ParametrosObtenerCita))
+            {
+
+                DataTable TablaCitas = conexion.GetTablaDatos();
+                foreach (DataRow fila in TablaCitas.Rows)
+                {
+                    /* VERIFICAR QUE LA TABLA NO SE DROPEE ANTES DE OBTENERLA */
+                    ListaCitas.Add((string) fila [CST.PARAM_HORAS_DISP]);
+                }
+        
+            }
+            return ListaCitas;
+        }
+
+
+        /* Elimina una cita por el Id de la cita y al cedula del paciente, si se logra 
+        eliminar retorna verdadero, sino falso */
+        public static bool EliminarCita(int pIdCita, int pCedulaPaciente)
+        {
+            List<SqlParameter> ParametrosEliminarCita = new List<SqlParameter>();
+            ParametrosEliminarCita.Add(new SqlParameter(CST.SQL_ID_CITA, pIdCita));
+            ParametrosEliminarCita.Add(new SqlParameter(CST.SQL_CED_PACIENT_CITA, pCedulaPaciente));
+
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_ELIMINAR_CITA, ParametrosEliminarCita))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /*  Cambia la fecha u hora de la cita por una fecha nueva o una hora nueva */
+        public bool CambiarHoraCita ()
+        {
+            List<SqlParameter> ParametrosCambiarCita = new List<SqlParameter>();
+            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_ID_CITA, this.IdCita));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_CED_PACIENT_CITA, this.CedulaPaciente));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_FECHA_NUEVA, this.fechaCita));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_HORA_NUEVA, this.horaCita));
+
+            Connection conexion = new Connection();
+
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_CAMBIAR_HORA_CITA, ParametrosCambiarCita))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+     
+    }
+}

@@ -18,30 +18,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <nav class="clearfix">
+                    <img height="48" width="48" class="pull-left" src="~/img/dr_icon.png" />
+                    <a class="navbar-brand" href="/Home">
+                        <span>DrPhishel</span>
+                    </a>
+                </nav>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li class="nav-item">@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, null)</li>
+                    <li class="nav-item">@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        <br/>
+        <br />
         @RenderBody()
         <br />
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - DrPhishel</p>
         </footer>
     </div>
-<!--
-    a@Scripts.Render("~/bundles/jquery")
-    a@Scripts.Render("~/bundles/bootstrap")
-    a@RenderSection("scripts", required: false)
--->
+    <!--
+        a@Scripts.Render("~/bundles/jquery")
+        a@Scripts.Render("~/bundles/bootstrap")
+        a@RenderSection("scripts", required: false)
+    -->
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/button.bootstrap.js"></script>
