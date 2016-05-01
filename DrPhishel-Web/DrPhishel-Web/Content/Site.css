@@ -23,37 +23,37 @@ textarea {
 
 
 
-.presentation_header{
-    font-family:Roboto !important; 
-    font-weight:200;
-    font-style:normal;
-    font-size:80px;
-    text-align:center;
+.presentation_header {
+    font-family: Roboto !important;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 80px;
+    text-align: center;
 }
 
-.subtitulo{
-    font-family:Roboto !important; 
-    font-weight:200;
-    font-style:normal;
-    font-size:40px;
-    color:#0c0c0c;
-    text-align:center;
+.subtitulo {
+    font-family: Roboto !important;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 40px;
+    color: #0c0c0c;
+    text-align: center;
 }
 
 
-.nav > li > a:hover, .nav > li > a:focus{
-    background-color:#dd3c3c;
-    color:#ffffff;
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #dd3c3c;
+    color: #ffffff;
 }
 
-.nav-tabs > li > a:hover, .nav-tabs > li > a:focus{
-    background-color:#ffa4a4;
-    color:#b12727;
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    background-color: #ffa4a4;
+    color: #b12727;
 }
 
-.nav-tabs > li > a{
-    background-color:#ffd2d2;
-    color:#b12727;
+.nav-tabs > li > a {
+    background-color: #ffd2d2;
+    color: #b12727;
 }
 
 .tab-content {
@@ -69,34 +69,35 @@ textarea {
 
 
 
-.horizontal_line{
-    height:1px;
-    border:none;
-    background-color:#dd3c3c;
-    color:#dd3c3c;
-    height:3px;
+.horizontal_line {
+    height: 1px;
+    border: none;
+    background-color: #dd3c3c;
+    color: #dd3c3c;
+    height: 3px;
 }
 
-.link_rojo{
-    color:#dd3c3c;
-    font-weight:bold;
+.link_rojo {
+    color: #dd3c3c;
+    font-weight: bold;
 }
 
-.link_rojo:hover{
-    color:#be2a2a;
-    font-weight:bold;
+    .link_rojo:hover {
+        color: #be2a2a;
+        font-weight: bold;
+    }
+
+
+
+.without_magin {
+    margin: 0px;
 }
 
-
-
-.without_magin{
-    margin:0px;
+.login_panel {
+    width: 320px;
 }
 
-.login_panel{
-    width:320px;
-}
-.icono_mediano{
+.icono_mediano {
     font-size: 17pt;
 }
 
@@ -106,7 +107,7 @@ textarea {
     Se setea el color de la barra de navegacion
 */
 .navbar {
-        background-color: #dd3c3c;
+    background-color: #dd3c3c;
 }
 
 /*
@@ -117,20 +118,20 @@ textarea {
     border-color: #ff9595;
 }
 
-/*
+    /*
     Se setea el color del boton de colapso 
 */
-.navbar-inverse .navbar-toggle:enabled {
-    background-color: #dd3c3c;
-    border-color: #ff9595;
-}
+    .navbar-inverse .navbar-toggle:enabled {
+        background-color: #dd3c3c;
+        border-color: #ff9595;
+    }
 
 
 /*
     El color de las letras de los hipervinculos de la barra de navegación se setean a un color mas
     claro
 */
-.navbar-inverse .navbar-nav > li > a{
+.navbar-inverse .navbar-nav > li > a {
     color: #ffd2d2;
 }
 
@@ -155,7 +156,7 @@ textarea {
 /**
     Se setea de color rojo claro la barra de navegacion de la pagina web
 */
-.navbar-inverse{
+.navbar-inverse {
     border-style: hidden;
     background-color: #dd3c3c;
 }
@@ -164,14 +165,14 @@ textarea {
     Define de un color claro el hiperenlace principal de la pagina 
 */
 .navbar .navbar-brand {
-        color: #ffdfdf;
+    color: #ffdfdf;
 }
 
 
 /*
     Setea el color del borde  boton de colapso de la barra de navegacion
 */
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #b12727;
 }
 
@@ -180,204 +181,258 @@ textarea {
 /*
     En la ventana de logeo algunos elementos deben separarse verticalmente
 */
-.login_component{
+.login_component {
     margin-top: 3px;
-    width:250px;
+    width: 250px;
 }
+
+.auxiliar_component {
+    max-width: 800px;
+    min-width: 260px;
+}
+
+    .auxiliar_component > * {
+        max-width: 750px;
+        min-width: 250px;
+        text-align: center;
+        margin: 0px auto;
+        margin-top: 3px;
+    }
+
+    .auxiliar_component > .form-group > * {
+        max-width: 750px;
+        min-width: 250px;
+        text-align: center;
+        margin: 0px auto;
+        margin-top: 3px;
+    }
+    .auxiliar_component > .form-group > .form-control{
+        max-width: 750px;
+        min-width: 250px;
+        text-align: left;
+        margin: 0px auto;
+        margin-top: 3px;
+    }
 
 /*
     Sirve para definir el tamanio de un formulario
 */
-.formulario{
-    max-width:580px;
-    min-width:280px;
+.formulario {
+    max-width: 580px;
+    min-width: 280px;
 }
+
 
 /*
     Representa una seccion del formulario de registro de usuario
 */
-.seccion_formulario{
+.seccion_formulario {
     padding-top: 5px;
-    padding-right:15px;
-    width:280px;
+    padding-right: 15px;
+    width: 280px;
     height: 500px;
-    display:inline-table;
+    display: inline-table;
 }
 
 /*
     Sirve para centrar botones
 */
-.btn .btn-success > .boton_centrado{
-    width:120px;
+.btn .btn-success > .boton_centrado {
+    width: 120px;
     margin-left: 0px;
-	margin-right: 0px;
+    margin-right: 0px;
 }
 
 /*
     Animacion de color de item de la barra de navegacion
 */
-.nav-item{
-    transition:background-color 0.5s;
+.nav-item {
+    transition: background-color 0.5s;
 }
 
-/*
+    /*
     Cuando el cursor esta sobre un elemento de la barra de navegación cambia de color dicho elemento
 */
-.nav-item:hover{
-    background-color:#b12727;
-}
+    .nav-item:hover {
+        background-color: #b12727;
+    }
 
 
 /**
     Color de elemento de barra de navegación seteado a color rojo oscuro
 */
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
-    background-color:#861111;
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #861111;
 }
 
 /**
     El texto de padecimiento no es redimensionable, para que el usuario no dañe la interfaz
 */
-#padecimiento{
-    resize:none;
+#padecimiento {
+    resize: none;
 }
 /*
     El mensaje de error de logueo se setea en alieneamiento central, ademas de color rojo oscuro
     y letra en negrita
 */
-.login_message{
-    text-align:center;
-    color:#5a0000;
-    font-weight:bold;
+.login_message {
+    text-align: center;
+    color: #5a0000;
+    font-weight: bold;
 }
+
+
+.vertical_al > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vertical_al {
+    vertical-align: middle;
+    position: relative;
+}
+
+
+
 
 /*
     Es el panel de navegacion en la seccion de productos
 */
-.product_sidebar_panel{
-    top:50px;/*Es el ancho de la barra de navegacion*/
-    left:-280px;/*Es el lugar en donde se ocultara la barra*/
-    background-color:#ba2c2c;
-    width:300px;
-    height:100%;
-    position:fixed;
+.product_sidebar_panel {
+    top: 50px; /*Es el ancho de la barra de navegacion*/
+    left: -280px; /*Es el lugar en donde se ocultara la barra*/
+    background-color: #ba2c2c;
+    width: 300px;
+    height: 100%;
+    position: fixed;
     transition: left 1s,background-color 0.5s;
-
 }
 
-.product_sidebar_panel:hover{
+    .product_sidebar_panel:hover {
+        background-color: #dd3c3c;
+        top: 50px; /*Es el ancho de la barra de navegacion*/
+        left: 0px; /*Es el lugar en donde se ocultara la barra*/
+    }
 
-    background-color:#dd3c3c;
-    top:50px;/*Es el ancho de la barra de navegacion*/
-    left:0px;/*Es el lugar en donde se ocultara la barra*/
-}
 
-
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
-a:visited{
-    text-decoration: none;
-}
-a:focus{
+a:visited {
     text-decoration: none;
 }
 
-
-.list-group-item{
-    transition:background-color 0.5s,color 0.5s;
+a:focus {
+    text-decoration: none;
 }
 
-a.list-group-item:hover, a.list-group-item:focus:hover{
-    background-color:#77ae3f;
-    color:#ffdfdf;
+
+.list-group-item {
+    transition: background-color 0.5s,color 0.5s;
 }
 
-a.list-group-item.active, a.list-group-item.active:hover{
-    background-color:#528320;
-    color:#ffdfdf;
-    border-color:#528320;
+a.list-group-item:hover, a.list-group-item:focus:hover {
+    background-color: #77ae3f;
+    color: #ffdfdf;
 }
 
-.panel-default > .panel-heading{
-    background-color:#dd3c3c;
-    color:#ffd2d2;
-    transition:background-color 0.5s,color 0.5s;
-}
-.panel{
-    margin-bottom:0px;
+a.list-group-item.active, a.list-group-item.active:hover {
+    background-color: #528320;
+    color: #ffdfdf;
+    border-color: #528320;
 }
 
-.panel-default > .panel-heading:hover{
-    background-color:#b12727;
-    color:#ffd2d2;
+.panel-default > .panel-heading {
+    background-color: #dd3c3c;
+    color: #ffd2d2;
+    transition: background-color 0.5s,color 0.5s;
 }
 
-.product-element-grid{
-    width:250px;
-    height:250px;
-    border-style:solid;
-    border-color:#ffd2d2;
-    display:inline-block;
-    vertical-align:middle;
+.panel {
+    margin-bottom: 0px;
 }
 
-.product-row{
-    max-width:1012px;
-    min-width:253px;
+.panel-default > .panel-heading:hover {
+    background-color: #b12727;
+    color: #ffd2d2;
 }
 
-.product-column{
+.product-element-grid {
+    width: 250px;
+    height: 250px;
+    border-style: solid;
+    border-color: #ffd2d2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.product-row {
+    max-width: 1012px;
+    min-width: 253px;
+}
+
+.product-column {
     padding-top: 5px;
-    padding-right:10px;
-    width:255px;
+    padding-right: 10px;
+    width: 255px;
     height: 500px;
-    display:inline-table;
+    display: inline-table;
 }
 /*
     Para la vista de edicion de productos
 */
-.button-list{
-    min-width:130px;
-    max-width:490px;
+.button-list {
+    min-width: 130px;
+    max-width: 490px;
 }
 
-.button-item{
-    display:block;
+.button-item {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width:160px;
+    width: 160px;
 }
 
-.input_grande{
-    width:100%;
+.input_grande {
+    width: 100%;
 }
 
 @media (max-width: 361px) {
-    .botones_administrador{
-        width:200px;
+    .botones_administrador {
+        width: 200px;
     }
-    .botones_administrador .boton{
-        width:200px;
-        display:inline-block;
+
+        .botones_administrador .boton {
+            width: 200px;
+            display: inline-block;
+            margin-bottom: 3px;
+            margin: 0px auto;
+        }
+
+    .login_panel {
+        width: 260px;
+        display: inline-block;
         margin-bottom: 3px;
         margin: 0px auto;
     }
-    .login_panel{
-        width:260px;
-        display:inline-block;
+
+    .login_component {
+        width: 228px;
+        display: inline-block;
+        margin: 0px auto;
         margin-bottom: 3px;
-        margin: 0px auto;       
-    }
-    .login_component{
-        width:228px;
-        display:inline-block;
-        margin: 0px auto;    
-        margin-bottom: 3px;   
     }
 
+    .auxiliar_component {
+        width: 228px;
+        margin: 0px auto;
+        margin-bottom: 3px;
+    }
 }
+
+
+
 
 @media (max-width: 801px) {
     .presentation_header {
@@ -394,42 +449,57 @@ a.list-group-item.active, a.list-group-item.active:hover{
  */
 
 @media (max-width: 991px) {
+    .auxiliar_component {
+        width: 100%;
+    }
 
+        .auxiliar_component > * {
+            max-width: 700px;
+            min-width: 250px;
+        }
 
     .navbar-header {
         float: none;
     }
+
     .navbar-toggle {
         display: block;
     }
+
     .navbar-collapse {
         border-top: 1px solid transparent;
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
     }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
+
+        .navbar-collapse.collapse {
+            display: none !important;
+        }
+
     .navbar-nav {
-        float: none!important;
+        float: none !important;
         margin: 7.5px -15px;
     }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+
+        .navbar-nav > li {
+            float: none;
+        }
+
+            .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
     .navbar-text {
         float: none;
         margin: 15px 0;
     }
     /* since 3.1.0 */
-    .navbar-collapse.collapse.in { 
-        display: block!important;
+    .navbar-collapse.collapse.in {
+        display: block !important;
     }
+
     .collapsing {
-        overflow: hidden!important;
+        overflow: hidden !important;
     }
 }
 
