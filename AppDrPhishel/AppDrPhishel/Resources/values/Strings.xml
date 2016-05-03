@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--- xml encargado de tener los strings a cargar para los componentes -->
+<resources>
+   <string name="_crear_usuario">Crear Usuario</string>
+    <string name="_application_name">AppDrPhishel1.01</string>
+  <string name="_crear_cuenta">Crear Cuenta</string>
+  <string name="_No">No</string>
+  <string name="_Si">Si</string>
+  <string name="_log_in">Log in</string>
+  <!--- Strings para Crear Cuenta -->
+  <string name="_nombre">Nombre</string>
+  <string name="_contraseña">Contraseña</string>
+  <string name="_usuario">Usuario</string>
+  <string name="_apellido1">Apellido1</string>
+  <string name="_apellido2">Apellido2</string>
+  <string name="_correo">Correo Electronico</string>
+  <string name="_telefono">Teléfono</string>
+  <string name="_direccion">Dirección </string>
+
+  <!--- Strings para los botones de Doctor -->
+
+  <string name="_historial">Historial de mis pacientes </string>
+  <string name="_agregar_paciente">Agregar un paciente </string>
+  <string name="_calendario_citas">Mis citas </string>
+
+  <!--- Strings para los botones de Doctor -->
+  <string name="_historialpaciente">Ver historial clínico </string>
+  <string name="_agregar_cita">Pedir Una Cita  </string>
+  
+
+</resources>

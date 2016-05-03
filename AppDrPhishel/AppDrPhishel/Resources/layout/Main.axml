@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E40202"
+    android:weightSum="100"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:adjustViewBounds="true">
+    <TextView
+        android:text="@string/_crear_cuenta"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:id="@+id/MAIN_textLogearCuenta"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:adjustViewBounds="true" />
+    <Button
+        android:text="@string/_crear_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:id="@+id/MAIN_botonCrear"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:adjustViewBounds="true" />
+    <TextView
+        android:text="@string/_log_in"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:layout_height="wrap_content"
+        android:textColor="#6D6767"
+        android:id="@+id/MAIN_textCrearCuenta"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:adjustViewBounds="true" />
+    <TextView
+        android:text="@string/_usuario"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:id="@+id/MAIN_textUsuario"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:adjustViewBounds="true" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MAIN_entryUsuario"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="#FF1E00"
+        android:background="#F6F7FC"
+        android:adjustViewBounds="true" />
+    <TextView
+        android:text="@string/_contraseña"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:id="@+id/MAIN_textConstraseña"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:adjustViewBounds="true" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MAIN_entryContraseña"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="#FF1E00"
+        android:background="#F6F7FC"
+        android:adjustViewBounds="true" />
+    <ImageButton
+        android:src="@drawable/CheckInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MAIN_botonLogearse"
+        android:translationY="10dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_gravity="center_vertical|center_horizontal" />
+</LinearLayout>
