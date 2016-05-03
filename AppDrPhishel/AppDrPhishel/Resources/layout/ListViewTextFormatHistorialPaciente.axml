@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="30px"
+    android:minHeight="30px"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp"
+    android:weightSum="100"
+    android:background="#FF4F00">
+    <TextView
+        android:text="Doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textNombreDoctor"
+        android:layout_weight="31" />
+    <TextView
+        android:text="Fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textFecha"
+        android:layout_weight="31" />
+    <TextView
+        android:text="Descripción"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textDescripcion"
+        android:layout_weight="31" />
+</LinearLayout>

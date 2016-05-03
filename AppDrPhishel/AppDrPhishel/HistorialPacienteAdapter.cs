@@ -53,19 +53,19 @@ namespace AppDrPhishel
             View Columna= convertView;
             if (Columna == null)
             {
-                Columna = LayoutInflater.From(Contexto).Inflate(Resource.Layout.Test,null,false);
+                Columna = LayoutInflater.From(Contexto).Inflate(Resource.Layout.ListViewTextFormatPacientesLayout,null,false);
             }
 
-            TextView TextoNombre = Columna.FindViewById<TextView>(Resource.Id.TESTtextNombre);
+            TextView TextoNombre = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextNombre);
             TextoNombre.Text = Pacientes[position].Nombre;
 
-            TextView TextoUsuario = Columna.FindViewById<TextView>(Resource.Id.TESTtextUsuario);
+            TextView TextoUsuario = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextUsuario);
             TextoUsuario.Text = Pacientes[position].Usuario;
 
-            TextView TextoID = Columna.FindViewById<TextView>(Resource.Id.TESTtextId);
+            TextView TextoID = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextId);
             TextoID.Text = Pacientes[position].ID;
 
-            TextView TextoPadecimiento = Columna.FindViewById<TextView>(Resource.Id.TESTtextPadecimiento);
+            TextView TextoPadecimiento = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextPadecimiento);
             TextoPadecimiento.Text = Pacientes[position].Padecimiento;
 
 

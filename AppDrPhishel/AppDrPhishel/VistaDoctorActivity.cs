@@ -38,7 +38,17 @@ namespace AppDrPhishel
             BotonHistorialPacientes.Click += (sender, e) =>
             {
 
-                StartActivity(typeof(HistorialPedidosPacienteDoctorActivity));
+                StartActivity(typeof(HistorialPacienteDoctorActivity));
+            };
+
+            /*
+             Boton de  hitorial de citas asociadas al doctor 
+             */
+            Button BotonCalendarioCitas = FindViewById<Button>(Resource.Id.DOCTOR_BotonCalendarioCitas);
+            BotonCalendarioCitas.Click += (sender, e) =>
+            {
+
+                StartActivity(typeof(CitasDoctorActivity));
             };
 
             base.OnCreate(savedInstanceState);

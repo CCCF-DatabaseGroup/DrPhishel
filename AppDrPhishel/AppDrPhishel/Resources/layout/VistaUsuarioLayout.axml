@@ -3,31 +3,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5973FF"
+    android:background="#FF4F00"
     android:minWidth="25px"
     android:minHeight="25px">
     <Button
-        android:text="@string/_historial"
+        android:text="@string/_historialpaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DOCTOR_BotonHistorialPacientes"
+        android:id="@+id/USUARIO_BotonHistorialPacientes"
         android:translationY="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
     <Button
-        android:text="@string/_calendario_citas"
+        android:text="@string/_agregar_cita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DOCTOR_BotonCalendarioCitas"
+        android:id="@+id/USARIO_BotonCalendarioCitas"
         android:translationY="150dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-    <Button
-        android:text="@string/_agregar_paciente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/DOCTOR_BotonAgregarPaciente"
-        android:translationY="200dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
     <TextView
@@ -35,22 +27,22 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DOCTOR_textUsuario"
+        android:id="@+id/USUARIO_textUsuario"
         android:translationY="-140dp" />
     <TextView
         android:text="Nombre del Usuario"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DOCTOR_textNombreUsuario"
+        android:id="@+id/USUARIO_textNombreUsuario"
         android:translationY="-140dp" />
-    <ImageButton
-        
-        android:id="@+id/DOCTOR_botonRegresar"
+    <Button
+        android:text="Salir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/USUARIO_botonRegresar"
         android:translationY="300dp"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal" />
 </LinearLayout>

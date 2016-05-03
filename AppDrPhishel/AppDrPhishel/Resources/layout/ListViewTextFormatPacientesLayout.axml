@@ -14,24 +14,24 @@
         android:text="Nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TESTtextNombre"
+        android:id="@+id/LISTVIEWPACIENTEStextNombre"
         android:layout_weight="25" />
     <TextView
         android:text="Usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TESTtextUsuario"
+        android:id="@+id/LISTVIEWPACIENTEStextUsuario"
         android:layout_weight="25" />
     <TextView
         android:text="ID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TESTtextId"
+        android:id="@+id/LISTVIEWPACIENTEStextId"
         android:layout_weight="25" />
     <TextView
         android:text="Padecimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TESTtextPadecimiento"
+        android:id="@+id/LISTVIEWPACIENTEStextPadecimiento"
         android:layout_weight="25" />
 </LinearLayout>
