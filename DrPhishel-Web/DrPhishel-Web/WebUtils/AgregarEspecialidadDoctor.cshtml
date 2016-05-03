@@ -1,0 +1,22 @@
+﻿<div ng-controller="AdministradorController">
+    <form class="form-inline center-block login_component">
+        <input max="20" autofocus required type="text" pattern="[a-zA-Z]+" class="form-control" placeholder="inserte el nombre de la especialidad" style="width:180px;display:inline-block;" />
+        <button class="btn btn-success" href="" type="submit">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </form>
+    <table class="table center-block">
+        <thead>
+            <!-- Este es el encabezado de la tabla, segun los valores que se desean obtener -->
+            <tr class="info">
+                <th>Especialidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Es la lista de pedidos ordenada por hora-->
+            <tr ng-repeat="especialidad in especialidades">
+                <td>{{especialidad.Nombre}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,44 @@
+﻿<!-- 
+    Tarea #117:
+    crear una vista en la pagina web en donde el usuario llene los datos para ser un doctor. 
+    Los datos a llenar son: Número de doctor, especialidad, nombre del consultorio, numero de 
+    teléfono del consultorio, dirección de consultorio y horario, Número de tarjeta de crédito
+     -->
+
+<form role="form" class="center-block login_component">
+    <div class="seccion_formulario">
+        <h2>Datos de doctor</h2>
+        <div class="form-group">
+            <!--Numero de doctor-->
+            <label for="numeroDoctor">N&uacute;mero de doctor:</label>
+            <input id="numeroDoctor" required oninvalid="validarNumeroDoctor(this);" type="text" pattern="[1-9][0-9]*" class="form-control" placeholder="Cedula del paciente" style="width:180px;display:inline-block;" />
+            
+            <!--Especialidad-->
+            <label for="especialidad">Especialidad m&eacute;dica:</label>
+            <select required class="form-control" placeholder="Instroduzca la especialidad medica" id="especialidad">
+                <option>Especilidades</option>
+            </select>
+            
+            <!--Nombre del consultorio-->
+            <label for="nombreConsultorio">Nombre del consultorio:</label>
+            <input required maxlength="20" class="form-control" id="nombreConsultorio" placeholder="Instroduzca el nombre de su consultorio">
+            
+            <!--Numero telefonico del consultorio-->
+            <label for="telefonoConsultorio">N&uacute;mero telefonico:</label>
+            <input required pattern="[1-9][0-9]*" class="form-control" id="telefono" placeholder="Instroduzca el número de telefono de su consultorio">
+            
+            <!--Direccion del consultorio-->
+            <label for="direccionConsultorio">Direccion del consultorio:</label>
+            <input required maxlength="100" class="form-control" id="direccionConsultorio" placeholder="Instroduzca la dirección exacta de su consultorio">
+
+            <!--Horario del consultorio-->
+            <label for="horarioConsultaInicio">Hora de inicio de consulta:</label>
+            <input required type="time" pattern="([0-1]?[0-9]|[0-3]):[0-5]?[0-9] (am|pm)" oninvalid="validarHora(this);" class="form-control" id="horarioConsultaInicio" placeholder="Instroduzca hora de inicio de consultas">
+            <!--Horario del consultorio-->
+            <label for="horarioConsultaFinalizacion">Hora de finalización de consulta:</label>
+            <input required type="time" pattern="(0?[0-9]|1[0-2]):[0-5]?[0-9] (am|pm)" oninvalid="validarHora(this);" class="form-control" id="horarioConsultaFinalizacion" placeholder="Instroduzca hora de inicio de consultas">
+        </div>
+
+        <button type="submit" class="btn btn-success center-block">Enviar Solicitud</button>
+    </div>    
+</form>
