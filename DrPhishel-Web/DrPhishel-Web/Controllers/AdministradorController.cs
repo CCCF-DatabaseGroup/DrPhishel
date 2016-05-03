@@ -27,13 +27,17 @@ namespace DrPhishel_Web.Controllers
             return View();
         }
 
+        [HttpPost]
         /* Se encarga de agregar una especialidad nueva, retorna un estado true si se logro uno false si no */
-        public JsonResult AgregarCategoria(int pIdAdmin, string pNombreCategoria)
+        public JsonResult AgregarEspecialidadDoctor(string pNombreCategoria)
         {
-            Especialidad nuevaEspecialidad = new Especialidad(pIdAdmin, pNombreCategoria); /* Se pone 0 ya que el ID se agrega automaticamente */
+            Especialidad nuevaEspecialidad = new Especialidad(0,pNombreCategoria); /* Se pone 0 ya que el ID se agrega automaticamente */
             bool agregado = nuevaEspecialidad.agregarCategoria();
-            return Json( new { Status = true}, JsonRequestBehavior.AllowGet);
+            return Json( new { Status = agregado }, JsonRequestBehavior.AllowGet);
 
         }
+
+
+
     }
 }

@@ -8,14 +8,18 @@ using System.Web.Http;
 
 namespace DrPhishel_Web.Controllers
 {
-    public class AdministradorControllerApi : ApiController
+    public class ApiAdministradorController : ApiController
     {
 
+
+        [HttpGet]
         /*  Obtiene una lista de todas las especialidades */
         public IHttpActionResult SolicitarEspecialidades()
         {
-            return Ok(Especialidad.SolicitarEspecialidades());
+            System.Diagnostics.Debug.WriteLine("Se esta llamando al web api");
+            return Json(Especialidad.SolicitarEspecialidades().ToList());
         }
+
 
     }
 }

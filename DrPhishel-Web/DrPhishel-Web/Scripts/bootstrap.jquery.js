@@ -3,6 +3,8 @@
 });
 
 
+
+
 function validarCedula(textbox) {
 
     if (textbox.validity.patternMismatch) {

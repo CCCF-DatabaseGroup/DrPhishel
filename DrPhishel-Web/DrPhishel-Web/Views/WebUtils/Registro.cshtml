@@ -1,43 +1,55 @@
-﻿<div class="auxiliar_component center-block">
-    <form role="form" class="form-group center-block">
+﻿<div class="auxiliar_component center-block" ng-controller="registroController">
+    <form name="registro" role="form" class="form-group center-block">
         <h2>Datos Personales</h2>
         <label for="cedula">C&eacute;dula:</label>
-        <input id="cedula" required max="9" oninvalid="validarCedula(this);" type="text" pattern="[1-8][0-9]{6,8}" class="form-control" placeholder="Cedula del paciente" style="width:180px;display:inline-block;" />
+        <input id="cedula" ng-required="true"  ng-model="usuario.Cedula" max="9" oninvalid="validarCedula(this);" type="text" pattern="[1-8][0-9]{6,8}" class="form-control" placeholder="Cedula del paciente" style="width:180px;display:inline-block;" />
         
         <label for="nombre">Nombre:</label>
-        <input required maxlength="20" class="form-control" placeholder="Instroduzca el nombre" id="nombre" ng-model="usuario_Nombre">
+        <input ng-required="true"  maxlength="20" class="form-control" placeholder="Instroduzca el nombre" id="nombre" ng-model="usuario.Nombre">
         
         <label for="primer_apellido">Primer Apellido:</label>
-        <input required maxlength="20" class="form-control" id="primer_apellido" placeholder="Instroduzca el primer apellido" ng-model="usuario_Primer_apellido">
+        <input ng-required="true" maxlength="20" class="form-control" id="primer_apellido" placeholder="Instroduzca el primer apellido" ng-model="usuario.PrimerApellido">
         
         <label for="segundo_apellido">Segundo Apellido:</label>
-        <input required maxlength="20" class="form-control" id="segundo_apellido" placeholder="Instroduzca el segundo apellido" ng-model="usuario_Segundo_apellido">
+        <input ng-required="true" maxlength="20" class="form-control" id="segundo_apellido" placeholder="Instroduzca el segundo apellido" ng-model="usuario.SegundoApellido">
         
         <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input required type="date" pattern="([0-2]?[0-9]|3[0-1])-([0-9]|1[0-2])-[0-9]{4}" oninvalid="validarFecha(this);" class="form-control" id="fecha_nacimiento" placeholder="Instroduzca la fecha de nacimiento" ng-model="usuario_Fecha_nacimiento">
+        <input ng-required="true" type="date" class="form-control" id="fecha_nacimiento" placeholder="Instroduzca la fecha de nacimiento" ng-model="usuario.FechaNacimiento">
         
         <label for="telefono">N&uacute;mero telefonico:</label>
-        <input required pattern="[1-9][0-9]*" class="form-control" id="telefono" placeholder="Instroduzca el número de " ng-model="usuario_Telefono">
+        <input ng-required="true" pattern="[1-9][0-9]*" class="form-control" id="telefono" placeholder="Instroduzca el número de " ng-model="usuario.Telefono">
         
         <label for="residencia">Residencia:</label>
-        <input required maxlength="100" class="form-control" id="recidencia" placeholder="Instroduzca la dirección exacta de su vivienda" ng-model="usuario_Residencia">
+        <input ng-required="true" maxlength="100" class="form-control" id="recidencia" placeholder="Instroduzca la dirección exacta de su vivienda" ng-model="usuario.Direccion">
         
         <h2>Datos de usuario</h2>
         
         <label for="email">Correo Electronico:</label>
-        <input required maxlength="50" type="email" class="form-control" id="email" placeholder="Instroduzca el correo electrónico" ng-model="usuario_Email">
-        
-        <label for="alias">Nombre de usuario:</label>
-        <input required maxlength="20" class="form-control" id="alias" placeholder="Instroduzca el nombre de usuario" ng-model="usuario_Alias">
+        <input ng-required="true" maxlength="50" type="email" class="form-control" id="email" placeholder="Instroduzca el correo electrónico" ng-model="usuario.CorreoElectronico">
         
         <label for="contrasenia">Contrase&ntilde;a:</label>
-        <input required maxlength="20" type="password" class="form-control" id="contrasenia" placeholder="Instroduzca la contraseña de usuario" ng-model="usuario_Contrasenia">
-        
+        <input ng-required="true" maxlength="20" type="password" class="form-control" id="contrasenia" placeholder="Instroduzca la contraseña de usuario" ng-model="usuario.Contrasena">
+        <!--
         <label for="contraseniaC">Confirme la contrase&ntilde;a:</label>
-        <input required min="4" maxlength="20" type="password" class="form-control" id="contraseniaC" placeholder="Confirme la contraseña de usuario" ng-model="usuario_Contrasenia_verificacion">
-        
+        <input ng-required="true" min="4" maxlength="20" type="password" class="form-control" id="contraseniaC" placeholder="Confirme la contraseña de usuario" ng-model="usuario.ContraseniaVerificacion">
+        -->
         <a class="login_message">{{advertenciaUsuarioRegistrado}}</a>
+        <!-- 
+        {{usuario.Cedula}} {{usuario.Nombre}}
+        {{usuario.PrimerApellido}}
+        {{usuario.SegundoApellido}}
+        {{usuario.FechaNacimiento | date : 'dd-mm-yyyy'}}
 
-        <button ng-click="registrarUsuario()" type="submit" class="btn btn-success center-block">Registrar</button>
+        {{usuario.Telefono}}
+        {{usuario.Direccion}}
+        {{usuario.CorreoElectronico}}
+        {{usuario.Contrasena}}
+        {{usuario.ContraseniaVerificacion}}
+        {{registro.$valid}}
+        -->
+        <button 
+                ng-click="registro.$valid && registrarUsuario()" class="btn btn-success center-block">
+            Registrar
+        </button>
     </form>
 </div>

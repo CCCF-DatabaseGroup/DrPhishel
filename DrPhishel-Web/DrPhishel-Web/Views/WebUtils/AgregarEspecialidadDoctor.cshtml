@@ -1,11 +1,11 @@
 ﻿<div ng-controller="AdministradorController">
     <div class="auxiliar_component center-block">
         <form class="form-group center-block form-inline">
-            <input max="20" autofocus required type="text" pattern="[a-zA-Z]+" class="form-control" placeholder="inserte el nombre de la especialidad" />
-            <button class="btn btn-success" href="" type="submit">
+            <input ng-model="EspecialidadInsertar" max="20" autofocus required type="text" class="form-control" placeholder="inserte el nombre de la especialidad" />
+            <button ng-click="insertarEspecialidad()" class="btn btn-success" href="" type="submit">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
-
+            <p class="login_message">{{errorEspecialidad}}</p>
 
             <table class="table table-responsive">
                 <thead>
@@ -20,16 +20,6 @@
                         <td>{{especialidad.Nombre}}</td>
 
                     </tr>
-                    <tr>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <td>a</td>
-                    </tr>
-
                 </tbody>
             </table>
 

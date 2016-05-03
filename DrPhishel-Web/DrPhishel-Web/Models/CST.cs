@@ -27,8 +27,11 @@ namespace DrPhishel_Web.Models
         /*Doctor */
         public const string PROC_ALMACENADO_ASOCIAR_PACIENTE_DOCTOR = "asociarPacienteADoctor"; /* MISSING */
 
-        /*Home */
+        /*Todo */
         public const string PROC_ALMACENADO_REGISTRAR_USUARIO = "registrarUsuario";
+
+        public const string PROC_ALMACENADO_OBTENER_USUARIO = "obtenerUsuario";
+
 
 
         /* SQL PARAMETERS */
@@ -43,8 +46,8 @@ namespace DrPhishel_Web.Models
         public const string SQL_HORA_NUEVA = "@Hora_nueva";
 
         /*Especialidades*/
-        public const string SQL_ID_ESPECIALIDAD = "@Id_especialidad";
-        public const string SQL_NOMBRE_ESPECIALIDAD = "@Nombre_especialidad";
+        public const string SQL_ID_ESPECIALIDAD = "Id_especialidad";
+        public const string SQL_NOMBRE_ESPECIALIDAD = "Nombre_especialidad";
 
         /* Historial */
         public const string SQL_ID_CITA_HISTORIAL = "@Id_cita_HC";
@@ -94,6 +97,21 @@ namespace DrPhishel_Web.Models
         /* Usuario */
         public const string SQL_CORREO_ELECTRONICO = "@Correo_electronico";
         public const string SQL_CONTRASENA = "@Contrasena";
+
+
+
+        /*HEADER TABLAS*/
+
+        public const string HEADER_CEDULA = "Cedula";
+        public const string HEADER_NOMBRE_PERSONA = "Nombre_persona";
+        public const string HEADER_PRIMER_APELLIDO = "Apellido1";
+        public const string HEADER_SEGUNDO_APELLIDO = "Apellido2";
+        public const string HEADER_FECHA_NACIMIENTO = "Fecha_nacimiento";
+        public const string HEADER_TELEFONO_PERSONA = "Telefono_persona";
+        public const string HEADER_DIRECCION_PERSONA = "Direccion_persona";
+        public const string HEADER_CORREO_ELECTRONICO = "Correo_electronico";
+        public const string HEADER_CONTRASENA = "Contrasena";
+
 
 
 

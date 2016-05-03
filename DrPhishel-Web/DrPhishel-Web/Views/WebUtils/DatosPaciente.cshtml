@@ -2,20 +2,20 @@
 <form role="form" id="datosPaciente" class="form-group center-block">
     <h2>Datos personales</h2>
     <label for="nombre">Nombre:</label>
-    <input maxlength="20" readonly="readonly" class="form-control" id="nombre" ng-model="usuario_Nombre">
+    <input maxlength="20" readonly="readonly" class="form-control" id="nombre" ng-model="usuario.Nombre">
 
     <label for="primer_apellido">Primer Apellido:</label>
-    <input maxlength="20" readonly="readonly" class="form-control" id="primer_apellido" ng-model="usuario_Primer_apellido">
+    <input maxlength="20" readonly="readonly" class="form-control" id="primer_apellido" ng-model="usuario.PrimerApellido">
 
     <label for="segundo_apellido">Segundo Apellido:</label>
-    <input maxlength="20" readonly="readonly" class="form-control" id="segundo_apellido" ng-model="usuario_Segundo_apellido">
+    <input maxlength="20" readonly="readonly" class="form-control" id="segundo_apellido" ng-model="usuario.SegundoApellido">
 
     <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-    <input type="date" readonly="readonly" class="form-control" id="fecha_nacimiento" ng-model="usuario_Fecha_nacimiento">
+    <input type="date" readonly="readonly" class="form-control" id="fecha_nacimiento" ng-model="usuario.FechaNacimiento">
 
     <label for="telefono">N&uacute;mero telefonico:</label>
-    <input pattern="[1-9][0-9]*" readonly="readonly" class="form-control" id="telefono" ng-model="usuario_Telefono">
+    <input pattern="[1-9][0-9]*" readonly="readonly" class="form-control" id="telefono" ng-model="usuario.Telefono">
 
     <label for="residencia">Residencia:</label>
-    <input maxlength="100" readonly="readonly" class="form-control" id="recidencia" ng-model="usuario_Residencia">
+    <input maxlength="100" readonly="readonly" class="form-control" id="recidencia" ng-model="usuario.Direccion">
 </form>

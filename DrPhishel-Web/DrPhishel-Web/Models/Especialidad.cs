@@ -20,31 +20,36 @@ namespace DrPhishel_Web.Models
         }
 
         /* Obtiene una lista de todas las especialidades de los doctores */
-        public static List<Especialidad> SolicitarEspecialidades()
+        public static List<object> SolicitarEspecialidades()
         {
-            List<Especialidad> listaEspecialidades = new List<Especialidad>();
+            List<object> listaEspecialidades = new List<object>();
 
             Connection conexion = new Connection();
-            if (conexion.abrirConexion(CST.PROC_ALMACENADO_SOLICITAR_ESPECIALIDADES, null))
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_SOLICITAR_ESPECIALIDADES, new List<SqlParameter>()))
             {
                 DataTable TablaEspecialidades = conexion.GetTablaDatos();
                 foreach(DataRow fila in TablaEspecialidades.Rows)
                 {
-                    listaEspecialidades.Add(new Especialidad((int)fila[CST.SQL_ID_ESPECIALIDAD], (string)fila[CST.SQL_NOMBRE_ESPECIALIDAD]));
+                    listaEspecialidades.Add(
+                        (new Especialidad((int)fila[CST.SQL_ID_ESPECIALIDAD], (string)fila[CST.SQL_NOMBRE_ESPECIALIDAD])).toJson()
+                        );
                 }
             }
             return listaEspecialidades;
+        }
+
+
+        public object toJson() {
+            return new {IdEspecialidad = this.IdAdmin, Nombre= this.NombreEspecialidad };
         }
 
         /* Agrega una especialidad nueva a partir de su nombre, retorna true si se pudo, false si no */
         public bool agregarCategoria()
         {
             List<SqlParameter> parametrosCategoria = new List<SqlParameter>();           
-            parametrosCategoria.Add(new SqlParameter(CST.PARAM_ID_ADMIN, this.IdAdmin));
             parametrosCategoria.Add(new SqlParameter(CST.PARAM_ESPECI, this.NombreEspecialidad));
-            parametrosCategoria.Add(new SqlParameter(CST.PARAM_MESSAGE, ""));
             Connection conexion = new Connection();
-            if (conexion.abrirConexion(CST.PROC_ALMACENADO_AGREGAR_CATEGORIA, parametrosCategoria))
+            if (conexion.abrirConexionNoRetorno(CST.PROC_ALMACENADO_AGREGAR_CATEGORIA, parametrosCategoria))
             {
                 return true;
             }
