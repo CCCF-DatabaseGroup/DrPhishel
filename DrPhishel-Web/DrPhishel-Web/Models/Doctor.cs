@@ -19,11 +19,11 @@ namespace DrPhishel_Web.Models
         private int NumeroTarjetaCredito;
 
         /* Asocia un paciente a un doctor, true si se logró, false si no */
-        public static bool AsociarPacienteADoctor(int pIdDoctor, int pIdPaciente)
+        public static bool AsociarPacienteADoctor(int pCedulaDoctor, int pCedulaCliente)
         {
             List<SqlParameter> parametrosAsocie = new List<SqlParameter>();
-            parametrosAsocie.Add(new SqlParameter(CST.SQL_ID_DOCTOR_ASOCIE, pIdDoctor));
-            parametrosAsocie.Add(new SqlParameter(CST.SQL_ID_PACIENTE_ASOCIE, pIdPaciente));
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_CED_DOC, pCedulaDoctor));
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_CED_CLIENTE, pCedulaCliente));
 
             Connection conexion = new Connection();
             if (conexion.abrirConexion(CST.PROC_ALMACENADO_ASOCIAR_PACIENTE_DOCTOR, parametrosAsocie))
@@ -36,7 +36,42 @@ namespace DrPhishel_Web.Models
             }
         }
 
-        /* Solicita la inscripción de un doctor */
 
+        /* Acepta la inscripción de un doctor */
+
+        public static bool AceptarDoctor (int pIdDoctor)
+        {
+            List<SqlParameter> parametrosAceptar = new List<SqlParameter>();
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_ID_USUARIO, pIdDoctor));
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_ACEPTAR_DOCTOR, parametrosAceptar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /* Solicita insertar un doctor nuevo */
+        public static bool SolicitudDoctor(int pNumeroDoctor, int pIdEspecialidad, int pTelefono, int pNumeroDeTarjeta, string pDireccion)
+        {
+            List<SqlParameter> parametrosAceptar = new List<SqlParameter>();
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_NUM_DOCTOR, pNumeroDoctor));
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_ID_ESPE, pIdEspecialidad));
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_TEL, pTelefono));
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_NUM_TARJETA, pNumeroDeTarjeta));
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_DIREC, pDireccion));
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_INSERTAR_DOC, parametrosAceptar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

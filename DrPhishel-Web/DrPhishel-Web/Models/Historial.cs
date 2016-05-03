@@ -45,7 +45,7 @@ namespace DrPhishel_Web.Models
                 DataTable tablaHistorial = conexion.GetTablaDatos();
                 foreach (DataRow fila in tablaHistorial.Rows)
                 {
-                    listaHistorialPaciente.Add(new Historial((string)fila[CST.SQL_FECHA_CITA], (string)fila[CST.SQL_HORA_CITA], (string)fila[CST.SQL_NOMBRE_DOC], (string) fila[CST.SQL_APEL1_DOC], (string) fila[CST.SQL_APEL2_DOC], (string) fila[CST.SQL_CONSULTA], (string) fila [CST.SQL_ESTUDIO], (string) fila[CST.SQL_RECETA]));
+                    listaHistorialPaciente.Add(new Historial((string)fila[CST.SQL_FECHA_CITA], (string)fila[CST.SQL_HORA_CITA], (string)fila[CST.SQL_CONSULTA], (string)fila[CST.SQL_ESTUDIO], (string)fila[CST.SQL_RECETA], (string)fila[CST.SQL_NOMBRE_DOC], (string) fila[CST.SQL_APEL1_DOC], (string) fila[CST.SQL_APEL2_DOC]));
                 }
 
             }

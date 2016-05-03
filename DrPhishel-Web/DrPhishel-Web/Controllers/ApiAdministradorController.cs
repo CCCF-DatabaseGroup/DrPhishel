@@ -16,7 +16,6 @@ namespace DrPhishel_Web.Controllers
         /*  Obtiene una lista de todas las especialidades */
         public IHttpActionResult SolicitarEspecialidades()
         {
-            System.Diagnostics.Debug.WriteLine("Se esta llamando al web api");
             return Json(Especialidad.SolicitarEspecialidades().ToList());
         }
 

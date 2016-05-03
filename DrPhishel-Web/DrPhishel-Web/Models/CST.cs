@@ -10,22 +10,29 @@ namespace DrPhishel_Web.Models
     {
         /*PROCEDIMIENTOS ALMACENADOS*/
 
-        
+
         /*  citas */
-        public const string PROC_ALMACENADO_PEDIR_CITA = "crearCita";
-        public const string PROC_ALMACENADO_OBTENER_CITAS_DISP_DOC = "obtenerCitasDisponiblesDoctor";
-        public const string PROC_ALMACENADO_ELIMINAR_CITA = "eliminarCita"; /* MISSING */
-        public const string PROC_ALMACENADO_CAMBIAR_HORA_CITA = "cambiarHoraCita"; /* MISSING */
+        public const string PROC_ALMACENADO_PEDIR_CITA = "crearCita"; /*PEDIR AL CHAN QUE RETORNA MSJ DE EXITO */
+        public const string PROC_ALMACENADO_OBTENER_CITAS_DISP_DOC = "obtenerCitasDisponiblesDoctor"; /*VER SI HAY QUE HACER EL TOQUE DEL .ToJson */
+        public const string PROC_ALMACENADO_ELIMINAR_CITA = "eliminarCita"; /*PEDIR AL CHAN QUE RETORNA MSJ DE EXITO */
+        public const string PROC_ALMACENADO_CAMBIAR_HORA_CITA = "cambiarHoraCita"; /* PEDIR AL CHAN QUE RETORNA MSJ DE EXITO */
 
         /* Especialidades */
-        public const string PROC_ALMACENADO_SOLICITAR_ESPECIALIDADES = "solicitarEspecialidades"; /* MISSING */
-        public const string PROC_ALMACENADO_AGREGAR_CATEGORIA = "insertarEspecialidad";
+        public const string PROC_ALMACENADO_SOLICITAR_ESPECIALIDADES = "solicitarEspecialidades";
+        public const string PROC_ALMACENADO_AGREGAR_CATEGORIA = "insertarEspecialidad"; /*NO SIRVE EL PROCEDURE */
 
         /* Historial */
-        public const string PROC_ALMACENADO_OBTENER_HISTORIAL_CLINICO_PACIENTE = "obtenerHistorialClinicoPaciente";
+        public const string PROC_ALMACENADO_OBTENER_HISTORIAL_CLINICO_PACIENTE = "verHistorialClinico"; /*VER SI HAY QUE HACER EL TOQUE DEL .ToJson */
 
         /*Doctor */
-        public const string PROC_ALMACENADO_ASOCIAR_PACIENTE_DOCTOR = "asociarPacienteADoctor"; /* MISSING */
+        public const string PROC_ALMACENADO_ASOCIAR_PACIENTE_DOCTOR = "relacionarDoctorConPaciente"; /* NOT WORKING */
+        public const string PROC_ALMACENADO_ACEPTAR_DOCTOR = "aceptarDoctor"; /* PEDIR CHACHER QUE RETORNE UN MSJ DE EXITO */
+        public const string PROC_ALMACENADO_INSERTAR_DOC = "insertarNuevoDoctor"; /* NO DEBE PEDIR ID USUARIO
+
+        /* Cobros */
+
+        public const string PROC_ALMACENADO_VER_COBRO = "verCobroDoctores"; /* PEDIR A CHAN QUE LO ARREGLE PARA 1 SOLO DOC*/
+        public const string PROC_ALMACENADO_REALIZAR_COBRO = "realizarCobrosADoctores"; /*PEDIR AL CHANCHER QUE RETORNE UN MSJ DE EXITO, WRONG IDEA EL COBRO ES DE LA APP AL DOCTOR */
 
         /*Todo */
         public const string PROC_ALMACENADO_REGISTRAR_USUARIO = "registrarUsuario";
@@ -75,6 +82,8 @@ namespace DrPhishel_Web.Models
 
         /* Parametros para stored procedures */
         public const string PARAM_CEDULA = "@cedula";
+        public const string PARAM_CED_DOC = "@cedulaDoctor";
+        public const string PARAM_CED_CLIENTE = "@cedulaCliente";
         public const string PARAM_NOMBRE = "@nombre";
         public const string PARAM_APELL1 = "@apellido1";
         public const string PARAM_APELL2 = "@apellido2";
@@ -91,13 +100,19 @@ namespace DrPhishel_Web.Models
         public const string PARAM_MESSAGE = "@message";
         public const string PARAM_ID_ADMIN = "@idAdministrador";
         public const string PARAM_ID_DOCTOR = "@idDoctor";
-        public const string PARAM_HORAS_DISP = "@Horas_disponibles";
+        public const string PARAM_ID_CITA = "@idCita";
+        public const string PARAM_ID_USUARIO= "@idUsuario";
+        public const string PARAM_ID_ESPE = "@idEspecialidad";
+        public const string PARAM_NUM_TARJETA = "@numeroTarjeta";
+        public const string PARAM_NUM_DOCTOR = "@numeroDoctor";
+        public const string PARAM_EXITO = "@exito";
+        public const string PARAM_COSTO_CITA = "@costoCita";
+
 
 
         /* Usuario */
         public const string SQL_CORREO_ELECTRONICO = "@Correo_electronico";
         public const string SQL_CONTRASENA = "@Contrasena";
-
 
 
         /*HEADER TABLAS*/
@@ -111,6 +126,9 @@ namespace DrPhishel_Web.Models
         public const string HEADER_DIRECCION_PERSONA = "Direccion_persona";
         public const string HEADER_CORREO_ELECTRONICO = "Correo_electronico";
         public const string HEADER_CONTRASENA = "Contrasena";
+        public const string HEADER_HORAS_DISP = "@Horas_disponibles";
+        public const string HEADER_FECHA_COBRO = "@Fecha_cobro";
+        public const string HEADER_CANT_COBRO = "@Cantidad_cobro";
 
 
 

@@ -84,8 +84,7 @@ namespace DrPhishel_Web.Models
                 DataTable TablaCitas = conexion.GetTablaDatos();
                 foreach (DataRow fila in TablaCitas.Rows)
                 {
-                    /* VERIFICAR QUE LA TABLA NO SE DROPEE ANTES DE OBTENERLA */
-                    ListaCitas.Add((string) fila [CST.PARAM_HORAS_DISP]);
+                    ListaCitas.Add((string) fila [CST.HEADER_HORAS_DISP]);
                 }
         
             }
@@ -95,11 +94,10 @@ namespace DrPhishel_Web.Models
 
         /* Elimina una cita por el Id de la cita y al cedula del paciente, si se logra 
         eliminar retorna verdadero, sino falso */
-        public static bool EliminarCita(int pIdCita, int pCedulaPaciente)
+        public static bool EliminarCita(int pIdCita)
         {
             List<SqlParameter> ParametrosEliminarCita = new List<SqlParameter>();
             ParametrosEliminarCita.Add(new SqlParameter(CST.SQL_ID_CITA, pIdCita));
-            ParametrosEliminarCita.Add(new SqlParameter(CST.SQL_CED_PACIENT_CITA, pCedulaPaciente));
 
             Connection conexion = new Connection();
             if (conexion.abrirConexion(CST.PROC_ALMACENADO_ELIMINAR_CITA, ParametrosEliminarCita))
@@ -116,10 +114,11 @@ namespace DrPhishel_Web.Models
         public bool CambiarHoraCita ()
         {
             List<SqlParameter> ParametrosCambiarCita = new List<SqlParameter>();
-            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_ID_CITA, this.IdCita));
-            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_CED_PACIENT_CITA, this.CedulaPaciente));
-            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_FECHA_NUEVA, this.fechaCita));
-            ParametrosCambiarCita.Add(new SqlParameter(CST.SQL_HORA_NUEVA, this.horaCita));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.PARAM_ID_CITA, this.IdCita));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.PARAM_NUM_DOCTOR, this.CedulaPaciente));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.PARAM_FECHA_MINUS, this.fechaCita));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.PARAM_HORA, this.horaCita));
+            ParametrosCambiarCita.Add(new SqlParameter(CST.PARAM_EXITO, 0));
 
             Connection conexion = new Connection();
 

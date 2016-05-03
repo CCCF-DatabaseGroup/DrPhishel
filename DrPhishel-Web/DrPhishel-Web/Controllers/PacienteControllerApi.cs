@@ -12,9 +12,9 @@ namespace DrPhishel_Web.Controllers
     {
 
         /*  Llama al metodo de eliminación de citas, si se logra eliminar retorna true sino false */
-        public IHttpActionResult EliminarCita (int pIdCita, int pCedulaPaciente)
+        public IHttpActionResult EliminarCita (int pIdCita)
         {
-            return Ok(Citas.EliminarCita(pIdCita, pCedulaPaciente));      
+            return Ok(Citas.EliminarCita(pIdCita));      
         }
 
         /* recibe la cedula del paciente y el id de la cita por cambiar ademas de la nueva hora y la nueva fecha
