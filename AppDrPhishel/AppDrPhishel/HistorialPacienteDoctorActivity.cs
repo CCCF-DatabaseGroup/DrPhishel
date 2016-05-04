@@ -9,6 +9,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
 
 namespace AppDrPhishel
 {
@@ -18,6 +24,24 @@ namespace AppDrPhishel
         private List<ClasePaciente> Pacientes;
         private ListView ListaPacientes;
 
+        public void AgregarDatos(string Cedula)
+        {
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://192.168.0.18/Doctor/api/ApiComun/ObtenerUsuario?pCedula="+Cedula);
+            request.Method = "GET";
+            String test = String.Empty;
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                test = reader.ReadToEnd();
+                reader.Close();
+                dataStream.Close();
+                Console.WriteLine(test);
+                ClasePaciente result = JsonConvert.DeserializeObject<ClasePaciente>(test);
+                Pacientes.Add(result);
+
+            }
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             SetContentView(Resource.Layout.HistorialPacienteDoctorLayout);
@@ -25,14 +49,13 @@ namespace AppDrPhishel
             //Seteando la ListView
             ListaPacientes = FindViewById<ListView>(Resource.Id.HISTORIALPEDIDOSDOCTORlista);
 
-          
-        
+
+
             //Lista de pacientes *quemar el primero*
             Pacientes = new List<ClasePaciente>();
-            Pacientes.Add(new ClasePaciente() {Nombre ="Juan",Usuario="Juan1",ID= "1",Padecimiento= "Gripe" });
-            Pacientes.Add(new ClasePaciente() { Nombre = "Mario", Usuario = "Marito", ID = "13", Padecimiento = "Diarrea" });
-            Pacientes.Add(new ClasePaciente() { Nombre = "Sonia", Usuario = "S33", ID = "11", Padecimiento = "Dolor de Cabeza" });
-           
+            AgregarDatos("604220930");
+            AgregarDatos("401080178");
+
             //Creando un adapter con nuestra clase para organizar los datos
             HistorialPacienteAdapter adapter = new HistorialPacienteAdapter(this, Pacientes);
 
@@ -53,7 +76,7 @@ namespace AppDrPhishel
          */
         private void ListaPacientes_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Console.WriteLine(Pacientes[e.Position].Nombre);
+           
         }
     }
 }

@@ -6,13 +6,18 @@ using System.Collections.Generic;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace AppDrPhishel
 {
     [Activity(Label = "@string/_application_name", MainLauncher = true, Icon = "@drawable/Drphi")]
     public class MainActivity : Activity
     {
-    
+        
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -27,12 +32,14 @@ namespace AppDrPhishel
 
             Button CrearUsuario = FindViewById<Button>(Resource.Id.MAIN_botonCrear);
             CrearUsuario.Click += (sender, e) =>
-            {
+            { 
+                
 
-                StartActivity(typeof(CrearUsuarioActivity));
             };
 
-            ImageButton LogearUsuario = FindViewById<ImageButton>(Resource.Id.MAIN_botonLogearse);
+            // Gets weather data from the passed URL.
+  
+        ImageButton LogearUsuario = FindViewById<ImageButton>(Resource.Id.MAIN_botonLogearse);
             LogearUsuario.Click += (sender, e) =>
             {
                 //Capturando User y password

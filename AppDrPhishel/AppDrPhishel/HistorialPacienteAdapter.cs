@@ -59,11 +59,11 @@ namespace AppDrPhishel
             TextView TextoNombre = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextNombre);
             TextoNombre.Text = Pacientes[position].Nombre;
 
-            TextView TextoUsuario = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextUsuario);
-            TextoUsuario.Text = Pacientes[position].Usuario;
+            TextView TextoUsuario = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextApellido1);
+            TextoUsuario.Text = Pacientes[position].PrimerApellido;
 
-            TextView TextoID = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextId);
-            TextoID.Text = Pacientes[position].ID;
+            TextView TextoID = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextApellido2);
+            TextoID.Text = Pacientes[position].SegundoApellido;
 
             TextView TextoPadecimiento = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWPACIENTEStextPadecimiento);
             TextoPadecimiento.Text = Pacientes[position].Padecimiento;

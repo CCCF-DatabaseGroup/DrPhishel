@@ -3,7 +3,7 @@
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="17" />
 	<application android:label="@string/_application_name"></application>
 
-
+ <uses-permission android:name="android.permission.INTERNET"/>
 
 
 </manifest>

@@ -189,17 +189,17 @@ namespace AppDrPhishel
 			// aapt resource value: 0x7f05001f
 			public const int LISTVIEWLISTADOCTORES_textNombreDoctor = 2131034143;
 			
+			// aapt resource value: 0x7f050024
+			public const int LISTVIEWPACIENTEStextApellido1 = 2131034148;
+			
 			// aapt resource value: 0x7f050025
-			public const int LISTVIEWPACIENTEStextId = 2131034149;
+			public const int LISTVIEWPACIENTEStextApellido2 = 2131034149;
 			
 			// aapt resource value: 0x7f050023
 			public const int LISTVIEWPACIENTEStextNombre = 2131034147;
 			
 			// aapt resource value: 0x7f050026
 			public const int LISTVIEWPACIENTEStextPadecimiento = 2131034150;
-			
-			// aapt resource value: 0x7f050024
-			public const int LISTVIEWPACIENTEStextUsuario = 2131034148;
 			
 			// aapt resource value: 0x7f050028
 			public const int MAIN_botonCrear = 2131034152;
