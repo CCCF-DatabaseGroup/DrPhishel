@@ -51,6 +51,15 @@ namespace AppDrPhishel
                 StartActivity(typeof(CitasDoctorActivity));
             };
 
+            Button BotonAgregarPaciente = FindViewById<Button>(Resource.Id.DOCTOR_BotonAgregarPaciente);
+            BotonAgregarPaciente.Click += (sender, e) =>
+            {
+
+                StartActivity(typeof(AgregarPacienteDoctorActivity));
+            };
+
+
+
             base.OnCreate(savedInstanceState);
 
 

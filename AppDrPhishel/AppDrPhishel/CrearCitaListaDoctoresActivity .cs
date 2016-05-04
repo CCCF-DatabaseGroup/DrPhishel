@@ -42,13 +42,21 @@ namespace AppDrPhishel
 
             ListaDoctores.Adapter = adapter;
 
-            
+            ListaDoctores.ItemLongClick += ListaDoctores_LongClick;
             base.OnCreate(savedInstanceState);
           
      
         }
 
-     
+        private void ListaDoctores_LongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            //capturando nombre del Doctor , NOTA: CAMBIAR POR ID
+            String NomDoctor = Doctores[e.Position].NombreDoctor.ToString();
 
+            Intent PasarAConfirmar = new Intent(this, typeof(CrearCitaConfirmarDoctorActivity));
+            PasarAConfirmar.PutExtra("IdDoctor", NomDoctor);
+            StartActivity(PasarAConfirmar);
+
+        }
     }
 }
