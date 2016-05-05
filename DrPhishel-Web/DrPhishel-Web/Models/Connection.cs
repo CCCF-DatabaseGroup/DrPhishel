@@ -11,7 +11,8 @@ namespace DrPhishel_Web.Models
     public class Connection
     {
         //public const string CONNECTION_STRING = "workstation id=drphishel.mssql.somee.com;packet size=4096;user id=crisferlop_SQLLogin_1;pwd=iufoc6fjnc;data source=drphishel.mssql.somee.com;persist security info=False;initial catalog=drphishel";
-        public const string CONNECTION_STRING = "Data Source=ELBARTO5;Initial Catalog=DrPhishel;Integrated Security=True";
+        //public const string CONNECTION_STRING = "Data Source=ELBARTO5;Initial Catalog=DrPhishel;Integrated Security=True";
+        public string CONNECTION_STRING;//= System.Configuration.ConfigurationManager.ConnectionStrings["DrPhishelDB"].ConnectionString;
         private SqlConnection SqlConexion;
         private DataTable TablaDatos;
         public List<SqlParameter> _Parametros;
@@ -20,8 +21,8 @@ namespace DrPhishel_Web.Models
             bool conexionStatus = false;
             SqlConexion = new SqlConnection();
             this.TablaDatos = new DataTable();
-            try
-            {
+            try {
+                CONNECTION_STRING = System.Configuration.ConfigurationManager.ConnectionStrings["DrPhishelDB"].ConnectionString;
                 SqlConexion.ConnectionString = CONNECTION_STRING;
                 SqlConexion.Open();
                 SqlCommand SqlComando = new SqlCommand();
@@ -60,6 +61,7 @@ namespace DrPhishel_Web.Models
             this.TablaDatos = new DataTable();
             try
             {
+                CONNECTION_STRING = System.Configuration.ConfigurationManager.ConnectionStrings["DrPhishelDB"].ConnectionString;
                 SqlConexion.ConnectionString = CONNECTION_STRING;
                 SqlConexion.Open();
                 SqlCommand SqlComando = new SqlCommand();
