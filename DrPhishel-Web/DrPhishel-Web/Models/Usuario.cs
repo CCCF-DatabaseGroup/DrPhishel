@@ -18,6 +18,7 @@ namespace DrPhishel_Web.Models
         public string Direccion { get; set; }
         public string Correo { get; set; }
         public string Contrasena { get; set; }
+        public DateTime FechaTmp { get; set; }
 
 
         public Usuario(int pCedula, string pNombre, string pPrimerApellido, string pSegundoApellido,
@@ -69,7 +70,7 @@ namespace DrPhishel_Web.Models
                 Nombre = this.Nombre,
                 PrimerApellido = this.PrimerApellido,
                 SegundoApellido = this.SegundoApellido,
-                FechaNacimiento = this.FechaNacimiento,
+                FechaNacimiento = this.FechaTmp,
                 Telefono = this.Telefono,
                 Direccion = this.Direccion,
                 Correo = this.Correo,
@@ -88,7 +89,6 @@ namespace DrPhishel_Web.Models
                 foreach(DataRow usuario in conexion.GetTablaDatos().Rows)
                 {
                     DateTime tmp = (DateTime)usuario[CST.HEADER_FECHA_NACIMIENTO];
-
                     Usuario UsuarioRetorno = new Usuario(
                         (int)usuario[CST.HEADER_CEDULA],
                         (string)usuario[CST.HEADER_NOMBRE_PERSONA],
@@ -100,6 +100,7 @@ namespace DrPhishel_Web.Models
                         (string)usuario[CST.HEADER_CORREO_ELECTRONICO],
                         ""
                         );
+                    UsuarioRetorno.FechaTmp = tmp;
                     return UsuarioRetorno.toJson();
                 }
             }

@@ -22,9 +22,9 @@
                 <div>
                     <form name="logeoUsuario" class="form-horizontal" role="form">
                         <!--Este es el input donde se ingresa el nombre de usuario-->
-                        <input required ng-model="usuarioLogin.CorreoElectronico" class="login_component form-control center-block" placeholder="usuario o e-mail" id="Text1" type="text" />
+                        <input ng-required="true" ng-model="usuarioLogin.CorreoElectronico" class="login_component form-control center-block" placeholder="ingrese su e-mail" id="Text1" type="email" />
                         <!--Este es el input donde se ingresa la contrasenia de usuario-->
-                        <input required ng-model="usuarioLogin.Contrasena" type="password" class="login_component form-control center-block" placeholder="contraseña" id="Text1"/>
+                        <input ng-required="true" ng-model="usuarioLogin.Contrasena" type="password" class="login_component form-control center-block" placeholder="contraseña" id="Text1"/>
                         <!--Este es el boton que el usuario utilizara para poder ingresar al sistema de farmacias-->
                         <!-- Error de seleccion arreglado
                                 solucion encontrada en
@@ -38,6 +38,9 @@
 
                         <button ng-click="logeoUsuario.$valid && ingresar()" class="login_component btn btn-success center-block" id="Button1">Ingresar</button>
                         <p class="login_message">{{loginMessage}}</p>
+                        <p class="login_message">{{logeoUsuario.$valid}}</p>
+
+                        
                         <a href="/Home/Registrarse" class="login_component btn btn-warning center-block" id="registro" type="button" >Registrarse</a>
                     </form>
                 </div>

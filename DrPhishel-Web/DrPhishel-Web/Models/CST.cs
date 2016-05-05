@@ -47,8 +47,8 @@ namespace DrPhishel_Web.Models
         public const string SQL_ID_CITA = "@Id_cita";
         public const string SQL_NUM_DOC_CITA = "@Numero_doctor_cita";
         public const string SQL_CED_PACIENT_CITA = "@Cedula_paciente_cita";
-        public const string SQL_FECHA_CITA = "@Fecha_cita";
-        public const string SQL_HORA_CITA = "@Hora_cita";
+        public const string SQL_FECHA_CITA = "Fecha_cita";
+        public const string SQL_HORA_CITA = "Hora_cita";
         public const string SQL_FECHA_NUEVA = "@Fecha_nueva";
         public const string SQL_HORA_NUEVA = "@Hora_nueva";
 
@@ -60,12 +60,12 @@ namespace DrPhishel_Web.Models
         public const string SQL_ID_CITA_HISTORIAL = "@Id_cita_HC";
         public const string SQL_NUM_DOC_HISTORIAL = "@Numero_doctor_HC";
         public const string SQL_CED_PACIENTE_HISTORIAL = "@Cedula_paciente_HC";
-        public const string SQL_CONSULTA = "@Consulta";
-        public const string SQL_ESTUDIO = "@Estudio";
-        public const string SQL_RECETA = "@Receta";
-        public const string SQL_NOMBRE_DOC = "@Nombre_Doctor";
-        public const string SQL_APEL1_DOC = "@Apellido1_Doctor";
-        public const string SQL_APEL2_DOC = "@Apellido2_Doctor";
+        public const string SQL_CONSULTA = "Consulta";
+        public const string SQL_ESTUDIO = "Estudio";
+        public const string SQL_RECETA = "Receta";
+        public const string SQL_NOMBRE_DOC = "Nombre_persona";
+        public const string SQL_APEL1_DOC = "Apellido1";
+        public const string SQL_APEL2_DOC = "Apellido2";
 
         /* Doctor */
         public const string SQL_ID_DOCTOR_ASOCIE = "@Id_doctor"; /*MISSING*/

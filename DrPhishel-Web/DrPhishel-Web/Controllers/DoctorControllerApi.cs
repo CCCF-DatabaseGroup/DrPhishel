@@ -23,8 +23,8 @@ namespace DrPhishel_Web.Controllers
         /* Obtiene una lista con el historial clinico de un paciente a partir de su cedula */
         public IHttpActionResult ObtenerHistorialClinicoPaciente (int pCedulaPaciente)
         {
-            List<Historial> historialPaciente = Historial.ObtenerHistorialClinicoPaciente(pCedulaPaciente);
-            return Ok(historialPaciente);
+            List<object> historialPaciente = Historial.ObtenerHistorialClinicoPaciente(pCedulaPaciente);
+            return Json(historialPaciente);
 
         }
 

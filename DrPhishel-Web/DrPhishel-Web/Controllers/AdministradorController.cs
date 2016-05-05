@@ -41,9 +41,9 @@ namespace DrPhishel_Web.Controllers
         /* Obtiene la lista de cobros de un doctor */
         public JsonResult VerCobrosDoctores(int pIdDoctor)
         {
-            List<Cobros> listaCobros = Cobros.VerCobrosDoctores();
-            return Json(listaCobros, JsonRequestBehavior.AllowGet);
-            
+            //List<Cobros> listaCobros = Cobros.VerCobrosDoctores();
+            //return Json(listaCobros, JsonRequestBehavior.AllowGet);
+            return Json(null, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -59,7 +59,7 @@ namespace DrPhishel_Web.Controllers
         /* acepta un doctor temporal como permanente*/
         public JsonResult AceptarDoctor(int pIdDoctor)
         {
-            bool aceptado = Dcotor.AceptarDoctor(pIdDoctor);
+            bool aceptado = Doctor.AceptarDoctor(pIdDoctor);
             return Json(new { Status = aceptado }, JsonRequestBehavior.AllowGet);
         }
 
@@ -68,7 +68,7 @@ namespace DrPhishel_Web.Controllers
         public JsonResult SolicitudDoctor(int pNumeroDoctor, int pIdEspecialidad, int pTelefono, int pNumeroDeTarjeta, string pDireccion)
         {
             bool insertado = Doctor.SolicitudDoctor(pNumeroDoctor,  pIdEspecialidad, pTelefono, pNumeroDeTarjeta, pDireccion);
-            return Json(new { Status = aceptado }, JsonRequestBehavior.AllowGet);
+            return Json(new { Status = insertado }, JsonRequestBehavior.AllowGet);
         }
 
     }

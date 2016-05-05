@@ -42,7 +42,7 @@ namespace DrPhishel_Web.Models
         public static bool AceptarDoctor (int pIdDoctor)
         {
             List<SqlParameter> parametrosAceptar = new List<SqlParameter>();
-            parametrosAsocie.Add(new SqlParameter(CST.PARAM_ID_USUARIO, pIdDoctor));
+            parametrosAceptar.Add(new SqlParameter(CST.PARAM_ID_USUARIO, pIdDoctor));
             Connection conexion = new Connection();
             if (conexion.abrirConexion(CST.PROC_ALMACENADO_ACEPTAR_DOCTOR, parametrosAceptar))
             {
@@ -57,14 +57,14 @@ namespace DrPhishel_Web.Models
         /* Solicita insertar un doctor nuevo */
         public static bool SolicitudDoctor(int pNumeroDoctor, int pIdEspecialidad, int pTelefono, int pNumeroDeTarjeta, string pDireccion)
         {
-            List<SqlParameter> parametrosAceptar = new List<SqlParameter>();
+            List<SqlParameter> parametrosAsocie = new List<SqlParameter>();
             parametrosAsocie.Add(new SqlParameter(CST.PARAM_NUM_DOCTOR, pNumeroDoctor));
             parametrosAsocie.Add(new SqlParameter(CST.PARAM_ID_ESPE, pIdEspecialidad));
             parametrosAsocie.Add(new SqlParameter(CST.PARAM_TEL, pTelefono));
             parametrosAsocie.Add(new SqlParameter(CST.PARAM_NUM_TARJETA, pNumeroDeTarjeta));
             parametrosAsocie.Add(new SqlParameter(CST.PARAM_DIREC, pDireccion));
             Connection conexion = new Connection();
-            if (conexion.abrirConexion(CST.PROC_ALMACENADO_INSERTAR_DOC, parametrosAceptar))
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_INSERTAR_DOC, parametrosAsocie))
             {
                 return true;
             }

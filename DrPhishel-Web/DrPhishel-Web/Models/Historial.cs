@@ -9,8 +9,8 @@ namespace DrPhishel_Web.Models
 {
     public class Historial
     {
-        private string Fecha { set; get; }
-        private string Hora { set; get; }
+        private DateTime Fecha { set; get; }
+        private TimeSpan Hora { set; get; }
         private string NombreDoctor { set; get; }
         private string Apellido1Doctor { set; get; }
         private string Apellido2Doctor { set; get; }
@@ -19,7 +19,7 @@ namespace DrPhishel_Web.Models
         private string Receta { set; get; }
 
         /* Constructor con todos los argumentos */
-        public Historial(string pFecha, string pHora, string pNombreDoctor, string pApellido1Doctor, string pApellido2Doctor, string pConsulta, string pEstudio, string pReceta)
+        public Historial(DateTime pFecha, TimeSpan pHora, string pNombreDoctor, string pApellido1Doctor, string pApellido2Doctor, string pConsulta, string pEstudio, string pReceta)
         {
             Fecha = pFecha;
             Hora = pHora;
@@ -33,24 +33,45 @@ namespace DrPhishel_Web.Models
 
         /* Obtiene el historial clinico de un paciente a partir de su cedula */
 
-        public static List<Historial> ObtenerHistorialClinicoPaciente(int pCedulaPaciente)
+        public static List<object> ObtenerHistorialClinicoPaciente(int pCedulaPaciente)
         {
             List<SqlParameter> ParametrosHistorial = new List<SqlParameter>();
             ParametrosHistorial.Add(new SqlParameter(CST.PARAM_CEDULA, pCedulaPaciente));
 
-            List<Historial> listaHistorialPaciente = new List<Historial>();
+            List<object> listaHistorialPaciente = new List<object>();
             Connection conexion = new Connection();
             if (conexion.abrirConexion(CST.PROC_ALMACENADO_OBTENER_HISTORIAL_CLINICO_PACIENTE, ParametrosHistorial))
             {
                 DataTable tablaHistorial = conexion.GetTablaDatos();
                 foreach (DataRow fila in tablaHistorial.Rows)
                 {
-                    listaHistorialPaciente.Add(new Historial((string)fila[CST.SQL_FECHA_CITA], (string)fila[CST.SQL_HORA_CITA], (string)fila[CST.SQL_CONSULTA], (string)fila[CST.SQL_ESTUDIO], (string)fila[CST.SQL_RECETA], (string)fila[CST.SQL_NOMBRE_DOC], (string) fila[CST.SQL_APEL1_DOC], (string) fila[CST.SQL_APEL2_DOC]));
+                    listaHistorialPaciente.Add((new Historial(
+                        (DateTime)fila[CST.SQL_FECHA_CITA], 
+                        (TimeSpan)fila[CST.SQL_HORA_CITA], 
+                        (string)fila[CST.SQL_CONSULTA], 
+                        (string)fila[CST.SQL_ESTUDIO], 
+                        (string)fila[CST.SQL_RECETA], 
+                        (string)fila[CST.SQL_NOMBRE_DOC], 
+                        (string) fila[CST.SQL_APEL1_DOC], 
+                        (string) fila[CST.SQL_APEL2_DOC])).toJson());
                 }
 
             }
             return listaHistorialPaciente;
 
+        }
+
+        public object toJson() {
+            return new {
+                Fecha = Fecha,
+            Hora = Hora,
+            NombreDoctor = NombreDoctor,
+            Apellido1Doctor = Apellido1Doctor,
+            Apellido2Doctor = Apellido2Doctor,
+            Consulta = Consulta,
+            Estudio = Estudio,
+            Receta = Receta
+        };
         }
 
     }

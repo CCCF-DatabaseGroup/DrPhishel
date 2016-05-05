@@ -10,7 +10,8 @@ namespace DrPhishel_Web.Models
     /*This class is the one that implements the database connection */
     public class Connection
     {
-        public const string CONNECTION_STRING = "workstation id=drphishel.mssql.somee.com;packet size=4096;user id=crisferlop_SQLLogin_1;pwd=iufoc6fjnc;data source=drphishel.mssql.somee.com;persist security info=False;initial catalog=drphishel";
+        //public const string CONNECTION_STRING = "workstation id=drphishel.mssql.somee.com;packet size=4096;user id=crisferlop_SQLLogin_1;pwd=iufoc6fjnc;data source=drphishel.mssql.somee.com;persist security info=False;initial catalog=drphishel";
+        public const string CONNECTION_STRING = "Data Source=ELBARTO5;Initial Catalog=DrPhishel;Integrated Security=True";
         private SqlConnection SqlConexion;
         private DataTable TablaDatos;
         public List<SqlParameter> _Parametros;

@@ -100,7 +100,13 @@ myApp.controller('registroController', function ($scope, $http, $filter) {
             //alert("fuck yeah!")
             console.log(data);
             data.Cedula = data.Cedula.toString();
-            data.FechaNacimiento = new Date(data.FechaNacimiento);
+            var fecha_nacimiento = new Date(data.FechaNacimiento);
+            console.log(fecha_nacimiento);
+            data.FechaNacimiento = data.FechaNacimiento.replace(/\//gi, '-');
+            console.log(data.FechaNacimiento);
+            console.log(typeof data.FechaNacimiento);
+            data.FechaNacimiento = (fecha_nacimiento);
+
             console.log(data.FechaNacimiento);
             $scope.usuario = data;
         })

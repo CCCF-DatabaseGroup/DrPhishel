@@ -23,32 +23,7 @@ namespace DrPhishel_Web.Controllers
             return Json (new { Status =  true });
 
         }
-
-        [HttpPost]
-        public IHttpActionResult RegistrarUsuario2(int pCedula, string pNombre)
-        {
-            /*
-            Usuario usuarioACrear = new Usuario(
-                pCedula, pNombre, pPrimerApellido, pSegundoApellido, pFechaNacimiento, pTelefono, pDireccion, pCorreo, pContrasena
-
-            );
-            */
-            return Json(new { Status = true });
-
-        }
-
-        [HttpPost]
-        public IHttpActionResult RegistrarUsuario3(int pCedula)
-        {
-            /*
-            Usuario usuarioACrear = new Usuario(
-                pCedula, pNombre, pPrimerApellido, pSegundoApellido, pFechaNacimiento, pTelefono, pDireccion, pCorreo, pContrasena
-
-            );
-            */
-            return Json(new { Status = true });
-
-        }
+        
 
 
 
@@ -58,10 +33,11 @@ namespace DrPhishel_Web.Controllers
             return Json(Usuario.obtenerUsuarioPorCedula(pCedula));
         }
 
+
         [HttpGet]
-        public IHttpActionResult ObtenerUsuario2(int pCedula,string pOtro)
-        {
-            return Json(Usuario.obtenerUsuarioPorCedula(pCedula));
+        public IHttpActionResult ObtenerHistorialClinico(int pCedula) {
+            List<object> historial = Historial.ObtenerHistorialClinicoPaciente(pCedula);
+            return Json(historial.ToList());
         }
 
     }

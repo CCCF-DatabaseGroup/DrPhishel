@@ -97,7 +97,7 @@ namespace DrPhishel_Web.Models
         public static bool EliminarCita(int pIdCita)
         {
             List<SqlParameter> ParametrosEliminarCita = new List<SqlParameter>();
-            ParametrosEliminarCita.Add(new SqlParameter(CST.SQL_ID_CITA, pIdCita));
+            ParametrosEliminarCita.Add(new SqlParameter(CST.PARAM_ID_CITA, pIdCita));
 
             Connection conexion = new Connection();
             if (conexion.abrirConexion(CST.PROC_ALMACENADO_ELIMINAR_CITA, ParametrosEliminarCita))

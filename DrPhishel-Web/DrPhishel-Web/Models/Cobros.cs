@@ -39,10 +39,10 @@ namespace DrPhishel_Web.Models
         }
 
         /* toma el id de un doctor y le realiza un cobro */
-        public static bool RealizarCobro(int pIdDoctor) 
+        public static bool RealizarCobro(int pIdDoctor)
         {
             List<SqlParameter> parametrosCobro = new List<SqlParameter>();
-            parametrosCobro.Add(new SqlParameter(CST.PARAM_NUM_DOCTOR, pidDoctor));
+            parametrosCobro.Add(new SqlParameter(CST.PARAM_NUM_DOCTOR, pIdDoctor));
             Connection conexion = new Connection();
             if (conexion.abrirConexion(CST.PROC_ALMACENADO_REALIZAR_COBRO, parametrosCobro))
             {
@@ -55,3 +55,4 @@ namespace DrPhishel_Web.Models
         }
 
     }
+}
