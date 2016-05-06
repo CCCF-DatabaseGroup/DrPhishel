@@ -1,4 +1,6 @@
-﻿myApp.controller('AdministradorController', function ($scope, $http) {
+﻿
+
+angular.module('myApp').controller('AdministradorController', function ($scope, $http) {
 
     $scope.doctorSolicitantes = [
         { NumeroDoctor: 1, Cedula: 2, Nombre: "Fernando", PrimerApellido: "Rivera", SegundoApellido: "Lopez", Especialidad: "pos ser OP" }
@@ -13,7 +15,7 @@
                 $scope.especialidades = data;
             })
             .error(function () {
-                alert("Something went wrong");
+                alert("Lo sentimos, no se pudo contactar con el servidor :(");
             });
     }
 
@@ -32,7 +34,32 @@
     }
 
 
+
+
+
+    $scope.aceptarDoctor = function (index) {
+        console.log('AD');
+        $scope.doctorSolicitantes.splice(index, 1);
+    };
+
+
+
+
+
+
+    /*
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    */
+
+
+
     $scope.obtenerEspecialidades();
+
+
+
 
 
 });

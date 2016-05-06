@@ -7,16 +7,6 @@
     $scope.usuarioLogin = { CorreoElectronico: undefined, Contrasena: undefined, TipoUsuario: 1 };
     $scope.loginMessage = "";
 
-
-    $http.get('api/ApiComun/ObtenerHistorialClinico', { params: { pCedula: 600870417 } })
-    .success(function (result) {
-        console.log(result);
-    })
-    .error(function (data) {
-        $scope.loginMessage = "Error al ingresar con el usuario, esto puede suceder por que usted esta iniciado con un usuario que no existe (correo electronico invalido), su contraseña sea erronea o ha elegido un tipo de usuario no valido para usted";
-    });
-
-
     $scope.ingresar = function () {
         $http.post('/Home/SetUsuario')
     .success(function (result) {

@@ -28,18 +28,22 @@ namespace DrPhishel_Web
             */
             config.Routes.MapHttpRoute(
                  name: "api8",
-                 routeTemplate: "Home/api/ApiComun/{action}/{pCedula}"
+                 routeTemplate: "api/ApiComun/{action}/{pCedula}"
             );
-            /*
+
             config.Routes.MapHttpRoute(
                  name: "api9",
-                 routeTemplate: "Paciente/api/{controller}/{action}/{pIdCita}"
+                 routeTemplate: "api/ApiPaciente/cambiarHoraCita/{pCedulaPaciente}/{pIdCita}/{pFechaNueva}/{pHoraNueva}"
             );
-            */
 
             config.Routes.MapHttpRoute(
                  name: "api10",
-                 routeTemplate: "Paciente/api/ApiPaciente/EliminarCita/{pIdCita}"
+                 routeTemplate: "api/ApiPaciente/EliminarCita/{pIdCita}"
+            );
+            //SolicitudDoctor(int pNumeroDoctor, string pNombreDoctor, string pApellido1, string pApellido2, string pLugarDeResidencia, int pTelefonoConsultorio, string pDireccionConsultorio, int pIdEspecialidad, int pNumeroTarjetaCredito, string pNombreUsuario, string pContraseña, string pCorreoElectronico)
+            config.Routes.MapHttpRoute(
+                 name: "api12",
+                 routeTemplate: "api/ApiDoctor/SolicitudDoctor/{pNumeroDoctor}/{pNombreDoctor}/{pApellido1}/{pApellido2}/{pLugarDeResidencia}/{pTelefonoConsultorio}/{pDireccionConsultorio}/{pIdEspecialidad}/{pNumeroTarjetaCredito}/{pNombreUsuario}/{pContrasena/{pCorreoElectronico}"
             );
 
 
@@ -72,12 +76,9 @@ namespace DrPhishel_Web
 
 
             config.Routes.MapHttpRoute(
-                             name: "api11",
-                             routeTemplate: "Paciente/api/{controller}/{action}"
-                        );
-
-
-
+                name: "api11",
+                routeTemplate: "Paciente/api/{controller}/{action}"
+            );
         }
     }
 }
