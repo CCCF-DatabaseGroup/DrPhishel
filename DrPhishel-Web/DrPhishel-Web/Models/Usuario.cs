@@ -16,6 +16,7 @@ namespace DrPhishel_Web.Models
         public string FechaNacimiento { get; set; }
         public int Telefono { get; set; }
         public string Direccion { get; set; }
+        public string TipoUsuario{ get; set; }
         public string Correo { get; set; }
         public string Contrasena { get; set; }
         public DateTime FechaTmp { get; set; }
@@ -75,6 +76,7 @@ namespace DrPhishel_Web.Models
                 Direccion = this.Direccion,
                 Correo = this.Correo,
                 Contrasena = this.Contrasena,
+                TipoUsuario = this.TipoUsuario
             };
         }
 
@@ -110,6 +112,45 @@ namespace DrPhishel_Web.Models
 
             return null;
         }
+
+
+        public static object LoginUsuario(string pCorreoElectronico,string pContrasena, int pTipo)
+        {
+            List<SqlParameter> parametroUsuario = new List<SqlParameter>();
+            parametroUsuario.Add(new SqlParameter(CST.PARAM_CORREO, pCorreoElectronico));
+            parametroUsuario.Add(new SqlParameter(CST.PARAM_CONTRA, pContrasena));
+            parametroUsuario.Add(new SqlParameter(CST.PARAM_TIPO_USUARIO, pTipo));
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_LOGEAR_USUARIO, parametroUsuario))
+            {
+                foreach (DataRow usuario in conexion.GetTablaDatos().Rows)
+                {
+                    DateTime tmp = (DateTime)usuario[CST.HEADER_FECHA_NACIMIENTO];
+                    Usuario UsuarioRetorno = new Usuario(
+                        (int)usuario[CST.HEADER_CEDULA],
+                        (string)usuario[CST.HEADER_NOMBRE_PERSONA],
+                        (string)usuario[CST.HEADER_PRIMER_APELLIDO],
+                        (string)usuario[CST.HEADER_SEGUNDO_APELLIDO],
+                        (tmp.Day + "/" + tmp.Month + "/" + tmp.Year).ToString(),
+                        (int)usuario[CST.HEADER_TELEFONO_PERSONA],
+                        (string)usuario[CST.HEADER_DIRECCION_PERSONA],
+                        (string)usuario[CST.HEADER_CORREO_ELECTRONICO],
+                        ""
+                        );
+                    UsuarioRetorno.FechaTmp = tmp;
+                    UsuarioRetorno.TipoUsuario = (string)usuario[CST.HEADER_NOMBRE_RANGO];
+                    return UsuarioRetorno.toJson();
+                }
+            }
+            else {
+
+            }
+
+            return null;
+        }
+
+
+
 
     }
 }

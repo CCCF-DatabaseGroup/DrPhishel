@@ -13,9 +13,10 @@
                 <button ng-click="buscarUsuario.$valid && obtenerUsuario()"  id="consultaPorCedula" class="btn btn-success" href="" type="submit">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
+                <p class="login_message">{{MensajeError}}</p>
             </form>
             @RenderPage("DatosPaciente.cshtml")
-            <input class="login_component btn btn-warning center-block" id="registroPaciente" type="button" value="Registrar como paciente" />
+            <input ng-click="buscarUsuario.$valid && asociarUsuario()" class="login_component btn btn-warning center-block" id="registroPaciente" type="button" value="Registrar como paciente" />
         </div>
     </div>
     <div class="tab-pane" id="agregarPaciente">

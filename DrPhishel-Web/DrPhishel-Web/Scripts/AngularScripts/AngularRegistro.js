@@ -99,16 +99,20 @@ myApp.controller('registroController', function ($scope, $http, $filter) {
         .success(function (data, status) {
             //alert("fuck yeah!")
             console.log(data);
-            data.Cedula = data.Cedula.toString();
-            var fecha_nacimiento = new Date(data.FechaNacimiento);
-            console.log(fecha_nacimiento);
-            data.FechaNacimiento = data.FechaNacimiento.replace(/\//gi, '-');
-            console.log(data.FechaNacimiento);
-            console.log(typeof data.FechaNacimiento);
-            data.FechaNacimiento = (fecha_nacimiento);
-
-            console.log(data.FechaNacimiento);
-            $scope.usuario = data;
+            if (data != null && data != {}) {
+                data.Cedula = data.Cedula.toString();
+                var fecha_nacimiento = new Date(data.FechaNacimiento);
+                console.log(fecha_nacimiento);
+                data.FechaNacimiento = data.FechaNacimiento.replace(/\//gi, '-');
+                console.log(data.FechaNacimiento);
+                console.log(typeof data.FechaNacimiento);
+                data.FechaNacimiento = (fecha_nacimiento);
+                console.log(data.FechaNacimiento);
+                $scope.usuario = data;
+                $scope.MensajeError = "";
+            }
+            else
+                $scope.MensajeError = "No es posible encontrar al paciente";
         })
         .error(function (data) {
             console.log(data);

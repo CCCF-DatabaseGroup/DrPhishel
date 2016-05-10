@@ -11,6 +11,17 @@ namespace DrPhishel_Web.Controllers
     public class ApiPacienteController : ApiController
     {
 
+
+        [HttpGet]
+        /* Obtiene todas las citas disponibles para el doctor */
+        public IHttpActionResult ObtenerCitasDisponiblesDoctor(int pIdDoctor, DateTime pDia)
+        {
+            List<string> listaCitas = Citas.ObtenerCitasDisponiblesDoctor(pIdDoctor, pDia);
+            return Ok(listaCitas);
+
+        }
+
+
         [HttpGet]
         /*  Llama al metodo de eliminación de citas, si se logra eliminar retorna true sino false */
         public IHttpActionResult EliminarCita(int pIdCita)

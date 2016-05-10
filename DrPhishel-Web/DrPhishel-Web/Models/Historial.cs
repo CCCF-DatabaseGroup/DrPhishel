@@ -16,10 +16,9 @@ namespace DrPhishel_Web.Models
         private string Apellido2Doctor { set; get; }
         private string Consulta { set; get; }
         private string Estudio { set; get; }
-        private string Receta { set; get; }
 
         /* Constructor con todos los argumentos */
-        public Historial(DateTime pFecha, TimeSpan pHora, string pNombreDoctor, string pApellido1Doctor, string pApellido2Doctor, string pConsulta, string pEstudio, string pReceta)
+        public Historial(DateTime pFecha, TimeSpan pHora, string pNombreDoctor, string pApellido1Doctor, string pApellido2Doctor, string pConsulta, string pEstudio)
         {
             Fecha = pFecha;
             Hora = pHora;
@@ -28,7 +27,6 @@ namespace DrPhishel_Web.Models
             Apellido2Doctor = pApellido2Doctor;
             Consulta = pConsulta;
             Estudio = pEstudio;
-            Receta = pReceta;
         }
 
         /* Obtiene el historial clinico de un paciente a partir de su cedula */
@@ -50,7 +48,6 @@ namespace DrPhishel_Web.Models
                         (TimeSpan)fila[CST.SQL_HORA_CITA], 
                         (string)fila[CST.SQL_CONSULTA], 
                         (string)fila[CST.SQL_ESTUDIO], 
-                        (string)fila[CST.SQL_RECETA], 
                         (string)fila[CST.SQL_NOMBRE_DOC], 
                         (string) fila[CST.SQL_APEL1_DOC], 
                         (string) fila[CST.SQL_APEL2_DOC])).toJson());
@@ -70,7 +67,6 @@ namespace DrPhishel_Web.Models
             Apellido2Doctor = Apellido2Doctor,
             Consulta = Consulta,
             Estudio = Estudio,
-            Receta = Receta
         };
         }
 

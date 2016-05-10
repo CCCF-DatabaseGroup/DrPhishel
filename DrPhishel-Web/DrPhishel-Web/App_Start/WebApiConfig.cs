@@ -43,7 +43,12 @@ namespace DrPhishel_Web
             //SolicitudDoctor(int pNumeroDoctor, string pNombreDoctor, string pApellido1, string pApellido2, string pLugarDeResidencia, int pTelefonoConsultorio, string pDireccionConsultorio, int pIdEspecialidad, int pNumeroTarjetaCredito, string pNombreUsuario, string pContraseña, string pCorreoElectronico)
             config.Routes.MapHttpRoute(
                  name: "api12",
-                 routeTemplate: "api/ApiDoctor/SolicitudDoctor/{pNumeroDoctor}/{pNombreDoctor}/{pApellido1}/{pApellido2}/{pLugarDeResidencia}/{pTelefonoConsultorio}/{pDireccionConsultorio}/{pIdEspecialidad}/{pNumeroTarjetaCredito}/{pNombreUsuario}/{pContrasena/{pCorreoElectronico}"
+                 routeTemplate: "api/ApiDoctor/SolicitudDoctor/{pNumeroDoctor}/{pNombreDoctor}/{pApellido1}/{pApellido2}/{pLugarDeResidencia}/{pTelefonoConsultorio}/{pDireccionConsultorio}/{pIdEspecialidad}/{pNumeroTarjetaCredito}/{pNombreUsuario}/{pContrasena}/{pCorreoElectronico}"
+            );
+
+            config.Routes.MapHttpRoute(
+                 name: "api13",
+                 routeTemplate: "Home/api/ApiComun/LoginUsuario/{pCorreoElectronico}/{pContrasena}/{pTipoUsuario}"
             );
 
 
@@ -54,6 +59,32 @@ namespace DrPhishel_Web
             routeTemplate: "Home/api/ApiComun/RegistrarUsuario/{pCedula}/{pNombre}/{pPrimerApellido}/{pSegundoApellido}/{pFechaNacimiento}/{pTelefono}/{pDireccion}/{pCorreo}/{pContrasena}"
           //routeTemplate: "Home/api/ApiComun/RegistrarUsuario/{pCedula}/{pNombre}/{pPrimerApellido}/{pSegundoApellido}/{pFechaNacimiento}/{pTelefono}/{pDireccion}/{pCorreo}/{pContrasena}"
             );
+
+
+            config.Routes.MapHttpRoute(
+                name: "apiDoctorAceptarPaciente",
+                routeTemplate: "Doctor/api/ApiDoctor/AsociarPacienteADoctor/{pNumeroDoctor}/{pCedulaPaciente}"
+            );
+
+
+            config.Routes.MapHttpRoute(
+                name: "apiDoctorObtenerCitas",
+                routeTemplate: "Paciente/api/ApiPaciente/ObtenerCitasDisponiblesDoctor/{pIdDoctor}/{pDia}"
+            );
+            /*
+            config.Routes.MapHttpRoute(
+                name: "apiDoctorInsertarHistorialClinico",
+                routeTemplate: "Paciente/api/ApiDoctor/InsertarHistorialClinico/{pIdDoctor}/{pDia}"
+            );
+            */
+            //SolicitudDoctor
+            config.Routes.MapHttpRoute(
+                name: "apiComunSolicitudDoctor",
+                //{pNumeroDoctor}/{pIdEspecialidad}/{pTelefono}/{pNumeroDeTarjeta}/{pDireccion}
+                routeTemplate: "Paciente/api/ApiComun/SolicitudDoctor/{pCedulaUsuario}/{pNumeroDoctor}/{pIdEspecialidad}/{pTelefono}/{pNumeroDeTarjeta}/{pDireccion}"
+            );
+
+
 
 
             config.Routes.MapHttpRoute(

@@ -39,7 +39,7 @@ namespace DrPhishel_Web.Controllers
         }
 
 
-
+        [HttpPost]
         /* Crea la cita del paciente,retorna true si se creo, false si no se pudo crear */
         public JsonResult CrearCita (int pCedulaPaciente, string pFecha, string pHora, int pNumeroDoctor)
         {

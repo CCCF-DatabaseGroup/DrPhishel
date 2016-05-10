@@ -54,11 +54,11 @@ namespace DrPhishel_Web.Models
             List<SqlParameter> ParametrosCita = new List<SqlParameter>();
             ParametrosCita.Add(new SqlParameter(CST.PARAM_DOCT, this.NumeroDoctor));
             ParametrosCita.Add(new SqlParameter(CST.PARAM_CEDULA, this.CedulaPaciente));
-            ParametrosCita.Add(new SqlParameter(CST.PARAM_FECHA_NAC, this.fechaCita));
+            ParametrosCita.Add(new SqlParameter(CST.PARAM_FECHA_MINUS, this.fechaCita));
             ParametrosCita.Add(new SqlParameter(CST.PARAM_HORA, this.horaCita));
 
             Connection conexion = new Connection();
-            if (conexion.abrirConexion(CST.PROC_ALMACENADO_PEDIR_CITA, ParametrosCita))
+            if (conexion.abrirConexionNoRetorno(CST.PROC_ALMACENADO_PEDIR_CITA, ParametrosCita))
             {
                 return true;
             }
@@ -70,7 +70,7 @@ namespace DrPhishel_Web.Models
         }
 
         /*  recibe el dia y el id del doctor y obtiene todas las citas para ese día */
-        public static List<string> ObtenerCitasDisponiblesDoctor(int pIdDoctor, string pDia)
+        public static List<string> ObtenerCitasDisponiblesDoctor(int pIdDoctor, DateTime pDia)
         {
             List<SqlParameter> ParametrosObtenerCita = new List<SqlParameter>();
             ParametrosObtenerCita.Add(new SqlParameter(CST.PARAM_ID_DOCTOR, pIdDoctor));
@@ -84,7 +84,7 @@ namespace DrPhishel_Web.Models
                 DataTable TablaCitas = conexion.GetTablaDatos();
                 foreach (DataRow fila in TablaCitas.Rows)
                 {
-                    ListaCitas.Add((string) fila [CST.HEADER_HORAS_DISP]);
+                    ListaCitas.Add( ((TimeSpan)fila[CST.HEADER_HORAS_DISP]).ToString());
                 }
         
             }

@@ -40,5 +40,23 @@ namespace DrPhishel_Web.Controllers
             return Json(historial.ToList());
         }
 
+        [HttpPost]
+        public IHttpActionResult LoginUsuario(string pCorreoElectronico, string pContrasena, int pTipoUsuario)
+        {
+            object usuario = Usuario.LoginUsuario(pCorreoElectronico,pContrasena, pTipoUsuario);
+            return Json(usuario);
+        }
+
+
+        [HttpPost]
+        /* insertar un doctor temporalmente*/
+        public IHttpActionResult SolicitudDoctor(int pCedulaUsuario, int pNumeroDoctor, int pIdEspecialidad, int pTelefono, int pNumeroDeTarjeta, string pDireccion)
+        {
+            bool insertado = Doctor.SolicitudDoctor(pCedulaUsuario,pNumeroDoctor, pIdEspecialidad, pTelefono, pNumeroDeTarjeta, pDireccion);
+            return Json(new { Status = insertado });
+        }
+
+
+
     }
 }

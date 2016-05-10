@@ -39,37 +39,37 @@ namespace DrPhishel_Web.Controllers
 
         [HttpPost]
         /* Obtiene la lista de cobros de un doctor */
-        public JsonResult VerCobrosDoctores(int pIdDoctor)
+        public JsonResult VerCobrosDoctores()
         {
-            //List<Cobros> listaCobros = Cobros.VerCobrosDoctores();
-            //return Json(listaCobros, JsonRequestBehavior.AllowGet);
-            return Json(null, JsonRequestBehavior.AllowGet);
+            List<object> listaCobros = Cobros.verCobros();
+            return Json(listaCobros.ToList(), JsonRequestBehavior.AllowGet);
         }
 
 
         [HttpPost]
         /* realiza el cobro a un doctor */
-        public JsonResult RealizarCobro (int pIdDoctor)
+        public JsonResult RealizarCobro (int pCostoCita)
         {
-            bool cobro = Cobros.RealizarCobro(pIdDoctor);
+            bool cobro = Cobros.RealizarCobro(pCostoCita);
             return Json(new { Status = cobro }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         /* acepta un doctor temporal como permanente*/
-        public JsonResult AceptarDoctor(int pIdDoctor)
+        public JsonResult AceptarDoctor(int pNumeroDoctor)
         {
-            bool aceptado = Doctor.AceptarDoctor(pIdDoctor);
+            bool aceptado = Doctor.AceptarDoctor(pNumeroDoctor);
             return Json(new { Status = aceptado }, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        /* insertar un doctor temporalmente*/
-        public JsonResult SolicitudDoctor(int pNumeroDoctor, int pIdEspecialidad, int pTelefono, int pNumeroDeTarjeta, string pDireccion)
+
+        [HttpGet]
+        public JsonResult VerSolicitudesDoctores()
         {
-            bool insertado = Doctor.SolicitudDoctor(pNumeroDoctor,  pIdEspecialidad, pTelefono, pNumeroDeTarjeta, pDireccion);
-            return Json(new { Status = insertado }, JsonRequestBehavior.AllowGet);
+            List<object> solicitudes =  Doctor.VerSolicitudDoctor();
+            return Json(solicitudes.ToList(),JsonRequestBehavior.AllowGet);
         }
+
 
     }
 }

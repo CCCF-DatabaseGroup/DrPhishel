@@ -38,6 +38,14 @@ namespace DrPhishel_Web.Models
         public const string PROC_ALMACENADO_REGISTRAR_USUARIO = "registrarUsuario";
 
         public const string PROC_ALMACENADO_OBTENER_USUARIO = "obtenerUsuario";
+        public const string PROC_ALMACENADO_LOGEAR_USUARIO = "loginUsuario";
+
+
+        /*Ver Solicitudes De doctor*/
+
+        public const string PROC_VER_SOLICITUD_DOCTOR = "verSolicitudesDoctores";
+
+
 
 
 
@@ -92,6 +100,7 @@ namespace DrPhishel_Web.Models
         public const string PARAM_DIREC = "@direccion";
         public const string PARAM_CORREO = "@correo";
         public const string PARAM_CONTRA = "@contrasena";
+        public const string PARAM_TIPO_USUARIO = "@tipoUsuario";
         public const string PARAM_DOCT = "@doctor";
         public const string PARAM_FECHA_MAYUS = "@Fecha";
         public const string PARAM_FECHA_MINUS = "@fecha";
@@ -107,7 +116,8 @@ namespace DrPhishel_Web.Models
         public const string PARAM_NUM_DOCTOR = "@numeroDoctor";
         public const string PARAM_EXITO = "@exito";
         public const string PARAM_COSTO_CITA = "@costoCita";
-
+        public const string PARAM_NUMERO_DOCTOR = "@numeroDoctor";
+        public const string PARAM_CEDULA_PACIENTE = "@cedulaPaciente";
 
 
         /* Usuario */
@@ -125,13 +135,17 @@ namespace DrPhishel_Web.Models
         public const string HEADER_TELEFONO_PERSONA = "Telefono_persona";
         public const string HEADER_DIRECCION_PERSONA = "Direccion_persona";
         public const string HEADER_CORREO_ELECTRONICO = "Correo_electronico";
+        public const string HEADER_NOMBRE_RANGO = "Nombre_rango";
         public const string HEADER_CONTRASENA = "Contrasena";
-        public const string HEADER_HORAS_DISP = "@Horas_disponibles";
-        public const string HEADER_FECHA_COBRO = "@Fecha_cobro";
-        public const string HEADER_CANT_COBRO = "@Cantidad_cobro";
-
-
-
+        public const string HEADER_HORAS_DISP = "Horas_disponibles";
+        public const string HEADER_FECHA_COBRO = "Fecha_cobro";
+        public const string HEADER_CANT_COBRO = "Monto_cobrado";
+        public const string HEADER_NUMERO_DOCTOR_COBRO = "Numero_doctor_cobro";
+        public const string HEADER_NUMERO_DOCTOR_DT = "Numero_doctor_DT";
+        public const string HEADER_NUMERO_TELEFONO_CONSULTORIO_DT = "Telefono_consultorio_DT";
+        public const string HEADER_DIRECCION_CONSULTORIO_DT = "Direccion_consultorio_DT";
+        public const string HEADER_NOMBRE_ESPECIALIDAD = "Nombre_especialidad";
+        public const string HEADER_NUMERO_TARJETA_CREDITO = "Numero_tarjeta_credito";
 
 
     }

@@ -9,17 +9,11 @@ using System.Web.Http.Results;
 
 namespace DrPhishel_Web.Controllers
 {
-    public class DoctorControllerApi : ApiController
+    public class ApiDoctorController : ApiController
     {
 
-        /* Obtiene todas las citas disponibles para el doctor */
-        public IHttpActionResult ObtenerCitasDisponiblesDoctor(int pIdDoctor, string pDia)
-        {
-            List<string> listaCitas = Citas.ObtenerCitasDisponiblesDoctor(pIdDoctor, pDia);
-            return Ok(listaCitas);
 
-        }
-
+        [HttpGet]
         /* Obtiene una lista con el historial clinico de un paciente a partir de su cedula */
         public IHttpActionResult ObtenerHistorialClinicoPaciente (int pCedulaPaciente)
         {
@@ -28,10 +22,11 @@ namespace DrPhishel_Web.Controllers
 
         }
 
+        [HttpPost]
         /* Asocia un paciente a un doctor, true si se logró, false si no */
-        public IHttpActionResult AsociarPacienteADoctor(int pIdDoctor, int pIdPaciente)
+        public IHttpActionResult AsociarPacienteADoctor(int pNumeroDoctor, int pCedulaPaciente)
         {
-            return Ok(Doctor.AsociarPacienteADoctor(pIdDoctor, pIdPaciente));
+            return Ok(Doctor.AsociarPacienteADoctor(pNumeroDoctor, pCedulaPaciente));
         }
 
     }
