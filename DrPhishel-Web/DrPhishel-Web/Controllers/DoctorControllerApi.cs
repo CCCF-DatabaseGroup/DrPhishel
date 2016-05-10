@@ -24,7 +24,7 @@ namespace DrPhishel_Web.Controllers
         public IHttpActionResult ObtenerHistorialClinicoPaciente (int pCedulaPaciente)
         {
             List<object> historialPaciente = Historial.ObtenerHistorialClinicoPaciente(pCedulaPaciente);
-            return Json(historialPaciente);
+            return Json(historialPaciente.ToList());
 
         }
 
@@ -32,6 +32,13 @@ namespace DrPhishel_Web.Controllers
         public IHttpActionResult AsociarPacienteADoctor(int pIdDoctor, int pIdPaciente)
         {
             return Ok(Doctor.AsociarPacienteADoctor(pIdDoctor, pIdPaciente));
+        }
+
+        /* Obtiene los detalles de la receta de una cita */ 
+        public IHttpActionResult ObtenerProductosReceta (int pIdCita)
+        {
+            List<object> listaReceta = Receta.ObtenerProductosDeReceta(pIdCita);
+            return Json(listaReceta.ToList());
         }
 
     }

@@ -61,6 +61,24 @@ namespace DrPhishel_Web.Models
 
         }
 
+        /* inserta una nueva entrada en el historial clínico retorna true si fue posible */
+        public static bool InsertarHistorialClinico(int pIdCita, string pConsulta, string pEstudios)
+        {
+            List<SqlParameter> ParametrosHistorial = new List<SqlParameter>();
+            ParametrosHistorial.Add(new SqlParameter(CST.PARAM_ID_CITA, pIdCita));
+            ParametrosHistorial.Add(new SqlParameter(CST.PARAM_CONSULTA, pConsulta));
+            ParametrosHistorial.Add(new SqlParameter(CST.PARAM_ESTUDIOS, pEstudios));
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_INSERTAR_HISTORIAL_CLINICO, ParametrosHistorial))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public object toJson() {
             return new {
                 Fecha = Fecha,

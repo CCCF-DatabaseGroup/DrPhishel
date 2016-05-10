@@ -35,9 +35,10 @@ namespace DrPhishel_Web.Controllers
             return View();
         }
 
-        public void SolicitudDoctor(int pNumeroDoctor, string pNombreDoctor, string pApellido1, string pApellido2, string pLugarDeResidencia, int pTelefonoConsultorio, string pDireccionConsultorio, int pIdEspecialidad, int pNumeroTarjetaCredito, string pNombreUsuario, string pContraseña, string pCorreoElectronico)
+        public JsonResult InsertarHistorialClinico(int pIdCita, string pConsulta, string pEstudios)
         {
-            
+            bool insertado = Historial.InsertarHistorialClinico(pIdCita, pConsulta, pEstudios);
+            return Json(new { Status = insertado }, JsonRequestBehavior.AllowGet);
         }
     }
 

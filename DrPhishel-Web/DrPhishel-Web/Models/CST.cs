@@ -23,11 +23,13 @@ namespace DrPhishel_Web.Models
 
         /* Historial */
         public const string PROC_ALMACENADO_OBTENER_HISTORIAL_CLINICO_PACIENTE = "verHistorialClinico"; /*VER SI HAY QUE HACER EL TOQUE DEL .ToJson */
+        public const string PROC_ALMACENADO_INSERTAR_HISTORIAL_CLINICO = "insertarHistorialClinico";
 
         /*Doctor */
         public const string PROC_ALMACENADO_ASOCIAR_PACIENTE_DOCTOR = "relacionarDoctorConPaciente"; /* NOT WORKING */
         public const string PROC_ALMACENADO_ACEPTAR_DOCTOR = "aceptarDoctor"; /* PEDIR CHACHER QUE RETORNE UN MSJ DE EXITO */
-        public const string PROC_ALMACENADO_INSERTAR_DOC = "insertarNuevoDoctor"; /* NO DEBE PEDIR ID USUARIO
+        public const string PROC_ALMACENADO_INSERTAR_DOC = "insertarNuevoDoctor"; /* NO DEBE PEDIR ID USUARIO */
+        public const string PROC_ALMACENADO_OBT_PROD_REC = "obtenerProductosDeReceta";
 
         /* Cobros */
 
@@ -36,10 +38,7 @@ namespace DrPhishel_Web.Models
 
         /*Todo */
         public const string PROC_ALMACENADO_REGISTRAR_USUARIO = "registrarUsuario";
-
         public const string PROC_ALMACENADO_OBTENER_USUARIO = "obtenerUsuario";
-
-
 
         /* SQL PARAMETERS */
 
@@ -107,6 +106,8 @@ namespace DrPhishel_Web.Models
         public const string PARAM_NUM_DOCTOR = "@numeroDoctor";
         public const string PARAM_EXITO = "@exito";
         public const string PARAM_COSTO_CITA = "@costoCita";
+        public const string PARAM_CONSULTA = "@consulta";
+        public const string PARAM_ESTUDIOS = "@estudios";
 
 
 
@@ -126,9 +127,12 @@ namespace DrPhishel_Web.Models
         public const string HEADER_DIRECCION_PERSONA = "Direccion_persona";
         public const string HEADER_CORREO_ELECTRONICO = "Correo_electronico";
         public const string HEADER_CONTRASENA = "Contrasena";
-        public const string HEADER_HORAS_DISP = "@Horas_disponibles";
-        public const string HEADER_FECHA_COBRO = "@Fecha_cobro";
-        public const string HEADER_CANT_COBRO = "@Cantidad_cobro";
+        public const string HEADER_HORAS_DISP = "Horas_disponibles";
+        public const string HEADER_FECHA_COBRO = "Fecha_cobro";
+        public const string HEADER_CANT_COBRO = "Cantidad_cobro";
+        public const string HEADER_NOM_MEDIC = "Nombre_medicamento";
+        public const string HEADER_CANT_MR = "Cantidad_MR";
+        public const string HEADER_OBSERVA_MR = "Observaciones_MR";
 
 
 
