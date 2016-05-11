@@ -14,5 +14,6 @@
         android:layout_height="match_parent"
         android:id="@+id/HISTORIALPACIENTEUSUARIO_lista"
         android:choiceMode="singleChoice"
-        android:descendantFocusability="blocksDescendants" />
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false" />
 </LinearLayout>

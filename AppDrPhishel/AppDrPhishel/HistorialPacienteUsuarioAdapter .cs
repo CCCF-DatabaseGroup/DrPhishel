@@ -12,6 +12,10 @@ using Android.Widget;
 using AppDrPhishel;
 namespace AppDrPhishel
 {
+    /**
+     * Clase que acomoda el ListView
+     * **/
+
     class HistorialPacienteUsuarioAdapter : BaseAdapter<ClaseHistorial>
     {
 
@@ -61,8 +65,21 @@ namespace AppDrPhishel
             TextView TextoFecha = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textFecha);
             TextoFecha.Text = Historial[position].Fecha;
 
-            TextView TextoDescripcion = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textDescripcion);
-            TextoDescripcion.Text = Historial[position].Descripcion;
+            TextView TextoEstudio = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textEstudio);
+            TextoEstudio.Text = Historial[position].Estudio;
+
+            TextView TextoApellido1Doctor = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textApellido1Doctor);
+            TextoApellido1Doctor.Text = Historial[position].Apellido1Doctor;
+
+            TextView TextoApellido2Doctor = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textApellido2Doctor);
+            TextoApellido2Doctor.Text = Historial[position].Apellido2Doctor;
+
+            TextView TextoConsulta = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textConsulta);
+            TextoConsulta.Text = Historial[position].Consulta;
+
+            TextView TextoHora = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWHISTORIALUSUARIO_textHora);
+            TextoHora.Text = Historial[position].Hora;
+
 
 
 

@@ -135,23 +135,23 @@ namespace AppDrPhishel
 			// aapt resource value: 0x7f05000b
 			public const int CREARUSUARIO_textUsuario = 2131034123;
 			
-			// aapt resource value: 0x7f050031
-			public const int DOCTOR_BotonAgregarPaciente = 2131034161;
-			
-			// aapt resource value: 0x7f050030
-			public const int DOCTOR_BotonCalendarioCitas = 2131034160;
-			
-			// aapt resource value: 0x7f05002f
-			public const int DOCTOR_BotonHistorialPacientes = 2131034159;
+			// aapt resource value: 0x7f050035
+			public const int DOCTOR_BotonAgregarPaciente = 2131034165;
 			
 			// aapt resource value: 0x7f050034
-			public const int DOCTOR_botonRegresar = 2131034164;
+			public const int DOCTOR_BotonCalendarioCitas = 2131034164;
 			
 			// aapt resource value: 0x7f050033
-			public const int DOCTOR_textNombreUsuario = 2131034163;
+			public const int DOCTOR_BotonHistorialPacientes = 2131034163;
 			
-			// aapt resource value: 0x7f050032
-			public const int DOCTOR_textUsuario = 2131034162;
+			// aapt resource value: 0x7f050038
+			public const int DOCTOR_botonRegresar = 2131034168;
+			
+			// aapt resource value: 0x7f050037
+			public const int DOCTOR_textNombreUsuario = 2131034167;
+			
+			// aapt resource value: 0x7f050036
+			public const int DOCTOR_textUsuario = 2131034166;
 			
 			// aapt resource value: 0x7f050018
 			public const int HISTORIALPACIENTEUSUARIO_lista = 2131034136;
@@ -171,74 +171,86 @@ namespace AppDrPhishel
 			// aapt resource value: 0x7f050019
 			public const int LISTVIEWCITASDOCTOR_textNombrePaciente = 2131034137;
 			
-			// aapt resource value: 0x7f05001f
-			public const int LISTVIEWHISTORIALUSUARIO_textDescripcion = 2131034143;
-			
-			// aapt resource value: 0x7f05001e
-			public const int LISTVIEWHISTORIALUSUARIO_textFecha = 2131034142;
-			
-			// aapt resource value: 0x7f05001d
-			public const int LISTVIEWHISTORIALUSUARIO_textNombreDoctor = 2131034141;
+			// aapt resource value: 0x7f050020
+			public const int LISTVIEWHISTORIALUSUARIO_textApellido1Doctor = 2131034144;
 			
 			// aapt resource value: 0x7f050021
-			public const int LISTVIEWLISTADOCTORES_textApellido1 = 2131034145;
+			public const int LISTVIEWHISTORIALUSUARIO_textApellido2Doctor = 2131034145;
 			
 			// aapt resource value: 0x7f050022
-			public const int LISTVIEWLISTADOCTORES_textApellido2 = 2131034146;
+			public const int LISTVIEWHISTORIALUSUARIO_textConsulta = 2131034146;
 			
 			// aapt resource value: 0x7f050023
-			public const int LISTVIEWLISTADOCTORES_textEspecialidad = 2131034147;
+			public const int LISTVIEWHISTORIALUSUARIO_textEstudio = 2131034147;
 			
-			// aapt resource value: 0x7f050020
-			public const int LISTVIEWLISTADOCTORES_textNombreDoctor = 2131034144;
+			// aapt resource value: 0x7f05001d
+			public const int LISTVIEWHISTORIALUSUARIO_textFecha = 2131034141;
+			
+			// aapt resource value: 0x7f05001e
+			public const int LISTVIEWHISTORIALUSUARIO_textHora = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int LISTVIEWHISTORIALUSUARIO_textNombreDoctor = 2131034143;
 			
 			// aapt resource value: 0x7f050025
-			public const int LISTVIEWPACIENTEStextApellido1 = 2131034149;
+			public const int LISTVIEWLISTADOCTORES_textApellido1 = 2131034149;
 			
 			// aapt resource value: 0x7f050026
-			public const int LISTVIEWPACIENTEStextApellido2 = 2131034150;
-			
-			// aapt resource value: 0x7f050024
-			public const int LISTVIEWPACIENTEStextNombre = 2131034148;
+			public const int LISTVIEWLISTADOCTORES_textApellido2 = 2131034150;
 			
 			// aapt resource value: 0x7f050027
-			public const int LISTVIEWPACIENTEStextPadecimiento = 2131034151;
+			public const int LISTVIEWLISTADOCTORES_textEspecialidad = 2131034151;
 			
-			// aapt resource value: 0x7f05002d
-			public const int MAIN_botonLogearseDoctor = 2131034157;
-			
-			// aapt resource value: 0x7f05002e
-			public const int MAIN_botonLogearsePaciente = 2131034158;
-			
-			// aapt resource value: 0x7f05002c
-			public const int MAIN_entryContraseña = 2131034156;
-			
-			// aapt resource value: 0x7f05002a
-			public const int MAIN_entryUsuario = 2131034154;
-			
-			// aapt resource value: 0x7f05002b
-			public const int MAIN_textConstraseña = 2131034155;
-			
-			// aapt resource value: 0x7f050028
-			public const int MAIN_textLogearse = 2131034152;
+			// aapt resource value: 0x7f050024
+			public const int LISTVIEWLISTADOCTORES_textNombreDoctor = 2131034148;
 			
 			// aapt resource value: 0x7f050029
-			public const int MAIN_textUsuario = 2131034153;
+			public const int LISTVIEWPACIENTEStextApellido1 = 2131034153;
 			
-			// aapt resource value: 0x7f050036
-			public const int USARIO_BotonCalendarioCitas = 2131034166;
+			// aapt resource value: 0x7f05002a
+			public const int LISTVIEWPACIENTEStextApellido2 = 2131034154;
 			
-			// aapt resource value: 0x7f050035
-			public const int USUARIO_BotonHistorialPacientes = 2131034165;
+			// aapt resource value: 0x7f050028
+			public const int LISTVIEWPACIENTEStextNombre = 2131034152;
+			
+			// aapt resource value: 0x7f05002b
+			public const int LISTVIEWPACIENTEStextPadecimiento = 2131034155;
+			
+			// aapt resource value: 0x7f050031
+			public const int MAIN_botonLogearseDoctor = 2131034161;
+			
+			// aapt resource value: 0x7f050032
+			public const int MAIN_botonLogearsePaciente = 2131034162;
+			
+			// aapt resource value: 0x7f050030
+			public const int MAIN_entryContraseña = 2131034160;
+			
+			// aapt resource value: 0x7f05002e
+			public const int MAIN_entryUsuario = 2131034158;
+			
+			// aapt resource value: 0x7f05002f
+			public const int MAIN_textConstraseña = 2131034159;
+			
+			// aapt resource value: 0x7f05002c
+			public const int MAIN_textLogearse = 2131034156;
+			
+			// aapt resource value: 0x7f05002d
+			public const int MAIN_textUsuario = 2131034157;
+			
+			// aapt resource value: 0x7f05003a
+			public const int USARIO_BotonCalendarioCitas = 2131034170;
 			
 			// aapt resource value: 0x7f050039
-			public const int USUARIO_botonRegresar = 2131034169;
+			public const int USUARIO_BotonHistorialPacientes = 2131034169;
 			
-			// aapt resource value: 0x7f050038
-			public const int USUARIO_textNombreUsuario = 2131034168;
+			// aapt resource value: 0x7f05003d
+			public const int USUARIO_botonRegresar = 2131034173;
 			
-			// aapt resource value: 0x7f050037
-			public const int USUARIO_textUsuario = 2131034167;
+			// aapt resource value: 0x7f05003c
+			public const int USUARIO_textNombreUsuario = 2131034172;
+			
+			// aapt resource value: 0x7f05003b
+			public const int USUARIO_textUsuario = 2131034171;
 			
 			// aapt resource value: 0x7f050005
 			public const int textNombreCREARUSUARIO = 2131034117;
