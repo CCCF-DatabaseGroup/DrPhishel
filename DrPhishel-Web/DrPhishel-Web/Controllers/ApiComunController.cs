@@ -70,7 +70,19 @@ namespace DrPhishel_Web.Controllers
             return Json(misDoctores.ToList());
         }
 
+        [HttpGet]
+        public IHttpActionResult VerCitasDoctor(int pCedula,DateTime pDia)
+        {
+            List<object> misDoctores = Citas.ObtenerCitasDoctor(pCedula, pDia);
+            return Json(misDoctores.ToList());
+        }
 
+        [HttpGet]
+        public IHttpActionResult VerCitasPaciente(int pCedula)
+        {
+            List<object> misDoctores = Citas.ObtenerCitasPaciente(pCedula);
+            return Json(misDoctores.ToList());
+        }
 
     }
 }

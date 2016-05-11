@@ -46,8 +46,8 @@ namespace DrPhishel_Web.Models
 
         public const string PROC_VER_SOLICITUD_DOCTOR = "verSolicitudesDoctores";
 
-
-
+        public const string PROC_ALMACENADO_CITAS_PACIENTE = "verCitasPaciente";
+        public const string PROC_ALMACENADO_CITAS_DOCTORES = "verCitasDoctor";
 
 
         /* SQL PARAMETERS */
@@ -147,6 +147,8 @@ namespace DrPhishel_Web.Models
         public const string HEADER_DIRECCION_CONSULTORIO_DT = "Direccion_consultorio_DT";
         public const string HEADER_NOMBRE_ESPECIALIDAD = "Nombre_especialidad";
         public const string HEADER_NUMERO_TARJETA_CREDITO = "Numero_tarjeta_credito";
+        public const string HEADER_ID_CITA = "Id_cita";
+
         public const string PARAM_CONSULTA = "@consulta";
         public const string PARAM_ESTUDIOS = "@estudios";
 
