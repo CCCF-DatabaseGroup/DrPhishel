@@ -26,22 +26,37 @@ namespace AppDrPhishel
 
         public void AgregarDatos(string Cedula)
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://192.168.0.18/Doctor/api/ApiComun/ObtenerUsuario?pCedula="+Cedula);
-            request.Method = "GET";
-            String test = String.Empty;
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            {
-                Stream dataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(dataStream);
-                test = reader.ReadToEnd();
-                reader.Close();
-                dataStream.Close();
-                Console.WriteLine(test);
-                ClasePaciente result = JsonConvert.DeserializeObject<ClasePaciente>(test);
-                Pacientes.Add(result);
 
+            
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://drphishel-001-site1.ftempurl.com/Home/api/ApiComun/ObtenerUsuario?pCedula=" + Cedula);
+                request.Method = "GET";
+                String test = String.Empty;
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    Stream dataStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(dataStream);
+                    test = reader.ReadToEnd();
+                    reader.Close();
+                    dataStream.Close();
+                    Console.WriteLine(test);
+                    ClasePaciente result = JsonConvert.DeserializeObject<ClasePaciente>(test);
+                    Pacientes.Add(result);
+
+                } }
+
+
+
+            catch (Exception e)
+            {
+                Pacientes = new List<ClasePaciente>();
+                Console.Write(e);
+                Pacientes.Add(new ClasePaciente() { Nombre = "Lo sentimos error al conectar :(" });
             }
+            
         }
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             SetContentView(Resource.Layout.HistorialPacienteDoctorLayout);
@@ -54,7 +69,7 @@ namespace AppDrPhishel
             //Lista de pacientes *quemar el primero*
             Pacientes = new List<ClasePaciente>();
             AgregarDatos("604220930");
-            AgregarDatos("401080178");
+           
 
             //Creando un adapter con nuestra clase para organizar los datos
             HistorialPacienteAdapter adapter = new HistorialPacienteAdapter(this, Pacientes);

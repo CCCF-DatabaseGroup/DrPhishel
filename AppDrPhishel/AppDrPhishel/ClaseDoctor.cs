@@ -14,9 +14,17 @@ namespace AppDrPhishel
 {
     class ClaseDoctor
     {
-        public string NombreDoctor { get; set; }
-        public string ApellidoDoctor1 { get; set; }
-        public string ApellidoDoctor2 { get; set; }
+      
         public string Especialidad { get; set; }
+        public string  Cedula { get; set; }
+       public string Nombre { get; set; }
+        public string PrimerApellido { get; set; }
+    public string SegundoApellido { get; set; }
+public string FechaNacimiento { get; set; }
+  public string Telefono { get; set; }
+  public string Direccion { get; set; }
+  public string Correo { get; set; }
+   public string Contrasena { get; set; }
+  public string  TipoUsuario { get; set; }
     }
 }

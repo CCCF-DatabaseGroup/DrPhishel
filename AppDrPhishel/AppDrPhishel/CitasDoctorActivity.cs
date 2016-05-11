@@ -12,8 +12,8 @@ using Android.Widget;
 
 namespace AppDrPhishel
 {
-    [Activity(Label = "CrearCitaConfirmarDoctorActivity")]
-    public class CrearCitaConfirmarDoctorActivity : Activity
+    [Activity(Label = "CitasDoctorActivity")]
+    public class CitasDoctorActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

@@ -13,14 +13,13 @@ using Android.Widget;
 namespace AppDrPhishel
 {
     [Activity(Label = "AgregarPacienteDoctorActivity")]
-    public class AgregarPacienteDoctorActivity : ConectionActivity
+    public class AgregarPacienteDoctorActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            SetContentView(Resource.Layout.AgregarPacienteDoctorLayout);
             base.OnCreate(savedInstanceState);
 
-         
+            // Create your application here
         }
     }
 }

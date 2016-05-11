@@ -18,8 +18,6 @@ namespace AppDrPhishel
         public string Usuario { get; set; }
         public string ID { get; set; }
         public string Padecimiento { get; set; }
-
-
         public int Cedula { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }

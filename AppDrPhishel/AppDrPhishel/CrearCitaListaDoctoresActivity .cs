@@ -29,9 +29,9 @@ namespace AppDrPhishel
         
             //Lista de pacientes *quemar el primero*
             Doctores = new List<ClaseDoctor>();
-            Doctores.Add(new ClaseDoctor() {NombreDoctor ="Chancher",ApellidoDoctor1="Soto",ApellidoDoctor2= "Rojas",Especialidad= "Dentista" });
-            Doctores.Add(new ClaseDoctor() { NombreDoctor = "Marcela", ApellidoDoctor1 = "Ortega", ApellidoDoctor2 = "Castro", Especialidad = "Ginecologia" });
-            Doctores.Add(new ClaseDoctor() { NombreDoctor = "Marco", ApellidoDoctor1 = "Rivera", ApellidoDoctor2 = "Acuña", Especialidad = "Urologia" });
+            Doctores.Add(new ClaseDoctor() {Nombre ="Chancher",PrimerApellido="Soto",SegundoApellido= "Rojas",Especialidad= "Dentista" });
+            Doctores.Add(new ClaseDoctor() { Nombre = "Marcela", PrimerApellido = "Ortega", SegundoApellido = "Castro", Especialidad = "Ginecologia" });
+            Doctores.Add(new ClaseDoctor() { Nombre = "Marco", PrimerApellido = "Rivera", SegundoApellido = "Acuña", Especialidad = "Urologia" });
            
             //Creando un adapter con nuestra clase para organizar los datos
             CrearCitaListaDoctoresAdapter adapter = new CrearCitaListaDoctoresAdapter(this, Doctores);
@@ -51,7 +51,7 @@ namespace AppDrPhishel
         private void ListaDoctores_LongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             //capturando nombre del Doctor , NOTA: CAMBIAR POR ID
-            String NomDoctor = Doctores[e.Position].NombreDoctor.ToString();
+            String NomDoctor = Doctores[e.Position].Nombre.ToString();
 
             Intent PasarAConfirmar = new Intent(this, typeof(CrearCitaConfirmarDoctorActivity));
             PasarAConfirmar.PutExtra("IdDoctor", NomDoctor);
