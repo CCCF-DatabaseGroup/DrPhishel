@@ -12,33 +12,62 @@ namespace DrPhishel_Web.Controllers
         // GET: Doctor
         public ActionResult Index()
         {
-            return View("~/Views/Doctor/Index.cshtml");
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Doctor") return View();
+            }
+            return Redirect("/Home");
         }
 
         public ActionResult AgregarPaciente()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Doctor") return View();
+            }
+            return Redirect("/Home");
         }
 
         public ActionResult VerCalendario()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Doctor") return View();
+            }
+            return Redirect("/Home");
         }
 
         public ActionResult AgregarHistorialClinico()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Doctor") return View();
+            }
+            return Redirect("/Home");
         }
 
         public ActionResult EditarHistorialClinico()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Doctor") return View();
+            }
+            return Redirect("/Home");
         }
 
-        public void SolicitudDoctor(int pNumeroDoctor, string pNombreDoctor, string pApellido1, string pApellido2, string pLugarDeResidencia, int pTelefonoConsultorio, string pDireccionConsultorio, int pIdEspecialidad, int pNumeroTarjetaCredito, string pNombreUsuario, string pContrasena, string pCorreoElectronico)
+
+
+        public JsonResult InsertarHistorialClinico(int pIdCita, string pConsulta, string pEstudios)
         {
-            
+            bool historial = Historial.InsertarHistorialClinico(pIdCita, pConsulta, pEstudios);
+            return Json(new {Status =  historial }, JsonRequestBehavior.AllowGet);
         }
+
     }
 
 }

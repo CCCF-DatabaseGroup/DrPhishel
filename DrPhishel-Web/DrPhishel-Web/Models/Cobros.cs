@@ -42,6 +42,7 @@ namespace DrPhishel_Web.Models
                     tmp.NombreDoctor = (string)fila[CST.HEADER_NOMBRE_PERSONA];
                     tmp.ApellidoDoctor = (string)fila[CST.HEADER_PRIMER_APELLIDO];
                     tmp.SegundoApellidoDoctor = (string)fila[CST.HEADER_SEGUNDO_APELLIDO];
+                    tmp.fechaCobro.AddMilliseconds(0);
                     listaCobros.Add(tmp.toJson());
                 }
 
@@ -56,7 +57,7 @@ namespace DrPhishel_Web.Models
                 NumeroDoctor = NumeroDoctor,
                 cantidadCobro = cantidadCobro,
                 fechaCobro = fechaCobro,
-                fechaCobroString = fechaCobro.ToString(),
+                fechaCobroString = fechaCobro.ToShortDateString(),
                 NombreDoctor = NombreDoctor,
                 ApellidoDoctor = ApellidoDoctor,
                 SegundoApellidoDoctor = SegundoApellidoDoctor

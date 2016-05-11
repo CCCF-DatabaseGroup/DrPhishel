@@ -22,6 +22,7 @@ namespace DrPhishel_Web.Models
         public const string PROC_ALMACENADO_AGREGAR_CATEGORIA = "insertarEspecialidad"; /*NO SIRVE EL PROCEDURE */
 
         /* Historial */
+        public const string PROC_ALMACENADO_INSERTAR_HISTORIAL_CLINICO = "insertarHistorialClinico";
         public const string PROC_ALMACENADO_OBTENER_HISTORIAL_CLINICO_PACIENTE = "verHistorialClinico"; /*VER SI HAY QUE HACER EL TOQUE DEL .ToJson */
 
         /*Doctor */
@@ -146,7 +147,11 @@ namespace DrPhishel_Web.Models
         public const string HEADER_DIRECCION_CONSULTORIO_DT = "Direccion_consultorio_DT";
         public const string HEADER_NOMBRE_ESPECIALIDAD = "Nombre_especialidad";
         public const string HEADER_NUMERO_TARJETA_CREDITO = "Numero_tarjeta_credito";
+        public const string PARAM_CONSULTA = "@consulta";
+        public const string PARAM_ESTUDIOS = "@estudios";
 
-
+        public const string PROC_VER_MIS_DOCTOR = "verMisDoctores";
+        public const string PROC_ALMACENADO_VER_MIS_PACIENTES = "verMisPacientes";
+        public const string HEADER_NUMERO_DOCTOR_DP = "Numero_doctor_DP";
     }
 }

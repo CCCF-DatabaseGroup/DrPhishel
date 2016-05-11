@@ -107,6 +107,34 @@ namespace DrPhishel_Web.Models
         }
 
 
+
+        public static List<object> VerDoctoresDePaciente(int pCedula)
+        {
+            List<SqlParameter> parametrosAsocie = new List<SqlParameter>();
+            parametrosAsocie.Add(new SqlParameter(CST.PARAM_CEDULA,pCedula));
+            List<object> misDoctores = new List<object>();
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_VER_MIS_DOCTOR, parametrosAsocie))
+            {
+                foreach (DataRow fila in conexion.GetTablaDatos().Rows)
+                {
+                    Doctor dr = new Doctor();
+                    dr.NumeroDoctor = (int)fila[CST.HEADER_NUMERO_DOCTOR_DP];
+                    dr.NombreDoctor = (string)fila[CST.HEADER_NOMBRE_PERSONA];
+                    dr.Apellido1 = (string)fila[CST.HEADER_PRIMER_APELLIDO];
+                    dr.Apellido2 = (string)fila[CST.HEADER_SEGUNDO_APELLIDO];
+                    dr.NombreEspecialidad = (string)fila[CST.HEADER_NOMBRE_ESPECIALIDAD];
+                    misDoctores.Add(dr.toJson());
+                }
+                return misDoctores;
+            }
+            else
+            {
+                return misDoctores;
+            }
+        }
+
+
         public object toJson()
         {
             return new

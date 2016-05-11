@@ -56,6 +56,20 @@ namespace DrPhishel_Web.Controllers
             return Json(new { Status = insertado });
         }
 
+        [HttpGet]
+        public IHttpActionResult VerMisDoctores(int pCedula)
+        {
+            List<object> misDoctores =  Doctor.VerDoctoresDePaciente(pCedula);
+            return Json(misDoctores.ToList());
+        }
+
+        [HttpGet]
+        public IHttpActionResult VerMisPacientes(int pCedula)
+        {
+            List<object> misDoctores = Usuario.obtenerPacientesDeDoctor(pCedula);
+            return Json(misDoctores.ToList());
+        }
+
 
 
     }

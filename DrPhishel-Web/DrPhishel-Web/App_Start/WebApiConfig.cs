@@ -86,7 +86,6 @@ namespace DrPhishel_Web
 
 
 
-
             config.Routes.MapHttpRoute(
                 name: "api",
                 routeTemplate: "Administrador/api/{controller}/{action}"

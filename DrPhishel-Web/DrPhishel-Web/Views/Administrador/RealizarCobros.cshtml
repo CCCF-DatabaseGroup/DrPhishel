@@ -1,0 +1,38 @@
+﻿<a href="/Administrador" class="btn btn-success"><span class="glyphicon glyphicon-chevron-left"></span> Volver atras</a>
+<div class="auxiliar_component center-block" ng-init="obtenerCobros()" ng-controller="AdministradorController">
+    <h3 class="text-center">Realizar Cobros</h3>
+    <form name="cobrar" class="form-group form-inline">
+        Cantidad a cobrar por cita (colones):<br />
+        <input ng-required="true" type="number" min="1" ng-init="cantidadCobro = 1" ng-model="cantidadCobro" class="form-control" style="width:70px;display:inline-block;" />
+        <button type="submit" ng-click="cobrar.$valid && realizarCobros()" class="btn btn-info center-block" style="display:inline-block;">Realizar cobros</button>
+    </form>
+    <br />
+    <br />
+    <h3 class="text-center">Cobros a doctores</h3>
+    <div class="form-group center-block table-responsive">
+        <table class="table">
+            <thead>
+                <!-- Este es el encabezado de la tabla, segun los valores que se desean obtener -->
+                <tr class="info">
+                    <th>N&uacute;mero de doctor</th>
+                    <th>Nombre Completo del doctor</th>
+                    <th>Ultima fecha De Cobro</th>
+                    <th>Monto Al Cobro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Es la lista de pedidos ordenada por hora-->
+                <tr ng-repeat="cobro in cobros">
+                    <td>{{cobro.NumeroDoctor}}</td>
+                    <td>{{cobro.NombreDoctor}} {{cobro.ApellidoDoctor}} {{cobro.SegundoApellidoDoctor}}</td>
+                    <td>{{cobro.fechaCobroString}}</td>
+                    <td>&cent;
+                        {{cobro.cantidadCobro}}
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

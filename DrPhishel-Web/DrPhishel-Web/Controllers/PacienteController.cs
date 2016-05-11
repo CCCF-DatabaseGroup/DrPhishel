@@ -12,20 +12,35 @@ namespace DrPhishel_Web.Controllers
         // GET: Paciente
         public ActionResult Index()
         {
-            return View("~/Views/Paciente/Index.cshtml");
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Paciente") return View();
+            }
+            return Redirect("/Home");
         }
 
         // GET: Paciente
         public ActionResult ReservarCita()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Paciente") return View();
+            }
+            return Redirect("/Home");
         }
 
 
         // GET: Paciente
         public ActionResult VerHistorialClinico()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Paciente") return View();
+            }
+            return Redirect("/Home");
         }
 
 
@@ -35,7 +50,12 @@ namespace DrPhishel_Web.Controllers
         // GET: Paciente
         public ActionResult DatosPersonales()
         {
-            return View();
+            if (Session[HomeController.USUARIO] != null)
+            {
+                HomeController.CustomUser user = (HomeController.CustomUser)Session[HomeController.USUARIO];
+                if (user.TipoUsuario == "Paciente") return View();
+            }
+            return Redirect("/Home");
         }
 
 

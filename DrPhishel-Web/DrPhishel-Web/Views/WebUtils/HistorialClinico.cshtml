@@ -1,20 +1,20 @@
 ﻿<div class="auxiliar_component center-block">
     <h2>Historial Clinico</h2>
-    <div class="form-group center-block table-responsive">
-        <table class="table" ng-controller="historialClinicoController">
+    <div class="form-group table-responsive">
+        <table ng-init="obtenerHistorialClinico()" class="table" ng-controller="historialClinicoController">
             <thead>
                 <!-- Este es el encabezado de la tabla, segun los valores que se desean obtener -->
                 <tr class="info">
                     <th>Doctor encargado</th>
-                    <th>Fecha de la cita</th>
+                    <th>Fecha y hora de la cita</th>
                     <th>Detalles</th>
                 </tr>
             </thead>
             <tbody>
                 <!--Es la lista de pedidos ordenada por hora-->
                 <tr ng-repeat="cita in citas">
-                    <td>{{cita.DoctorEncargado}}</td>
-                    <td>{{cita.FechaCita}}</td>
+                    <td>{{cita.NombreDoctor}} {{cita.Apellido1Doctor}} {{cita.Apellido2Doctor}}</td>
+                    <td>{{cita.Fecha | date: 'dd-mm-yyyy'}}  a las {{cita.Hora | date: 'h:mma'}}</td>
                     <td>
                         <input type="button" class="btn btn-info" ng-click="seleccionarCita(cita)" data-target="#myModal{{index}}" data-toggle="modal" value="Ver detalles" />
                         <div id="myModal{{index}}" class="modal fade" role="dialog">
@@ -30,9 +30,9 @@
 
                                     <div class="modal-body">
                                         <h3>Descripcion de la cita</h3>
-                                        <p>{{citaSeleccionada.Descripcion}}</p>
+                                        <p>{{citaSeleccionada.Consulta}}</p>
                                         <h3>Resultados de estudios</h3>
-                                        <p>{{citaSeleccionada.ResultadosDeEstudios}}</p>
+                                        <p>{{citaSeleccionada.Estudio}}</p>
                                         <h3>Receta</h3>
                                         <div class="list-group">
                                             <a class="list-group-item" ng-repeat="medicamento in receta">{{medicamento.nombre}}</a>

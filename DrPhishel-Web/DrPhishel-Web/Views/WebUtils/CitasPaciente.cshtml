@@ -11,21 +11,21 @@
 
 
     <div  id="agregar_cita" class="auxiliar_component center-block tab-pane active">
-        <form ng-init="inicializar()" ng-controller="CitasPacienteController" class="form-group center-block">
+        <form ng-init="inicializarAgregar()" ng-controller="CitasPacienteController" class="form-group center-block">
 
             <!-- Doctor a seleccion -->
             <label for="doctorSeleccionAgregar">Doctor:</label>
-            <select ng-change="filtroDoctor()" ng-model="doctorSeleccionado" ng-options="doctor.Nombre + ' ' + doctor.PrimerApellido + ' ' + doctor.SegundoApellido for doctor in doctores " id="doctorSeleccionAgregar" class="form-control">
+            <select ng-change="filtroDoctor()" ng-model="doctorSeleccionado" ng-options="doctor.NombreDoctor + ' ' + doctor.PrimerApellido + ' ' + doctor.SegundoApellido + ' - ' + doctor.NombreEspecialidad for doctor in doctores " id="doctorSeleccionAgregar" class="form-control">
             </select>
 
             <!--Dia de la cita-->
             <label for="fecha_cita">Fecha de cita:</label>
-            <input ng-change="filtroFecha()" ng-model="fechaCita" required type="date" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita">
+            <input ng-change="filtroFecha()" ng-model="fechaCita" min="today" required type="date" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita">
 
 
             <!-- Lista de citas -->
             <label for="citas_disponibles">Citas disponibles:</label>
-            <select ng-model="citaSeleccionada" ng-options="cita.HoraCita for cita in citasDisponibles" required id="citas_disponibles" class="form-control">
+            <select ng-model="citaSeleccionada" ng-options="cita for cita in citasDisponibles" required id="citas_disponibles" class="form-control">
             </select>
 
             <!-- Boton agregar-->
@@ -39,7 +39,7 @@
 
     <!--select citas-->
     <div id="editar_eliminar_cita" class="auxiliar_component center-block tab-pane">
-        <form ng-init="inicializar()" ng-controller="CitasPacienteController" class="form-group center-block">
+        <form ng-init="inicializarEditar()" ng-controller="CitasPacienteController" class="form-group center-block">
             <!-- Lista de citas -->
             <label for="mis_citas">Mis citas:</label>
             <h3>Doctor encargado:</h3>

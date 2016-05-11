@@ -151,6 +151,35 @@ namespace DrPhishel_Web.Models
 
 
 
+        public static List <object> obtenerPacientesDeDoctor(int pCedula)
+        {
+            List<SqlParameter> parametroUsuario = new List<SqlParameter>();
+            parametroUsuario.Add(new SqlParameter(CST.PARAM_CEDULA, pCedula));
+            List<object> misPacientes = new List<object>();
+
+            Connection conexion = new Connection();
+            if (conexion.abrirConexion(CST.PROC_ALMACENADO_VER_MIS_PACIENTES, parametroUsuario))
+            {
+                foreach (DataRow usuario in conexion.GetTablaDatos().Rows)
+                {
+                    object UsuarioRetorno = new {
+                        Cedula = (int)usuario[CST.HEADER_CEDULA],
+                        Nombre = (string)usuario[CST.HEADER_NOMBRE_PERSONA],
+                        PrimerApellido =(string)usuario[CST.HEADER_PRIMER_APELLIDO],
+                        SegundoApellido = (string)usuario[CST.HEADER_SEGUNDO_APELLIDO]
+                        };
+                    misPacientes.Add(UsuarioRetorno);
+                }
+            }
+            else {
+
+            }
+
+            return misPacientes;
+        }
+
+
+
 
     }
 }
