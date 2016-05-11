@@ -45,7 +45,6 @@
         android:id="@+id/DOCTOR_textNombreUsuario"
         android:translationY="-140dp" />
     <ImageButton
-        
         android:id="@+id/DOCTOR_botonRegresar"
         android:translationY="300dp"
         android:layout_marginLeft="80dp"

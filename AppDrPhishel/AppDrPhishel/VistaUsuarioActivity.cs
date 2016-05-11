@@ -21,8 +21,8 @@ namespace AppDrPhishel
             SetContentView(Resource.Layout.VistaUsuarioLayout);
         
             //Poner Nombre del Usuario en el texto
-            TextView NombreDelUsuario = FindViewById<TextView>(Resource.Id.USUARIO_textUsuario);
-            NombreDelUsuario.Text = Intent.GetStringExtra("Usuario");
+            TextView NombreDelUsuario = FindViewById<TextView>(Resource.Id.USUARIO_textNombreUsuario);
+            NombreDelUsuario.Text = Intent.GetIntExtra("Usuario",0).ToString();
 
             /*
              Boton que abre el historial clinico del paciente

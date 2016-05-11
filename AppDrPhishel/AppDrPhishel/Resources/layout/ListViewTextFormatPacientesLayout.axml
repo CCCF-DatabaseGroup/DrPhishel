@@ -17,16 +17,16 @@
         android:id="@+id/LISTVIEWPACIENTEStextNombre"
         android:layout_weight="25" />
     <TextView
-        android:text="Usuario"
+        android:text="Apellido1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LISTVIEWPACIENTEStextUsuario"
+        android:id="@+id/LISTVIEWPACIENTEStextApellido1"
         android:layout_weight="25" />
     <TextView
-        android:text="ID"
+        android:text="Apellido2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LISTVIEWPACIENTEStextId"
+        android:id="@+id/LISTVIEWPACIENTEStextApellido2"
         android:layout_weight="25" />
     <TextView
         android:text="Padecimiento"

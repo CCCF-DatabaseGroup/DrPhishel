@@ -56,14 +56,14 @@ namespace AppDrPhishel
                 Columna = LayoutInflater.From(Contexto).Inflate(Resource.Layout.ListViewTextFormatListaDoctoresCita, null, false);
             }
             TextView TextoNombreDoctor = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWLISTADOCTORES_textNombreDoctor);
-            TextoNombreDoctor.Text = Doctor[position].NombreDoctor;
+            TextoNombreDoctor.Text = Doctor[position].Nombre;
 
 
             TextView TextoApellido1 = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWLISTADOCTORES_textApellido1);
-            TextoApellido1.Text = Doctor[position].ApellidoDoctor1;
+            TextoApellido1.Text = Doctor[position].PrimerApellido;
 
             TextView TextoApellido2 = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWLISTADOCTORES_textApellido2);
-            TextoApellido2.Text = Doctor[position].ApellidoDoctor2;
+            TextoApellido2.Text = Doctor[position].SegundoApellido;
 
 
             TextView TextoEspecialidad = Columna.FindViewById<TextView>(Resource.Id.LISTVIEWLISTADOCTORES_textEspecialidad);

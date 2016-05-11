@@ -9,35 +9,13 @@
     android:minHeight="25px"
     android:adjustViewBounds="true">
     <TextView
-        android:text="@string/_crear_cuenta"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_weight="20"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:id="@+id/MAIN_textLogearCuenta"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:adjustViewBounds="true" />
-    <Button
-        android:text="@string/_crear_usuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:id="@+id/MAIN_botonCrear"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="15sp"
-        android:adjustViewBounds="true" />
-    <TextView
         android:text="@string/_log_in"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_weight="20"
         android:layout_height="wrap_content"
         android:textColor="#6D6767"
-        android:id="@+id/MAIN_textCrearCuenta"
+        android:id="@+id/MAIN_textLogearse"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="30sp"
@@ -85,10 +63,19 @@
         android:background="#F6F7FC"
         android:adjustViewBounds="true" />
     <ImageButton
-        android:src="@drawable/CheckInicio"
+        android:src="@drawable/IconoDoctor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/MAIN_botonLogearse"
+        android:id="@+id/MAIN_botonLogearseDoctor"
+        android:translationY="10dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_gravity="center_vertical|center_horizontal" />
+    <ImageButton
+        android:src="@drawable/IconoPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MAIN_botonLogearsePaciente"
         android:translationY="10dp"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="150dp"

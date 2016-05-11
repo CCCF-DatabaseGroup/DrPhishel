@@ -26,6 +26,7 @@
   <!--- Strings para los botones de Doctor -->
   <string name="_historialpaciente">Ver historial clínico </string>
   <string name="_agregar_cita">Pedir Una Cita  </string>
+  <string name="_confirmar">¿Desea confirmar su cita con ese doctor?  </string>
   
 
 </resources>
