@@ -13,7 +13,7 @@ using AppDrPhishel;
 namespace AppDrPhishel
 {
     /**
-     * Clase que acomoda el ListView
+     * Clase que acomoda el ListView para el historial clinico del Paciente 
      * **/
 
     class HistorialPacienteUsuarioAdapter : BaseAdapter<ClaseHistorial>
@@ -28,7 +28,7 @@ namespace AppDrPhishel
             Contexto = contexto;
 
         }
-
+        //Count para obtener tamaño de la list view
         public override int Count
         {
             get
@@ -37,13 +37,13 @@ namespace AppDrPhishel
             }
         }
 
-
+        // Para obtener la posicion por ID
 
         public override long GetItemId(int position)
         {
             return position;
         }
-
+        // ClaseHistorial que se va  a usar por el Adapter
         public override ClaseHistorial this[int position]
         {
             get
@@ -51,7 +51,7 @@ namespace AppDrPhishel
                 return Historial[position];
             }
         }
-
+        // se acomodan los datos de la lista a los componenetes de la listview
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View Columna = convertView;

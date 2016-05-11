@@ -124,7 +124,9 @@ namespace AppDrPhishel
                         // si el usuario existe
                          if (PacienteLogin != null)
                         {
-                           Intent PasarAPaciente = new Intent(this, typeof(VistaUsuarioActivity));
+
+                        // se hace un Inten para pasar parametros a la proxima Activity
+                        Intent PasarAPaciente = new Intent(this, typeof(VistaUsuarioActivity));
                          
                           PasarAPaciente.PutExtra("Usuario Cedula", PacienteLogin.Cedula.ToString());
                         PasarAPaciente.PutExtra("Usuario Nombre", PacienteLogin.Nombre);

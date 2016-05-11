@@ -42,7 +42,7 @@ namespace AppDrPhishel
             };
 
             /*
-             Boton de  hitorial de citas asociadas al doctor 
+             Boton de  historial de citas asociadas al doctor 
              */
             Button BotonCalendarioCitas = FindViewById<Button>(Resource.Id.DOCTOR_BotonCalendarioCitas);
             BotonCalendarioCitas.Click += (sender, e) =>
@@ -50,6 +50,10 @@ namespace AppDrPhishel
 
                 StartActivity(typeof(CitasDoctorActivity));
             };
+
+            /*
+            Boton de inicia la activy de agregar paciente
+            */
 
             Button BotonAgregarPaciente = FindViewById<Button>(Resource.Id.DOCTOR_BotonAgregarPaciente);
             BotonAgregarPaciente.Click += (sender, e) =>

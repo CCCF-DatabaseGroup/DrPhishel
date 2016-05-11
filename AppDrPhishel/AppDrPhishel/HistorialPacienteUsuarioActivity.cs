@@ -20,7 +20,7 @@ using System.Collections.Specialized;
 
 namespace AppDrPhishel
 {
-    [Activity(Label = "HistorialPedidosPacienteDoctorActivity")]
+    [Activity(Label = "@string/_application_name", Icon = "@drawable/Drphi")]
     public class HistorialPacienteUsuarioActivity : ConectionActivity
     {
         private List<ClaseHistorial> Historial;
@@ -32,6 +32,7 @@ namespace AppDrPhishel
         {
             try
             {
+                //se setea el HttpWebRequest
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://drphishel-001-site1.ftempurl.com/Home/api/ApiComun/ObtenerHistorialClinico?pCedula=" + Cedula);
                 request.Method = "GET";
                 String test = String.Empty;
@@ -49,10 +50,13 @@ namespace AppDrPhishel
 
                     JsonSerializerSettings settings = new JsonSerializerSettings();
                     settings.ContractResolver = new CustomResolver();
+                    // se deserealiza el Json
 
                     List<ClaseHistorial> result = JsonConvert.DeserializeObject<List<ClaseHistorial>>(test,settings);
                   
                     Historial= result;
+
+                    // elemento para dar formato y que el usuario sepa cuales son los datos
                     Historial.Insert(0,new ClaseHistorial() {NombreDoctor="Nombre" ,Apellido1Doctor = "Apellido1",
                         Apellido2Doctor = "Apellido2",Consulta = "Consulta",Estudio = "Estudio" , Fecha = "Fecha" ,Hora = "Hora"
                     });
@@ -67,7 +71,7 @@ namespace AppDrPhishel
             {
                 Historial = new List<ClaseHistorial>();
                 Console.Write(e);
-                Historial.Add(new ClaseHistorial() { Apellido1Doctor = e.ToString() , Apellido2Doctor= "Catch" });
+                Historial.Add(new ClaseHistorial() { Apellido1Doctor = "Error al conectar lo sentimos :( "  });
                
             }
         }
@@ -79,6 +83,7 @@ namespace AppDrPhishel
             //Seteando la ListView
             ListaHistorial = FindViewById<ListView>(Resource.Id.HISTORIALPACIENTEUSUARIO_lista);
          
+            //Se captura el numero de cedula del activity anterior
             string CedulaUsuario = Intent.GetStringExtra("Cedula");
             ConsultarHistorial(CedulaUsuario);
            

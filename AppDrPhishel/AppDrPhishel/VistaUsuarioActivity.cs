@@ -22,9 +22,8 @@ namespace AppDrPhishel
 
             SetContentView(Resource.Layout.VistaUsuarioLayout);
         
-            //Poner Nombre del Usuario en el texto
-            TextView NombreDelUsuario = FindViewById<TextView>(Resource.Id.USUARIO_textUsuario);
-            NombreDelUsuario.Text = Intent.GetStringExtra("Usuario Nombre");
+            
+           
 
             string Cedula = Intent.GetStringExtra("Usuario Cedula");
          
