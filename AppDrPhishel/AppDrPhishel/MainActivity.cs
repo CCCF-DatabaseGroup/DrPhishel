@@ -33,21 +33,23 @@ namespace AppDrPhishel
             String ProcedureLogearse2 = "&pContrasena=";
             String ProcedureLogearse3 = "&pTipoUsuario=";
             this.PacienteLogin = new List<ClasePaciente>();
+        
 
-         
-           /** WebClient cliente = new WebClient();
-            Uri url = new Uri(ProcedureLogearse1 + User + ProcedureLogearse2 + Password + ProcedureLogearse3 + Tipo);
-            cliente.UploadString(url,);*/
+            /** WebClient cliente = new WebClient();
+             Uri url = new Uri(ProcedureLogearse1 + User + ProcedureLogearse2 + Password + ProcedureLogearse3 + Tipo);
+             cliente.UploadString(url,);*/
             try
             {
 
+                
 
-
-                 Uri url = new Uri(ProcedureLogearse1 + User + ProcedureLogearse2 + Password + ProcedureLogearse3 + Tipo);
-                /** HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                Uri url = new Uri(ProcedureLogearse1 + User + ProcedureLogearse2 + Password + ProcedureLogearse3 + Tipo);
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
                  request.ContentType="application/json";
-                 request.Method = "GET/POST";**/
-                    
+                 request.Method = "POST";
+                request.Expect = "application/json";
+
+                /**    
                // y.Text = ProcedureLogearse1 + User + ProcedureLogearse2 + Password + ProcedureLogearse3 + Tipo;
                  String test = String.Empty;
                 x.SetX(10);
@@ -55,68 +57,65 @@ namespace AppDrPhishel
 
 
 
-                using (WebClient wc = new WebClient())
+                // using (WebClient wc = new WebClient())
+                // {
+
+                //   wc.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*//*//;q=0.8//");
+                //  wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22");
+                // wc.Headers.Add("Accept-Encoding", "gzip,deflate,sdch");
+                // wc.Headers.Add("Accept-Language", "en-US,en;q=0.8");
+                // wc.Headers.Add("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.3");
+                **/
+
+
+
+
+             //   string dataString = @"{""pCorreoElectronico"":""crisrivlop@gmail.com"",""pContrasena"":""1111"",""pTipo"":3}";
+
+             // byte[] dataBytes = Encoding.UTF8.GetBytes(dataString);
+              //  request.GetRequestStream().Write(dataBytes, 0, dataBytes.Length);
+                request.ContentLength = 0;
+
+
+
+
+
+
+
+                using (WebResponse response = (WebResponse)request.GetResponse())
                 {
-
-                    wc.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-                    wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22");
-                    wc.Headers.Add("Accept-Encoding", "gzip,deflate,sdch");
-                    wc.Headers.Add("Accept-Language", "en-US,en;q=0.8");
-                    wc.Headers.Add("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.3");
-
                   
+                    Stream stream = response.GetResponseStream();
+                    StreamReader SR = new StreamReader(stream);
+                    y.Text = SR.ReadToEnd().ToString();
+                    SR.Close();
 
 
-
-                    string dataString = @"{""pCorreoElectronico"":""crisrivlop@gmail.com"",""pContrasena"":""1111"",""pTipo"":3}";
-
-                    byte[] dataBytes = Encoding.UTF8.GetBytes(dataString);
-                    y.Text = "V";
-                    byte[] responseBytes = wc.UploadData(new Uri("http://drphishel-001-site1.ftempurl.com/Home/api/ApiComun/LoginUsuario"), "POST", dataBytes);
-                    y.Text = "V2";
-                    string responseString = Encoding.UTF8.GetString(responseBytes);
-                    y.Text = "V3";
-                    Console.WriteLine(responseString);
-                    y.Text = "V4";
-
-
-
-
-
-
-                    y.Text += responseString;
+                    stream.Close();
                 }
+                /**
 
 
+                         Stream dataStream = response.GetResponseStream();
+                         StreamReader reader = new StreamReader(dataStream);
+                         test = reader.ReadToEnd();
+                        reader.Close();
+                        dataStream.Close();
+                        x.SetX(80);
+                       
 
+                        if (Tipo == "3")
+                         {
 
-                /**using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                 {
+                            
+                             ClasePaciente result = JsonConvert.DeserializeObject<ClasePaciente>(test);
+                             this.PacienteLogin.Add(result);
+                            x.SetX(150);
 
+                        }
+                         
 
-
-
-
-                     Stream dataStream = response.GetResponseStream();
-                     StreamReader reader = new StreamReader(dataStream);
-                     test = reader.ReadToEnd();
-                    reader.Close();
-                    dataStream.Close();
-                    x.SetX(80);
-                   
-
-                    if (Tipo == "3")
-                     {
-
-                        
-                         ClasePaciente result = JsonConvert.DeserializeObject<ClasePaciente>(test);
-                         this.PacienteLogin.Add(result);
-                        x.SetX(150);
-
-                    }
-                     
-
-                 }**/
+                     }**/
 
 
 
@@ -124,8 +123,8 @@ namespace AppDrPhishel
 
 
 
-            }
-            catch(Exception e)
+                }
+            catch (Exception e)
             {
                 y.Text += e.Message;
             }
