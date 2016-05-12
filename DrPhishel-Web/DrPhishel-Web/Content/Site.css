@@ -333,14 +333,14 @@ a:focus {
 }
 
 a.list-group-item:hover, a.list-group-item:focus:hover {
-    background-color: #77ae3f;
-    color: #ffdfdf;
+    background-color: #dd3c3c;
+    color: #ffffff;
 }
 
 a.list-group-item.active, a.list-group-item.active:hover {
-    background-color: #528320;
-    color: #ffdfdf;
-    border-color: #528320;
+    background-color: #861111;
+    color: #ffffff;
+    border-color: #ff9595;
 }
 
 .panel-default > .panel-heading {

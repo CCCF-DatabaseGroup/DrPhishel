@@ -1,4 +1,4 @@
-﻿<div class="auxiliar_component center-block">
+﻿<div class="auxiliar_component center-block" >
     @RenderPage("EdicionHistorialClinicoVistaComun.cshtml")
-    <button form="datosCita" type="submit" class="btn btn-success center-block">Listo!</button>
+    <button ng-click="datosCita.$valid && insertarHistorial()" form="insertarhc" type="submit" class="btn btn-success center-block">Listo!</button>
 </div>

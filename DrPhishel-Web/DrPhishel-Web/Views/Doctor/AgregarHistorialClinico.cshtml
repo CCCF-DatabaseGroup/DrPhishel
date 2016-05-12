@@ -2,8 +2,10 @@
 @{
     ViewBag.Title = "Agregar historial clinico";
 }
-
+<a href="/Doctor" class="btn btn-success"><span class="glyphicon glyphicon-chevron-left"></span> Volver atras</a>
 <h2 class="text-center">Agregar historial clinico</h2>
 
+<div ng-controller="DoctorController">
 @RenderPage("~/Views/WebUtils/CalendarioDoctor.cshtml")
 @RenderPage("~/Views/WebUtils/AgregarHistorialClinico.cshtml")
+</div>

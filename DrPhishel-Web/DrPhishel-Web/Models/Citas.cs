@@ -106,7 +106,10 @@ namespace DrPhishel_Web.Models
                     ListaCitas.Add(new
                     {
                         HoraCita = ((TimeSpan)fila[CST.SQL_HORA_CITA]).ToString(),
-                        IdCita = ((int)fila[CST.HEADER_ID_CITA])
+                        IdCita = ((int)fila[CST.HEADER_ID_CITA]),
+                        NombreDoctor = ((String)fila[CST.HEADER_NOMBRE_PERSONA]),
+                        PrimerApellidoDoctor = ((String)fila[CST.HEADER_PRIMER_APELLIDO]),
+                        SegundoApellidoDoctor = (String)fila[CST.HEADER_SEGUNDO_APELLIDO]
                     }
                     );
                 }

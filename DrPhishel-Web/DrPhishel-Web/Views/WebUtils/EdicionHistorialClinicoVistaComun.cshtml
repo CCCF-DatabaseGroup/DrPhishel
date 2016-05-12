@@ -1,9 +1,11 @@
-﻿<form id="datosCita" class="form-group center-block">
+﻿<form id="insertarhc" name="datosCita" class="form-group center-block">
     <label for="detallesCita">Detalles de la cita:</label>
-    <textarea required maxlength="500" class="form-control" placeholder="Instroduzca los detalles de la cita" id="detallesCita"></textarea>
+    <textarea ng-model="consulta" ng-required="true" maxlength="100" class="form-control" placeholder="Instroduzca los detalles de la cita" id="detallesCita"></textarea>
     <label for="resultadosEstudios">Resultados de estudios:</label>
-    <textarea required maxlength="500" class="form-control" placeholder="Instroduzca los resultados de estudios" id="resultadosEstudios"></textarea>
+    <textarea ng-model="estudios" ng-required="true" maxlength="100" class="form-control" placeholder="Instroduzca los resultados de estudios" id="resultadosEstudios"></textarea>
+    <p class="login_message">{{ErrorHistorial}}</p>    
 </form>
+<!--
 <form class="form-group center-block">
     <select required id="seleccionProducto">
         <option>Primer producto</option>
@@ -16,8 +18,7 @@
                 <h5>Este es un span</h5>
                 <a class="btn btn-danger pull-right" href=""><span class="glyphicon glyphicon-remove"></span></a>
             </li>
-            <li class="list-group-item">v</li>
-            <li class="list-group-item">:v</li>
         </ul>
     </div>
 </form>
+    -->

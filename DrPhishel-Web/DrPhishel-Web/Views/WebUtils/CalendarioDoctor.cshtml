@@ -1,16 +1,28 @@
-﻿<div class="auxiliar_component center-block">
+﻿<div class="auxiliar_component center-block" >
     <form class="form-group center-block">
         <div class="form-inline">
             <label for="fecha_citas">Fecha de Citas:</label>
-            <input type="date" class="form-control" id="fecha_citas">
-            <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span> Buscar Citas</button>
-            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span> Hoy</button>
+            <input ng-required="true" ng-model="fechaCalendario" type="date" class="form-control" id="fecha_citas">
+            <button ng-click="obtenerCalendarioCitas()" class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span> Buscar Citas</button>
+            <button ng-click="resetDay()" class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span> Hoy</button>
         </div>
-        <div class="list-group">
-            <a  class="list-group-item">
-                aaaa
-            </a>
-        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#citasPaciente">Citas programadas para la fecha {{fechaCalendario | date: 'dd-mm-yyyy'}}</a>
+                </h4>
+            </div>
+            <div id="citasPaciente" class="panel-collapse collapse in">
+                <div class="list-group">
+                    <div class="list-group">
+                        <a ng-click="setearCitaSeleccionada(cita)" ng-repeat="cita in citas" ng-class="estaLaCitaSeleccionada(cita)" data-toggle="collapse" href="#citasPaciente" >
+                            <b>Hora cita:</b>{{cita.HorasCita}} | <b>Nombre paciente: </b>{{cita.NombrePaciente}} {{cita.PrimerApellidoPaciente}} {{cita.SegundoApellidoPaciente}}
+                        </a>
+                    </div>
 
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
     </form>
 </div>

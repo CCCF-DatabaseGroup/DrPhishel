@@ -6,7 +6,7 @@
         .success(function (result) {
             console.log(result);
             $scope.citasDisponibles = result;
-            $scope.citaSeleccionada = $scope.citasDisponibles[0];
+            if (result.length > 0)$scope.citaSeleccionada = $scope.citasDisponibles[0];
         })
         .error(function (data) {
         });
@@ -15,10 +15,14 @@
     $scope.solicitarDoctoresHelp = function (cedula) {
         $http.get('/Paciente/api/ApiComun/VerMisDoctores', { params: { pCedula: cedula } })
         .success(function (result) {
-            $scope.doctores = result;
-            $scope.doctorSeleccionado = $scope.doctores[0];
-            $scope.solicitarCitasDisponibles();
-            console.log($scope.doctorSeleccionado);
+            console.log(result);
+            if (result.length > 0) console.log("Esta vacia", result.length );
+            if (result != null && result.length != 0) {
+                $scope.doctores = result;
+                $scope.doctorSeleccionado = $scope.doctores[0];
+                $scope.solicitarCitasDisponibles();
+                console.log($scope.doctorSeleccionado);
+            }
         })
         .error(function (data) {
         });
@@ -89,8 +93,10 @@
         })
         .success(function (result) {
             $scope.solicitarCitasDisponibles();
+            $scope.ErrorCita = "La cita se llevo a cabo con exito";
         })
         .error(function (data) {
+            $scope.ErrorCita = "Error: Algo salio mal en la creacion de la cita";
         });
         alert("Usted desea solicitar una cita con el doctor: " + doc.Nombre + " " + doc.PrimerApellido
             + ", en la fecha: " + $scope.fechaCita.toString() + ", a las " + $scope.citaSeleccionada.HoraCita + " horas.");

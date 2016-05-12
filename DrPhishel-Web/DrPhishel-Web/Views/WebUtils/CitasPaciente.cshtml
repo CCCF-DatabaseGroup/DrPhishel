@@ -11,26 +11,28 @@
 
 
     <div  id="agregar_cita" class="auxiliar_component center-block tab-pane active">
-        <form ng-init="inicializarAgregar()" ng-controller="CitasPacienteController" class="form-group center-block">
+        <form name="AgregarHistorial" ng-init="inicializarAgregar()" ng-controller="CitasPacienteController" class="form-group center-block">
 
             <!-- Doctor a seleccion -->
             <label for="doctorSeleccionAgregar">Doctor:</label>
-            <select ng-change="filtroDoctor()" ng-model="doctorSeleccionado" ng-options="doctor.NombreDoctor + ' ' + doctor.PrimerApellido + ' ' + doctor.SegundoApellido + ' - ' + doctor.NombreEspecialidad for doctor in doctores " id="doctorSeleccionAgregar" class="form-control">
+            <select ng-required="true" ng-change="filtroDoctor()" ng-model="doctorSeleccionado" ng-options="doctor.NombreDoctor + ' ' + doctor.PrimerApellido + ' ' + doctor.SegundoApellido + ' - ' + doctor.NombreEspecialidad for doctor in doctores " id="doctorSeleccionAgregar" class="form-control">
             </select>
 
             <!--Dia de la cita-->
             <label for="fecha_cita">Fecha de cita:</label>
-            <input ng-change="filtroFecha()" ng-model="fechaCita" min="today" required type="date" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita">
+            <input ng-required="true" ng-change="filtroFecha()" ng-model="fechaCita" min="today" required type="date" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita" placeholder="Instroduzca la fecha de la cita">
 
 
             <!-- Lista de citas -->
             <label for="citas_disponibles">Citas disponibles:</label>
-            <select ng-model="citaSeleccionada" ng-options="cita for cita in citasDisponibles" required id="citas_disponibles" class="form-control">
+            <select ng-required="true" ng-model="citaSeleccionada" ng-options="cita for cita in citasDisponibles" required id="citas_disponibles" class="form-control">
             </select>
 
-            <!-- Boton agregar-->
-            <input ng-click="solicitarCita()" class="login_component btn btn-success" type="submit" value="Agregar cita" />
+            <p class="login_message">{{ErrorCita}}</p>
 
+            <!-- Boton agregar-->
+            <input ng-click="AgregarHistorial.$valid && solicitarCita()" class="login_component btn btn-success" type="submit" value="Agregar cita" />
+            
 
         </form>
 
@@ -39,21 +41,21 @@
 
     <!--select citas-->
     <div id="editar_eliminar_cita" class="auxiliar_component center-block tab-pane">
-        <form ng-init="inicializarEditar()" ng-controller="CitasPacienteController" class="form-group center-block">
+        <form ng-init="inicializarAgregar()" ng-controller="CitasPacienteController" class="form-group center-block">
             <!-- Lista de citas -->
             <label for="mis_citas">Mis citas:</label>
-            <h3>Doctor encargado:</h3>
-            <select ng-change="filtroDoctor()" ng-model="doctorSeleccionado" ng-options="doctor.Nombre + ' ' + doctor.PrimerApellido + ' ' + doctor.SegundoApellido for doctor in doctores " id="mis_citas" class="form-control"></select>
+            <h3>Mis citas:</h3>
+            <select ng-model="doctorSeleccionado" ng-options="doctor.NombreDoctor + ' ' + doctor.PrimerApellido + ' ' + doctor.SegundoApellido + ' - ' + doctor.NombreEspecialidad for doctor in doctores " id="mis_citas" class="form-control"></select>
 
             <!-- ver datos de cita -->
             <h3>Datos de la cita:</h3>
             <p></p>
 
-            <label for="fecha_cita_editar">Fecha de Cita:</label>
-            <input ng-change="filtroFecha()" ng-model="fechaCita" required type="date" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita_editar" placeholder="Instroduzca la fecha de la cita">
+            <label for="fecha_cita_editar">Cambiar fecha de cita:</label>
+            <input ng-model="fechaCita" required type="date" oninvalid="validarFecha(this);" class="form-control" id="fecha_cita_editar" placeholder="Instroduzca la fecha de la cita">
             
-            <label for="hora_cita">Hora de Cita:</label>
-            <select ng-model="citaSeleccionada" ng-options="cita.HoraCita for cita in citasDisponibles" required id="hora_cita" class="form-control"></select>
+            <label for="hora_cita">Cambiar hora de cita:</label>
+            <select ng-model="citaSeleccionada" ng-options="cita for cita in citasDisponibles"  required id="hora_cita" class="form-control"></select>
             <p></p>
 
             <!-- cambiar hora-->
