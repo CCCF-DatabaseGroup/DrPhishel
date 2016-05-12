@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace AppDrPhishel
 {
-    [Activity(Label = "HistorialPedidosPacienteDoctorActivity")]
+    [Activity(Label = "@string/_application_name", Icon = "@drawable/Drphi")]
     public class HistorialPacienteDoctorActivity : ConectionActivity
     {
         private List<ClasePaciente> Pacientes;
@@ -66,7 +66,7 @@ namespace AppDrPhishel
 
 
 
-            //Lista de pacientes *quemar el primero*
+           
             Pacientes = new List<ClasePaciente>();
             AgregarDatos("604220930");
            

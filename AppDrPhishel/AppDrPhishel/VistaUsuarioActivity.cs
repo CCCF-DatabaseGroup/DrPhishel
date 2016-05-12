@@ -15,14 +15,18 @@ namespace AppDrPhishel
     [Activity(Label = "@string/_application_name", Icon = "@drawable/Drphi")]
     public class VistaUsuarioActivity : ConectionActivity
     {
+
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
             SetContentView(Resource.Layout.VistaUsuarioLayout);
         
-            //Poner Nombre del Usuario en el texto
-            TextView NombreDelUsuario = FindViewById<TextView>(Resource.Id.USUARIO_textNombreUsuario);
-            NombreDelUsuario.Text = Intent.GetIntExtra("Usuario",0).ToString();
+            
+           
+
+            string Cedula = Intent.GetStringExtra("Usuario Cedula");
+         
 
             /*
              Boton que abre el historial clinico del paciente
@@ -32,7 +36,12 @@ namespace AppDrPhishel
             BotonHistorialPaciente.Click += (sender, e) =>
             {
 
-                StartActivity(typeof(HistorialPacienteUsuarioActivity));
+                Intent PasarAHistorial = new Intent(this, typeof(HistorialPacienteUsuarioActivity));
+                PasarAHistorial.PutExtra("Cedula", Cedula);
+
+                StartActivity(PasarAHistorial);
+
+              
             };
 
             Button BotonCrearCita = FindViewById<Button>(Resource.Id.USARIO_BotonCalendarioCitas);

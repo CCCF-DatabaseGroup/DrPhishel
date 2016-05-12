@@ -14,8 +14,12 @@ namespace AppDrPhishel
 {
     class ClaseHistorial
     {
-        public string NombreDoctor { get; set; }
         public string Fecha { get; set; }
-        public string Descripcion { get; set; }
+        public string Hora { get; set; }
+        public string NombreDoctor { get; set; }
+        public string Apellido1Doctor { get; set; }
+        public string Apellido2Doctor { get; set; }
+        public string Consulta { get; set; }
+        public string Estudio { get; set; }
     }
 }

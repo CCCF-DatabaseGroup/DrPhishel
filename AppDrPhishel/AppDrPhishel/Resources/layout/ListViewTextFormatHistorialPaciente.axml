@@ -11,21 +11,52 @@
     android:weightSum="100"
     android:background="#FF4F00">
     <TextView
-        android:text="Doctor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textNombreDoctor"
-        android:layout_weight="31" />
-    <TextView
         android:text="Fecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LISTVIEWHISTORIALUSUARIO_textFecha"
-        android:layout_weight="31" />
+        android:layout_weight="14.5"
+        android:textSize="12sp" />
     <TextView
-        android:text="Descripción"
+        android:text="Hora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textDescripcion"
-        android:layout_weight="31" />
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textHora"
+        android:layout_weight="14.5"
+        android:textSize="12sp" />
+    <TextView
+        android:text="Nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textNombreDoctor"
+        android:layout_weight="14.5"
+        android:textSize="12sp" />
+    <TextView
+        android:text="Apellido1Doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textApellido1Doctor"
+        android:layout_weight="14.5"
+        android:textSize="12sp" />
+    <TextView
+        android:text="Apellido2Doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textApellido2Doctor"
+        android:layout_weight="14.5"
+        android:textSize="12sp" />
+    <TextView
+        android:text="Consulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textConsulta"
+        android:layout_weight="14"
+        android:textSize="12sp" />
+    <TextView
+        android:text="Estudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LISTVIEWHISTORIALUSUARIO_textEstudio"
+        android:layout_weight="14"
+        android:textSize="12sp" />
 </LinearLayout>

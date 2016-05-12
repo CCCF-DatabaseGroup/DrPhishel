@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/USUARIO_textNombreUsuario"
-        android:translationY="-140dp" />
+        android:translationY="-40dp" />
     <Button
         android:text="Salir"
         android:layout_width="match_parent"
